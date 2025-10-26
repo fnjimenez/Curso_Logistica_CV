@@ -1,0 +1,13 @@
+📜 LICENSE – Universidad del SABES · Campus San Felipe
+Copyright (c) 2025 Mtro. Noé Jiménez
+
+Este material ha sido creado con fines exclusivamente educativos para el curso:
+"Logística y Cadena de Valor" de la Licenciatura en Ingeniería Logística.
+
+Queda prohibido su uso comercial o reproducción sin autorización institucional.
+
+─────────────────────────────────────────────
+📘 LICENSE – Educational Use Only (English)
+This material is provided solely for educational purposes within
+the SABES University, Campus San Felipe.
+Commercial use, redistribution or modification without permission is prohibited.

@@ -1,0 +1,12 @@
+# ============================================
+# .gitattributes – SABES Amazon Logistics Project
+# ============================================
+
+* text=auto eol=lf working-tree-encoding=UTF-8
+*.ipynb linguist-language=Jupyter Notebook
+*.py linguist-language=Python
+*.md text diff=markdown
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary

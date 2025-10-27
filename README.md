@@ -298,7 +298,7 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](L
 
 **Francisco Jiménez**
 - GitHub: [@fnjimenez](https://github.com/fnjimenez)
-- Email: [tu-email@ejemplo.com]
+- Email: [fausto.noej@sabes.edu.mx]
 
 **Curso de Logística - SABES San Felipe**
 - Ubicación: San Felipe, Guanajuato, México

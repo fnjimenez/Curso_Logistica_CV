@@ -1,0 +1,42 @@
+# Amazon Logistics Optimization - Requirements
+# Python 3.8+
+
+# Optimización
+pulp>=2.7.0
+
+# Análisis de redes
+networkx>=3.0
+
+# Visualización
+matplotlib>=3.5.0
+seaborn>=0.12.0
+
+# Procesamiento de datos
+numpy>=1.21.0
+pandas>=1.3.0
+
+# Procesamiento de imágenes y PDFs
+Pillow>=9.0.0
+qrcode>=7.3.1
+reportlab>=3.6.0
+
+# Utilidades
+python-dateutil>=2.8.0
+tqdm>=4.62.0
+
+# Jupyter
+jupyter>=1.0.0
+ipywidgets>=7.6.0
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=3.0.0
+
+# Documentación
+sphinx>=4.5.0
+sphinx-rtd-theme>=1.0.0
+
+# Desarrollo
+black>=22.0.0
+flake8>=4.0.0
+mypy>=0.950

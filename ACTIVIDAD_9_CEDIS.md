@@ -10,8 +10,9 @@
 
 <body class="stackedit">
   <div class="stackedit__html"><h1 id="🟦-modelado-del-cedis-en-anylogic">🟦 MODELADO DEL CEDIS EN ANYLOGIC</h1>
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Logo_AnyLogic.png" alt="AnyLogic Logo" width="200">
-<p>💬 Este modelo representa tu propuesta real del CEDIS San Bartolo. Cada bloque que configures es un paso hacia la eficiencia que justificaste en la Actividad 6 (reducción del 55% en viajes, mejora del 40% en utilización). ¡Hazlo como si fuera tu proyecto profesional! 🚀</p>
+<div align="center"> <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Logo_AnyLogic.png" alt="AnyLogic Logo" width="200">
+ <img src="https://github.com/fnjimenez/Curso_Logistica_CV/blob/main/CEDIS.png?raw=true" alt="CEDIS Layout" width="600"> </div>
+💬 Este modelo representa tu propuesta real del CEDIS San Bartolo. Cada bloque que configures es un paso hacia la eficiencia que justificaste en la Actividad 6 (reducción del 55% en viajes, mejora del 40% en utilización). ¡Hazlo como si fuera tu proyecto profesional! 🚀
 <p>💡 <strong>Tip Global:</strong> Usa colores y nombres claros en el layout para que tu simulación sea fácil de interpretar. Esto refleja el diseño conceptual que planteaste (áreas de sorting, buffer y kitting).</p>
 <p>⚠️ <strong>Error Común:</strong> No olvides configurar las unidades (horas y metros) antes de avanzar. Si fallas aquí, todo el modelo será inconsistente.</p>
 <hr>
@@ -19,7 +20,7 @@
 <h3 id="curso-logística-y-cadena-de-valor">Curso: Logística y Cadena de Valor</h3>
 <h3 id="sistemas-de-almacenamiento-y-cedis">Sistemas de Almacenamiento y CEDIS</h3>
 <h3 id="versión-2025---edición--para-principiantes">Versión: 2025 - EDICIÓN  PARA PRINCIPIANTES</h3>
-<h2 id="div-aligncenter-img-srchttpsgithub.comfnjimenezcurso_logistica_cvblobmaincedis.pngrawtrue-altcedis-layout-width600-div"><div align="center"> <img src="https://github.com/fnjimenez/Curso_Logistica_CV/blob/main/CEDIS.png?raw=true" alt="CEDIS Layout" width="600"> </div></h2>
+<hr>
 <h2 id="📌-antes-de-empezar---lee-esto-primero">📌 ANTES DE EMPEZAR - LEE ESTO PRIMERO</h2>
 <h3 id="¿qué-voy-a-hacer-en-esta-actividad">¿Qué voy a hacer en esta actividad?</h3>
 <p>Vas a construir un <strong>modelo de simulación</strong> del CEDIS (Centro de Distribución) San Bartolo en el software AnyLogic. Este CEDIS distribuye piezas automotrices a tres plantas ensambladoras: GM Silao, GM San Luis Potosí y BMW San Luis Potosí.</p>

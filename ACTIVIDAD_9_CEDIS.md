@@ -10,6 +10,196 @@
 
 <body class="stackedit">
   <div class="stackedit__html"><h1 id="🟦-actividad-9-–-modelado-del-cedis-automotriz-san-bartolo-en-anylogic">🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</h1>
+<p>💬 Este modelo representa tu propuesta real del CEDIS San Bartolo. Cada bloque que configures es un paso hacia la eficiencia que justificaste en la Actividad 6 (reducción del 55% en viajes, mejora del 40% en utilización). ¡Hazlo como si fuera tu proyecto profesional! 🚀</p>
+<p>💡 <strong>Tip Global:</strong> Usa colores y nombres claros en el layout para que tu simulación sea fácil de interpretar. Esto refleja el diseño conceptual que planteaste (áreas de sorting, buffer y kitting).</p>
+<p>⚠️ <strong>Error Común:</strong> No olvides configurar las unidades (horas y metros) antes de avanzar. Si fallas aquí, todo el modelo será inconsistente.</p>
+<hr>
+<h1 id="📑-tabla-de-contenido">📑 Tabla de Contenido</h1>
+<ul>
+<li><a href="#curso:-log%C3%ADstica-y-cadena-de-valor">Curso: Logística y Cadena de Valor</a></li>
+<li><a href="#unidad:-sistemas-de-almacenamiento-y-cedis">Unidad: Sistemas de Almacenamiento y CEDIS</a></li>
+<li><a href="#versi%C3%B3n:-2025---edici%C3%B3n-mejorada-para-principiantes">Versión: 2025 - EDICIÓN MEJORADA PARA PRINCIPIANTES</a></li>
+<li><a href="#%F0%9F%93%8C-antes-de-empezar---lee-esto-primero">📌 ANTES DE EMPEZAR - LEE ESTO PRIMERO</a></li>
+<li><a href="#qu%C3%A9-voy-a-hacer-en-esta-actividad">¿Qué voy a hacer en esta actividad?</a></li>
+<li><a href="#qu%C3%A9-es-un-modelo-de-simulaci%C3%B3n">¿Qué es un modelo de simulación?</a></li>
+<li><a href="#qu%C3%A9-necesito-saber-antes">¿Qué necesito saber antes?</a></li>
+<li><a href="#tiempo-estimado">Tiempo estimado</a></li>
+<li><a href="#1.-datos-de-identificaci%C3%B3n">1. DATOS DE IDENTIFICACIÓN</a></li>
+<li><a href="#2.-contexto-y-v%C3%ADnculo-con-actividades-anteriores">2. CONTEXTO Y VÍNCULO CON ACTIVIDADES ANTERIORES</a></li>
+<li><a href="#%F0%9F%94%97-de-d%C3%B3nde-viene-este-proyecto">🔗 ¿De dónde viene este proyecto?</a></li>
+<li><a href="#%F0%9F%8E%AF-qu%C3%A9-voy-a-simular">🎯 ¿Qué voy a simular?</a></li>
+<li><a href="#%F0%9F%93%8A-datos-clave-del-cedis-(actividad-6)">📊 Datos clave del CEDIS (Actividad 6)</a></li>
+<li><a href="#3.-objetivo-general">3. OBJETIVO GENERAL</a></li>
+<li><a href="#4.-objetivos-espec%C3%ADficos">4. OBJETIVOS ESPECÍFICOS</a></li>
+<li><a href="#5.-requisitos-previos">5. REQUISITOS PREVIOS</a></li>
+<li><a href="#%F0%9F%93%A6-software-necesario">📦 Software Necesario</a></li>
+<li><a href="#%F0%9F%A7%A0-conocimientos-previos">🧠 Conocimientos Previos</a></li>
+<li><a href="#%F0%9F%93%8E-materiales-de-referencia">📎 Materiales de Referencia</a></li>
+<li><a href="#%F0%9F%96%BC%EF%B8%8F-layout-de-referencia">🖼️ Layout de Referencia</a></li>
+<li><a href="#6.-c%C3%B3mo-usar-este-documento">6. ¿CÓMO USAR ESTE DOCUMENTO?</a></li>
+<li><a href="#%F0%9F%93%96-estructura-de-cada-paso">📖 Estructura de Cada Paso</a></li>
+<li><a href="#%E2%9C%85-sistema-de-checklist">✅ Sistema de Checklist</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#%F0%9F%8E%AF-flujo-recomendado">🎯 Flujo Recomendado</a></li>
+<li><a href="#1.-paso-1-crear-el-proyecto-y-configurar-unidades">1. PASO 1 CREAR EL PROYECTO Y CONFIGURAR UNIDADES</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-1.1:-crear-el-proyecto**"><strong>Paso 1.1: Crear el Proyecto</strong></a></li>
+<li><a href="#**paso-1.2:-configurar-unidades-de-tiempo-y-espacio**"><strong>Paso 1.2: Configurar Unidades de Tiempo y Espacio</strong></a></li>
+<li><a href="#**paso-1.3:-verificar-que-main-est%C3%A1-activo**"><strong>Paso 1.3: Verificar que Main está Activo</strong></a></li>
+<li><a href="#%E2%9A%A0%EF%B8%8F-problemas-comunes-y-soluciones">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</a></li>
+<li><a href="#%F0%9F%92%A1-consejos-pr%C3%A1cticos">💡 CONSEJOS PRÁCTICOS</a></li>
+<li><a href="#%E2%9C%85-checklist-de-verificaci%C3%B3n">✅ Checklist de Verificación</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#2.-paso-2-dibujar-el-layout-del-cedis">2. PASO 2 DIBUJAR EL LAYOUT DEL CEDIS</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-2.1:-insertar-la-imagen-de-fondo-(altamente-recomendado)**"><strong>Paso 2.1: Insertar la Imagen de Fondo (ALTAMENTE RECOMENDADO)</strong></a></li>
+<li><a href="#**paso-2.2:-dibujar-las-zonas-principales-con-rect%C3%A1ngulos**"><strong>Paso 2.2: Dibujar las Zonas Principales con Rectángulos</strong></a></li>
+<li><a href="#**paso-2.3:-agregar-etiquetas-de-texto-identificadoras**"><strong>Paso 2.3: Agregar Etiquetas de Texto Identificadoras</strong></a></li>
+<li><a href="#%E2%9A%A0%EF%B8%8F-problemas-comunes-y-soluciones">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</a></li>
+<li><a href="#%F0%9F%92%A1-consejos-de-dise%C3%B1o">💡 CONSEJOS DE DISEÑO</a></li>
+<li><a href="#%F0%9F%8E%A8-esquema-de-colores-recomendado">🎨 Esquema de Colores Recomendado</a></li>
+<li><a href="#%E2%9C%85-checklist-de-verificaci%C3%B3n">✅ Checklist de Verificación</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#3.-paso-3-crear-el-agente-%60truck%60">3. PASO 3 CREAR EL AGENTE <code>Truck</code></a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-3.1:-crear-el-agente-truck**"><strong>Paso 3.1: Crear el Agente Truck</strong></a></li>
+<li><a href="#**paso-3.2:-agregar-atributos-(variables)-al-agente**"><strong>Paso 3.2: Agregar Atributos (Variables) al Agente</strong></a></li>
+<li><a href="#%E2%9A%A0%EF%B8%8F-problemas-comunes-y-soluciones">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</a></li>
+<li><a href="#%F0%9F%92%A1-consejos-de-buenas-pr%C3%A1cticas">💡 CONSEJOS DE BUENAS PRÁCTICAS</a></li>
+<li><a href="#%E2%9C%85-checklist-de-verificaci%C3%B3n">✅ Checklist de Verificación</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#4.-paso-4-crear-las-fuentes-de-camiones">4. PASO 4 CREAR LAS FUENTES DE CAMIONES</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-4.1:-preparar-el-ambiente-de-trabajo**"><strong>Paso 4.1: Preparar el Ambiente de Trabajo</strong></a></li>
+<li><a href="#**paso-4.2:-configuraci%C3%B3n-de-sources-por-proveedor**"><strong>Paso 4.2: Configuración de Sources por Proveedor</strong></a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#%E2%9A%A0%EF%B8%8F-problemas-comunes-y-soluciones">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</a></li>
+<li><a href="#%F0%9F%92%A1-consejos-de-configuraci%C3%B3n">💡 CONSEJOS DE CONFIGURACIÓN</a></li>
+<li><a href="#%F0%9F%93%8A-explicaci%C3%B3n-de-distribuciones">📊 Explicación de Distribuciones</a></li>
+<li><a href="#%E2%9C%85-checklist-de-verificaci%C3%B3n">✅ Checklist de Verificación</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#5.-paso-5-entrada-al-cedis-y-gesti%C3%B3n-de-andenes">5. PASO 5 ENTRADA AL CEDIS Y GESTIÓN DE ANDENES</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-5.1:-crear-resourcepool-de-andenes**"><strong>Paso 5.1: Crear ResourcePool de Andenes</strong></a></li>
+<li><a href="#**paso-5.2:-construir-flowchart-de-entrada**"><strong>Paso 5.2: Construir Flowchart de Entrada</strong></a></li>
+<li><a href="#**paso-5.3:-conectar-todo-el-flowchart**"><strong>Paso 5.3: Conectar Todo el Flowchart</strong></a></li>
+<li><a href="#%E2%9A%A0%EF%B8%8F-problemas-comunes-y-soluciones">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</a></li>
+<li><a href="#%F0%9F%92%A1-consejos-de-flowchart">💡 CONSEJOS DE FLOWCHART</a></li>
+<li><a href="#%E2%8F%B1%EF%B8%8F-tiempos-de-proceso-explicados">⏱️ Tiempos de Proceso Explicados</a></li>
+<li><a href="#%E2%9C%85-checklist-de-verificaci%C3%B3n">✅ Checklist de Verificación</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#6.-paso-6-ruteo-hacia-recepci%C3%B3n-norte-o-sur">6. PASO 6 RUTEO HACIA RECEPCIÓN NORTE O SUR</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-6.1:-crear-bloque-de-decisi%C3%B3n**"><strong>Paso 6.1: Crear Bloque de Decisión</strong></a></li>
+<li><a href="#**paso-6.2:-programar-la-l%C3%B3gica-de-decisi%C3%B3n**"><strong>Paso 6.2: Programar la Lógica de Decisión</strong></a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#**paso-6.2:-configurar-tiempos-de-recepci%C3%B3n**"><strong>Paso 6.2: Configurar Tiempos de Recepción</strong></a></li>
+<li><a href="#**paso-6.3:-crear-delays-de-procesamiento-por-recepci%C3%B3n**"><strong>Paso 6.3: Crear Delays de Procesamiento por Recepción</strong></a></li>
+<li><a href="#**paso-6.4:-conectar-las-rutas**"><strong>Paso 6.4: Conectar las Rutas</strong></a></li>
+<li><a href="#%E2%9A%A0%EF%B8%8F-problemas-comunes-y-soluciones">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</a></li>
+<li><a href="#%F0%9F%92%A1-consejos-de-ruteo">💡 CONSEJOS DE RUTEO</a></li>
+<li><a href="#%E2%8F%B1%EF%B8%8F-tiempos-de-recepci%C3%B3n">⏱️ Tiempos de Recepción</a></li>
+<li><a href="#%E2%9C%85-checklist-de-verificaci%C3%B3n">✅ Checklist de Verificación</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#7.-paso-7-decisi%C3%B3n:-cross-docking-o-buffer-estrat%C3%A9gico">7. PASO 7 DECISIÓN: CROSS-DOCKING O BUFFER ESTRATÉGICO</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-7.1:-crear-punto-de-decisi%C3%B3n-de-flujo**"><strong>Paso 7.1: Crear Punto de Decisión de Flujo</strong></a></li>
+<li><a href="#**paso-7.2:-programar-distribuci%C3%B3n-probabil%C3%ADstica**"><strong>Paso 7.2: Programar Distribución Probabilística</strong></a></li>
+<li><a href="#**paso-7.3:-crear-procesos-para-cada-ruta**"><strong>Paso 7.3: Crear Procesos para Cada Ruta</strong></a></li>
+<li><a href="#**paso-7.4:-conectar-las-rutas**"><strong>Paso 7.4: Conectar las Rutas</strong></a></li>
+<li><a href="#%E2%9A%A0%EF%B8%8F-problemas-comunes">⚠️ PROBLEMAS COMUNES</a></li>
+<li><a href="#%E2%9C%85-checklist">✅ Checklist</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#8.-paso-8-asignaci%C3%B3n-de-destino-oem**">8. PASO 8 ASIGNACIÓN DE DESTINO OEM**</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n">🛠️ Configuración</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-8.1:-crear-decisi%C3%B3n-de-destino**"><strong>Paso 8.1: Crear Decisión de Destino</strong></a></li>
+<li><a href="#**paso-8.2:-programar-asignaci%C3%B3n**"><strong>Paso 8.2: Programar Asignación</strong></a></li>
+<li><a href="#**paso-8.3:-conectar-flujos-anteriores**"><strong>Paso 8.3: Conectar Flujos Anteriores</strong></a></li>
+<li><a href="#**paso-8.4:-preparaci%C3%B3n-por-cliente**"><strong>Paso 8.4: Preparación por Cliente</strong></a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-8.1:-crear-punto-de-decisi%C3%B3n-de-destino**"><strong>Paso 8.1: Crear Punto de Decisión de Destino</strong></a></li>
+<li><a href="#**paso-8.2:-programar-asignaci%C3%B3n-de-destino**"><strong>Paso 8.2: Programar Asignación de Destino</strong></a></li>
+<li><a href="#**paso-8.3:-conectar-todos-los-flujos-anteriores**"><strong>Paso 8.3: Conectar Todos los Flujos Anteriores</strong></a></li>
+<li><a href="#**paso-8.4:-crear-procesos-de-preparaci%C3%B3n-por-cliente**"><strong>Paso 8.4: Crear Procesos de Preparación por Cliente</strong></a></li>
+<li><a href="#**paso-8.5:-conectar-destinos**"><strong>Paso 8.5: Conectar Destinos</strong></a></li>
+<li><a href="#%E2%9C%85-checklist">✅ Checklist</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n">🛠️ Configuración</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#9.-paso-9-salida-y-registro-de-m%C3%A9tricas**">9. PASO 9 SALIDA Y REGISTRO DE MÉTRICAS**</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n">🛠️ Configuración</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-9.1:-crear-variables-kpi-en-main**"><strong>Paso 9.1: Crear Variables KPI en Main</strong></a></li>
+<li><a href="#**paso-9.2:-crear-salida**"><strong>Paso 9.2: Crear Salida</strong></a></li>
+<li><a href="#**paso-9.3:-c%C3%B3digo-en-exit_cedis-(on-exit)**"><strong>Paso 9.3: Código en EXIT_CEDIS (On exit)</strong></a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-9.1:-crear-variables-globales-para-kpis**"><strong>Paso 9.1: Crear Variables Globales para KPIs</strong></a></li>
+<li><a href="#**paso-9.2:-crear-punto-de-salida**"><strong>Paso 9.2: Crear Punto de Salida</strong></a></li>
+<li><a href="#**paso-9.3:-conectar-todas-las-rutas-finales**"><strong>Paso 9.3: Conectar Todas las Rutas Finales</strong></a></li>
+<li><a href="#**paso-9.4:-programar-registro-de-m%C3%A9tricas**"><strong>Paso 9.4: Programar Registro de Métricas</strong></a></li>
+<li><a href="#%E2%9C%85-checklist">✅ Checklist</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n">🛠️ Configuración</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-10.1:-t%C3%ADtulo-del-dashboard**"><strong>Paso 10.1: Título del Dashboard</strong></a></li>
+<li><a href="#**paso-10.2:-m%C3%A9tricas-din%C3%A1micas**"><strong>Paso 10.2: Métricas Dinámicas</strong></a></li>
+<li><a href="#10.-paso-10-gesti%C3%B3n-de-montacargas-(opcional)">10. PASO 10 GESTIÓN DE MONTACARGAS (OPCIONAL)</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-10.1:-crear-resourcepool-de-montacargas**"><strong>Paso 10.1: Crear ResourcePool de Montacargas</strong></a></li>
+<li><a href="#**paso-10.2:-usar-montacargas-en-procesos-clave**"><strong>Paso 10.2: Usar Montacargas en Procesos Clave</strong></a></li>
+<li><a href="#%E2%9C%85-checklist-(opcional)">✅ Checklist (Opcional)</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#11.-paso-11-crear-dashboard-de-monitoreo">11. PASO 11 CREAR DASHBOARD DE MONITOREO</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n-paso-a-paso">🛠️ Configuración Paso a Paso</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-11.1:-crear-t%C3%ADtulo-del-dashboard**"><strong>Paso 11.1: Crear Título del Dashboard</strong></a></li>
+<li><a href="#**paso-11.2:-crear-etiquetas-y-valores-din%C3%A1micos**"><strong>Paso 11.2: Crear Etiquetas y Valores Dinámicos</strong></a></li>
+<li><a href="#%E2%9C%85-checklist">✅ Checklist</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-configuraci%C3%B3n">🛠️ Configuración</a>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li><a href="#**paso-11.1:-crear-resourcepool**"><strong>Paso 11.1: Crear ResourcePool</strong></a></li>
+<li><a href="#**paso-11.2:-usar-en-procesos**"><strong>Paso 11.2: Usar en Procesos</strong></a></li>
+<li><a href="#12.-paso-12-ejecuci%C3%B3n-y-validaci%C3%B3n">12. PASO 12 EJECUCIÓN Y VALIDACIÓN</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%A7%A0-l%C3%B3gica">🧠 Lógica</a>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-procedimiento-de-pruebas">🛠️ Procedimiento de Pruebas</a></li>
+<li><a href="#**paso-12.1:-ejecuci%C3%B3n-inicial**"><strong>Paso 12.1: Ejecución Inicial</strong></a></li>
+<li><a href="#**paso-12.2:-validaci%C3%B3n-de-m%C3%A9tricas**"><strong>Paso 12.2: Validación de Métricas</strong></a></li>
+<li><a href="#%E2%9C%85-checklist">✅ Checklist</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#13.-paso-13-publicaci%C3%B3n-en-anylogic-cloud">13. PASO 13 PUBLICACIÓN EN ANYLOGIC CLOUD</a></li>
+<li><a href="#%F0%9F%8E%AF-objetivo">🎯 Objetivo</a>  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</li>
+<li><a href="#%F0%9F%9B%A0%EF%B8%8F-procedimiento">🛠️ Procedimiento</a></li>
+<li><a href="#**paso-13.1:-exportar-a-la-nube**"><strong>Paso 13.1: Exportar a la Nube</strong></a></li>
+<li><a href="#**paso-13.2:-probar-en-navegador**"><strong>Paso 13.2: Probar en Navegador</strong></a></li>
+<li><a href="#%E2%9C%85-checklist">✅ Checklist</a>  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</li>
+<li><a href="#%F0%9F%8E%AF-resumen-de-completitud">🎯 RESUMEN DE COMPLETITUD</a></li>
+<li><a href="#%E2%9C%85-**configuraciones-ahora-completas:**">✅ <strong>CONFIGURACIONES AHORA COMPLETAS:</strong></a></li>
+<li><a href="#%F0%9F%93%8A-**flujo-completo-implementado:**">📊 <strong>FLUJO COMPLETO IMPLEMENTADO:</strong></a></li>
+<li><a href="#%F0%9F%93%8B-resumen-de-secciones-faltantes">📋 RESUMEN DE SECCIONES FALTANTES</a></li>
+<li><a href="#%F0%9F%9A%A8-**problemas-principales-identificados**">🚨 <strong>PROBLEMAS PRINCIPALES IDENTIFICADOS</strong></a></li>
+<li><a href="#1.-**secciones-duplicadas-y-repetidas**">1. <strong>SECCIONES DUPLICADAS Y REPETIDAS</strong></a></li>
+<li><a href="#2.-**secuencia-num%C3%A9rica-rompida**">2. <strong>SECUENCIA NUMÉRICA ROMPIDA</strong></a></li>
+<li><a href="#3.-**contenido-repetido-innecesariamente**">3. <strong>CONTENIDO REPETIDO INNECESARIAMENTE</strong></a></li>
+<li><a href="#%F0%9F%94%A7-**correcciones-requeridas---versi%C3%B3n-limpia**">🔧 <strong>CORRECCIONES REQUERIDAS - VERSIÓN LIMPIA</strong></a></li>
+<li><a href="#**%F0%9F%93%8D-ubicaci%C3%B3n:-eliminar-contenido-duplicado**"><strong>📍 UBICACIÓN: ELIMINAR CONTENIDO DUPLICADO</strong></a></li>
+<li><a href="#**%F0%9F%93%8D-mantener-solo-estas-secciones-principales:**"><strong>📍 MANTENER SOLO ESTAS SECCIONES PRINCIPALES:</strong></a></li>
+<li><a href="#%F0%9F%93%8B-**checklist-de-limpieza**">📋 <strong>CHECKLIST DE LIMPIEZA</strong></a></li>
+<li><a href="#**%E2%9C%85-para-corregir-el-documento:**"><strong>✅ PARA CORREGIR EL DOCUMENTO:</strong></a></li>
+<li><a href="#**%F0%9F%94%8D-verificaci%C3%B3n-final-del-flujo:**"><strong>🔍 VERIFICACIÓN FINAL DEL FLUJO:</strong></a></li>
+<li><a href="#%F0%9F%8E%AF-**resultado-esperado**">🎯 <strong>RESULTADO ESPERADO</strong></a></li>
+</ul>
+<hr>
+<p>Mejor te paso el codigo # 🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</p>
 <h3 id="curso-logística-y-cadena-de-valor">Curso: Logística y Cadena de Valor</h3>
 <h3 id="unidad-sistemas-de-almacenamiento-y-cedis">Unidad: Sistemas de Almacenamiento y CEDIS</h3>
 <h3 id="versión-2025---edición-mejorada-para-principiantes">Versión: 2025 - EDICIÓN MEJORADA PARA PRINCIPIANTES</h3>
@@ -22,7 +212,7 @@
 <h3 id="¿qué-necesito-saber-antes">¿Qué necesito saber antes?</h3>
 <p>✅ <strong>No necesitas ser experto en programación</strong><br>
 ✅ Este documento te guía paso a paso<br>
-✅ Cada sección tiene: 🎯 Objetivo | 🧠 Explicación | 🛠️ Qué hacer | 💡 Consejos<br>
+✅ Cada sección tiene: 🎯 Objetivo | 🧠 Explicación | 🛠️ Qué hacer | 💡 Consejos    💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.<br>
 ✅ Si te atoras, busca las secciones <strong>"⚠️ PROBLEMAS COMUNES"</strong></p>
 <h3 id="tiempo-estimado">Tiempo estimado</h3>
 <ul>
@@ -125,73 +315,18 @@
 </blockquote>
 <hr>
 <h2 id="objetivos-específicos">4. OBJETIVOS ESPECÍFICOS</h2>
-
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Objetivo</th>
-<th>Estado</th>
-<th>Prioridad</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Configurar proyecto AnyLogic con unidades correctas</td>
-<td></td>
-<td>🔴 ALTA</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Crear agentes (camiones) con información de carga y destino</td>
-<td></td>
-<td>🔴 ALTA</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Dibujar layout básico del CEDIS</td>
-<td></td>
-<td>🟡 MEDIA</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Construir diagrama de flujo con bloques Process Modeling</td>
-<td></td>
-<td>🔴 ALTA</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Gestionar recursos (andenes, montacargas)</td>
-<td></td>
-<td>🔴 ALTA</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Programar decisiones de ruteo</td>
-<td></td>
-<td>🟡 MEDIA</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Calcular indicadores (KPIs)</td>
-<td></td>
-<td>🟢 BAJA</td>
-</tr>
-<tr>
-<td>8</td>
-<td>Publicar modelo en AnyLogic Cloud</td>
-<td></td>
-<td>🟢 BAJA</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Crear dashboard de monitoreo</td>
-<td></td>
-<td>🟡 MEDIA</td>
-</tr>
-</tbody>
-</table><hr>
+<p>| # | Objetivo | Estado | Prioridad |  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.<br>
+|—|----------|--------|-----------|<br>
+| 1 | Configurar proyecto AnyLogic con unidades correctas | | 🔴 ALTA |<br>
+| 2 | Crear agentes (camiones) con información de carga y destino | | 🔴 ALTA |<br>
+| 3 | Dibujar layout básico del CEDIS | | 🟡 MEDIA |<br>
+| 4 | Construir diagrama de flujo con bloques Process Modeling | | 🔴 ALTA |<br>
+| 5 | Gestionar recursos (andenes, montacargas) | | 🔴 ALTA |<br>
+| 6 | Programar decisiones de ruteo | | 🟡 MEDIA |<br>
+| 7 | Calcular indicadores (KPIs) | | 🟢 BAJA |<br>
+| 8 | Publicar modelo en AnyLogic Cloud | | 🟢 BAJA |<br>
+| 9 | Crear dashboard de monitoreo | | 🟡 MEDIA |</p>
+<hr>
 <h2 id="requisitos-previos">5. REQUISITOS PREVIOS</h2>
 <h3 id="📦-software-necesario">📦 Software Necesario</h3>
 <ul>
@@ -222,7 +357,7 @@
 💡 CONSEJOS → Trucos y mejores prácticas
 ⚠️ PROBLEMAS COMUNES → Soluciones rápidas a errores frecuentes
 </code></pre>
-<h3 id="✅-sistema-de-checklist">✅ Sistema de Checklist</h3>
+<h3 id="✅-sistema-de-checklist--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.">✅ Sistema de Checklist  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <p>Al final de cada sección encontrarás:</p>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> <strong>Completado y funciona</strong> - Todo correcto</li>
@@ -239,10 +374,10 @@
 <hr>
 <h1 id="parte-1-configuración-inicial">PARTE 1: CONFIGURACIÓN INICIAL</h1>
 <hr>
-<h2 id="paso-1-–-crear-el-proyecto-y-configurar-unidades">7. PASO 1 – CREAR EL PROYECTO Y CONFIGURAR UNIDADES</h2>
-<h3 id="🎯-objetivo">🎯 Objetivo</h3>
+<h2 id="paso-1-crear-el-proyecto-y-configurar-unidades">1. PASO 1 CREAR EL PROYECTO Y CONFIGURAR UNIDADES</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Crear un proyecto nuevo en AnyLogic con las unidades correctas (horas y metros) para el modelo del CEDIS.</p>
-<h3 id="🧠-lógica">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Trabajaremos en un solo agente llamado <code>Main</code> que contendrá todos los elementos:</p>
 <ul>
 <li>El dibujo del layout del CEDIS</li>
@@ -250,7 +385,7 @@
 <li>Los recursos compartidos (andenes, montacargas)</li>
 <li>Los indicadores de desempeño (KPIs)</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-1.1-crear-el-proyecto"><strong>Paso 1.1: Crear el Proyecto</strong></h4>
 <ol>
 <li>Abrir AnyLogic desde el escritorio</li>
@@ -320,7 +455,7 @@
 <li><strong>Guarda frecuentemente</strong> con Ctrl+S durante el proceso</li>
 <li><strong>Mantén Main abierto</strong> - es tu área de trabajo principal</li>
 </ul>
-<h3 id="✅-checklist-de-verificación">✅ Checklist de Verificación</h3>
+<h3 id="✅-checklist-de-verificación--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.">✅ Checklist de Verificación  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Proyecto creado con nombre personalizado correcto</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Unidades configuradas en horas y metros en Environment</li>
@@ -328,10 +463,10 @@
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Puedo ver la ventana de Properties en la parte inferior</li>
 </ul>
 <hr>
-<h2 id="paso-2-–-dibujar-el-layout-del-cedis">8. PASO 2 – DIBUJAR EL LAYOUT DEL CEDIS</h2>
-<h3 id="🎯-objetivo-1">🎯 Objetivo</h3>
+<h2 id="paso-2-dibujar-el-layout-del-cedis">2. PASO 2 DIBUJAR EL LAYOUT DEL CEDIS</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-1">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Crear la representación visual del CEDIS usando el layout proporcionado como referencia, definiendo claramente todas las zonas operativas.</p>
-<h3 id="🧠-lógica-1">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-1">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Un buen layout visual ayuda a:</p>
 <ul>
 <li>Entender el flujo de materiales</li>
@@ -339,7 +474,7 @@
 <li>Comunicar el diseño a otras personas</li>
 <li>Debuggear problemas en la simulación</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-1">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-1">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-2.1-insertar-la-imagen-de-fondo-altamente-recomendado"><strong>Paso 2.1: Insertar la Imagen de Fondo (ALTAMENTE RECOMENDADO)</strong></h4>
 <ol>
 <li>Descargar la imagen <code>layoutt.png</code> desde GitHub</li>
@@ -523,7 +658,7 @@ Procesamiento: #D5E8D4  (Verde - Transformación)
 Almacenamiento: #F8CECC  (Rojo - Buffer)
 Salida:       #E1D5E7  (Morado - Embarques)
 </code></pre>
-<h3 id="✅-checklist-de-verificación-1">✅ Checklist de Verificación</h3>
+<h3 id="✅-checklist-de-verificación--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-1">✅ Checklist de Verificación  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Imagen de fondo insertada y bloqueada en posición</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 8 zonas dibujadas con rectángulos de colores diferenciados</li>
@@ -535,10 +670,10 @@ Salida:       #E1D5E7  (Morado - Embarques)
 <hr>
 <h1 id="parte-2-creación-de-agentes-y-fuentes">PARTE 2: CREACIÓN DE AGENTES Y FUENTES</h1>
 <hr>
-<h2 id="paso-3-–-crear-el-agente-truck">9. PASO 3 – CREAR EL AGENTE <code>Truck</code></h2>
-<h3 id="🎯-objetivo-2">🎯 Objetivo</h3>
+<h2 id="paso-3-crear-el-agente-truck">3. PASO 3 CREAR EL AGENTE <code>Truck</code></h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-2">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Definir la “ficha técnica” de los camiones que entrarán al CEDIS con todos sus atributos necesarios.</p>
-<h3 id="🧠-lógica-2">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-2">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Cada camión es un <strong>agente</strong> que fluye por el sistema y necesita almacenar información específica:</p>
 <ul>
 <li><strong>Origen:</strong> Proveedor y región de procedencia</li>
@@ -546,7 +681,7 @@ Salida:       #E1D5E7  (Morado - Embarques)
 <li><strong>Destino:</strong> Cliente final al que va dirigido</li>
 <li><strong>Tiempos:</strong> Registro de entrada y salida para métricas</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-2">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-2">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-3.1-crear-el-agente-truck"><strong>Paso 3.1: Crear el Agente Truck</strong></h4>
 <ol>
 <li>En panel <strong>Projects</strong>, click derecho en <strong>Agent Types</strong></li>
@@ -666,7 +801,7 @@ Salida:       #E1D5E7  (Morado - Embarques)
 <li><strong>Comentarios:</strong> Agregar notas si es necesario</li>
 <li><strong>Tipos correctos:</strong> String para texto, int para enteros, double para decimales</li>
 </ul>
-<h3 id="✅-checklist-de-verificación-2">✅ Checklist de Verificación</h3>
+<h3 id="✅-checklist-de-verificación--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-2">✅ Checklist de Verificación  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Agente Truck creado en Agent Types</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 6 variables agregadas con nombres exactos</li>
@@ -675,10 +810,10 @@ Salida:       #E1D5E7  (Morado - Embarques)
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Variables organizadas y visibles en el canvas</li>
 </ul>
 <hr>
-<h2 id="paso-4-–-crear-las-fuentes-de-camiones">10. PASO 4 – CREAR LAS FUENTES DE CAMIONES</h2>
-<h3 id="🎯-objetivo-3">🎯 Objetivo</h3>
+<h2 id="paso-4-crear-las-fuentes-de-camiones">4. PASO 4 CREAR LAS FUENTES DE CAMIONES</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-3">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Configurar la generación automática de camiones desde los tres proveedores principales con sus características específicas.</p>
-<h3 id="🧠-lógica-3">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-3">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Cada proveedor tiene patrones únicos:</p>
 <ul>
 <li><strong>Frecuencias diferentes</strong> de llegada</li>
@@ -686,14 +821,14 @@ Salida:       #E1D5E7  (Morado - Embarques)
 <li><strong>Capacidades distintas</strong> de carga</li>
 <li><strong>Horarios preferentes</strong> de entrega</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-3">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-3">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-4.1-preparar-el-ambiente-de-trabajo"><strong>Paso 4.1: Preparar el Ambiente de Trabajo</strong></h4>
 <ol>
 <li>Regresar al agente <strong>Main</strong> (doble click en Projects)</li>
 <li>En paleta izquierda, verificar que <strong>Process Modeling Library</strong> está visible</li>
 <li>Si no está: <strong>View → Palettes → Process Modeling Library</strong></li>
 </ol>
-<h4 id="paso-4.2-configuración-de-sources-por-proveedor"><strong>Paso 4.2: Configuración de Sources por Proveedor</strong></h4>
+<h4 id="paso-4.2-configuración-de-sources-por-proveedor--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic."><strong>Paso 4.2: Configuración de Sources por Proveedor</strong>  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h4>
 
 <table>
 <thead>
@@ -832,7 +967,7 @@ agent<span class="token punctuation">.</span>tEntradaSistema <span class="token 
 <li><strong>Resultado:</strong> ~3 camiones/hora en promedio</li>
 <li><strong>Cálculo diario:</strong> 3 cam/h × 24h × 26 pallets = ~1,872 pallets/día</li>
 </ul>
-<h3 id="✅-checklist-de-verificación-3">✅ Checklist de Verificación</h3>
+<h3 id="✅-checklist-de-verificación--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-3">✅ Checklist de Verificación  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 Sources creados con nombres descriptivos</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Cada Source configurado con Agent type: Truck</li>
@@ -844,10 +979,10 @@ agent<span class="token punctuation">.</span>tEntradaSistema <span class="token 
 <hr>
 <h1 id="parte-3-flujo-de-entrada-y-andenes">PARTE 3: FLUJO DE ENTRADA Y ANDENES</h1>
 <hr>
-<h2 id="paso-5-–-entrada-al-cedis-y-gestión-de-andenes">11. PASO 5 – ENTRADA AL CEDIS Y GESTIÓN DE ANDENES</h2>
-<h3 id="🎯-objetivo-4">🎯 Objetivo</h3>
+<h2 id="paso-5-entrada-al-cedis-y-gestión-de-andenes">5. PASO 5 ENTRADA AL CEDIS Y GESTIÓN DE ANDENES</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-4">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Implementar el sistema de recepción donde camiones esperan, ocupan andenes, descargan y liberan recursos.</p>
-<h3 id="🧠-lógica-4">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-4">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Los andenes son recursos limitados que deben gestionarse eficientemente:</p>
 <ul>
 <li><strong>Cola de espera</strong> cuando no hay andenes disponibles</li>
@@ -855,7 +990,7 @@ agent<span class="token punctuation">.</span>tEntradaSistema <span class="token 
 <li><strong>Delay (proceso)</strong> de descarga con tiempo variable</li>
 <li><strong>Release (liberar)</strong> andén para siguiente camión</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-4">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-4">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-5.1-crear-resourcepool-de-andenes"><strong>Paso 5.1: Crear ResourcePool de Andenes</strong></h4>
 <ol>
 <li>En agente <strong>Main</strong>, paleta: <strong>Agent → Resource Pool</strong></li>
@@ -996,7 +1131,7 @@ SRC_MAGNA_SUR ───┘
 </li>
 <li><strong>Justificación:</strong> Depende de tipo de carga, personal disponible, etc.</li>
 </ul>
-<h3 id="✅-checklist-de-verificación-4">✅ Checklist de Verificación</h3>
+<h3 id="✅-checklist-de-verificación--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-4">✅ Checklist de Verificación  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> ResourcePool <code>docks</code> creado con capacidad 24</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Enter conecta los 3 Sources correctamente</li>
@@ -1008,10 +1143,10 @@ SRC_MAGNA_SUR ───┘
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> No hay líneas rojas de error</li>
 </ul>
 <hr>
-<h2 id="paso-6-–-ruteo-hacia-recepción-norte-o-sur">12. PASO 6 – RUTEO HACIA RECEPCIÓN NORTE O SUR</h2>
-<h3 id="🎯-objetivo-5">🎯 Objetivo</h3>
+<h2 id="paso-6-ruteo-hacia-recepción-norte-o-sur">6. PASO 6 RUTEO HACIA RECEPCIÓN NORTE O SUR</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-5">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Implementar la decisión que dirige cada camión a la zona de recepción correcta según su región de origen.</p>
-<h3 id="🧠-lógica-5">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-5">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>La separación por regiones permite:</p>
 <ul>
 <li><strong>Optimizar flujos</strong> internos</li>
@@ -1019,7 +1154,7 @@ SRC_MAGNA_SUR ───┘
 <li><strong>Manejar características</strong> específicas por región</li>
 <li><strong>Preparar para procesos</strong> diferenciados</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-5">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-5">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-6.1-crear-bloque-de-decisión"><strong>Paso 6.1: Crear Bloque de Decisión</strong></h4>
 <ol>
 <li>Arrastrar <strong>SelectOutput</strong> desde Process Modeling Library</li>
@@ -1033,7 +1168,7 @@ SRC_MAGNA_SUR ───┘
 </ul>
 </li>
 </ol>
-<h4 id="paso-6.2-programar-la-lógica-de-decisión"><strong>Paso 6.2: Programar la Lógica de Decisión</strong></h4>
+<h4 id="paso-6.2-programar-la-lógica-de-decisión--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia."><strong>Paso 6.2: Programar la Lógica de Decisión</strong>  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h4>
 <h3 id="paso-6.2-configurar-tiempos-de-recepción"><strong>Paso 6.2: Configurar Tiempos de Recepción</strong></h3>
 <p><strong>Agregar estos delays después del SelectOutput ROUTE_RECEPCION:</strong></p>
 
@@ -1167,7 +1302,7 @@ SRC_MAGNA_SUR ───┘
 <li><strong>Sorting:</strong> <code>triangular(0.2, 0.4, 0.8)</code> = 12-48 minutos</li>
 <li><strong>Diferenciación:</strong> Tiempos similares entre Norte/Sur para simplicidad</li>
 </ul>
-<h3 id="✅-checklist-de-verificación-5">✅ Checklist de Verificación</h3>
+<h3 id="✅-checklist-de-verificación--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-5">✅ Checklist de Verificación  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> SelectOutput configurado con 2 salidas</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código de decisión funciona sin errores</li>
@@ -1179,165 +1314,17 @@ SRC_MAGNA_SUR ───┘
 </ul>
 <hr>
 <h1 id="🟦-actividad-9-–-modelado-del-cedis-automotriz-san-bartolo-en-anylogic-1">🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</h1>
-<h2 id="📋-análisis-de-completitud-del-documento">📋 ANÁLISIS DE COMPLETITUD DEL DOCUMENTO</h2>
-<h3 id="✅-configuraciones-completadas">✅ <strong>CONFIGURACIONES COMPLETADAS</strong></h3>
-
-<table>
-<thead>
-<tr>
-<th>Sección</th>
-<th>Estado</th>
-<th>Elementos Implementados</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Configuración Inicial</strong></td>
-<td>✅ COMPLETO</td>
-<td>Proyecto, unidades (horas/metros), Main activo</td>
-</tr>
-<tr>
-<td><strong>Agente Truck</strong></td>
-<td>✅ COMPLETO</td>
-<td>6 variables con tipos y valores iniciales</td>
-</tr>
-<tr>
-<td><strong>Fuentes de Camiones</strong></td>
-<td>✅ COMPLETO</td>
-<td>3 Sources con rates y código On exit</td>
-</tr>
-<tr>
-<td><strong>Gestión de Andenes</strong></td>
-<td>✅ COMPLETO</td>
-<td>ResourcePool docks (24), flowchart entrada completo</td>
-</tr>
-</tbody>
-</table><h3 id="paso-7-–-decisión-cross-docking-o-buffer-estratégico"><strong>13. PASO 7 – DECISIÓN: CROSS-DOCKING O BUFFER ESTRATÉGICO</strong></h3>
-<h3 id="🎯-objetivo-6">🎯 Objetivo</h3>
-<p>Implementar la lógica que determina si los materiales pasan directo a embarque o requieren almacenamiento temporal.</p>
-<h3 id="🧠-lógica-6">🧠 Lógica</h3>
-<p>Según datos reales de CEDIS automotrices:</p>
-<ul>
-<li><strong>65% Cross-docking:</strong> Máxima eficiencia, costo mínimo</li>
-<li><strong>30% Buffer:</strong> Flexibilidad operativa, manejo de picos</li>
-<li><strong>5% Kitting:</strong> Valor agregado, servicios especiales</li>
-</ul>
-<h3 id="🛠️-configuración">🛠️ Configuración</h3>
-<h4 id="paso-7.1-crear-decisión-de-flujo"><strong>Paso 7.1: Crear Decisión de Flujo</strong></h4>
-<ol>
-<li>Arrastrar <strong>SelectOutput</strong> a la derecha de <code>SORTING_PROCESS</code></li>
-<li>Configurar:
-<ul>
-<li><strong>Name:</strong> <code>FLOW_DECISION</code></li>
-<li><strong>Type:</strong> <code>Condition</code></li>
-<li><strong>Condition:</strong> <code>By code</code></li>
-<li><strong>Outputs:</strong> <code>3</code></li>
-</ul>
-</li>
-</ol>
-<h4 id="paso-7.2-programar-distribución"><strong>Paso 7.2: Programar Distribución</strong></h4>
-<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">double</span> r <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> <span class="token number">0.65</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// 65% - Cross-docking directo</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> <span class="token number">0.95</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// 30% - Buffer estratégico</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>  <span class="token comment">// 5% - Kitting/Valor agregado</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h4 id="paso-7.3-crear-procesos"><strong>Paso 7.3: Crear Procesos</strong></h4>
-
-<table>
-<thead>
-<tr>
-<th>Ruta</th>
-<th>Bloque</th>
-<th>Nombre</th>
-<th>Delay Time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Buffer</td>
-<td>Delay</td>
-<td><code>BUFFER_TIME</code></td>
-<td><code>triangular(1, 3, 6)</code></td>
-</tr>
-<tr>
-<td>Kitting</td>
-<td>Delay</td>
-<td><code>KITTING_PROCESS</code></td>
-<td><code>triangular(0.15, 0.30, 0.50)</code></td>
-</tr>
-<tr>
-<td>Cross-docking</td>
-<td>(Directo)</td>
-<td>-</td>
-<td>-</td>
-</tr>
-</tbody>
-</table><p><strong>Conexiones:</strong></p>
-<pre><code>SORTING_PROCESS → FLOW_DECISION ─┬─(0)─&gt; [Cross-docking] ─┐
-                                 ├─(1)─&gt; BUFFER_TIME ────┤
-                                 └─(2)─&gt; KITTING_PROCESS ─┘
-</code></pre>
-<h4 id="paso-6.2-delays-de-recepción"><strong>Paso 6.2: Delays de Recepción</strong></h4>
-
-<table>
-<thead>
-<tr>
-<th>Bloque</th>
-<th>Nombre</th>
-<th>Delay Time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Delay</td>
-<td><code>DELAY_RECEP_NORTE</code></td>
-<td><code>triangular(0.15, 0.25, 0.40)</code></td>
-</tr>
-<tr>
-<td>Delay</td>
-<td><code>DELAY_RECEP_SUR</code></td>
-<td><code>triangular(0.15, 0.25, 0.40)</code></td>
-</tr>
-</tbody>
-</table><p><strong>Conexiones:</strong></p>
-<ul>
-<li>Rama 0 de <code>ROUTE_RECEPCION</code> → <code>DELAY_RECEP_NORTE</code></li>
-<li>Rama 1 de <code>ROUTE_RECEPCION</code> → <code>DELAY_RECEP_SUR</code></li>
-</ul>
-<h4 id="paso-6.3-proceso-de-clasificación-central"><strong>Paso 6.3: Proceso de Clasificación Central</strong></h4>
-<ol>
-<li>Arrastrar <strong>Delay</strong> al centro-derecha</li>
-<li>Configurar:
-<ul>
-<li><strong>Name:</strong> <code>SORTING_PROCESS</code></li>
-<li><strong>Delay time:</strong> <code>triangular(0.2, 0.4, 0.8)</code></li>
-</ul>
-</li>
-<li><strong>Conectar:</strong>
-<ul>
-<li><code>DELAY_RECEP_NORTE</code> → <code>SORTING_PROCESS</code></li>
-<li><code>DELAY_RECEP_SUR</code> → <code>SORTING_PROCESS</code></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h1 id="parte-4-cross-docking-buffer-y-kitting-continuación">PARTE 4: CROSS-DOCKING, BUFFER Y KITTING (CONTINUACIÓN)</h1>
-<hr>
-<h2 id="paso-7-–-decisión-cross-docking-o-buffer-estratégico-1">13. PASO 7 – DECISIÓN: CROSS-DOCKING O BUFFER ESTRATÉGICO</h2>
-<h3 id="🎯-objetivo-7">🎯 Objetivo</h3>
+<h2 id="paso-7-decisión-cross-docking-o-buffer-estratégico">7. PASO 7 DECISIÓN: CROSS-DOCKING O BUFFER ESTRATÉGICO</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-6">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Implementar la lógica que determina si los materiales pasan directo a embarque (cross-docking) o requieren almacenamiento temporal (buffer).</p>
-<h3 id="🧠-lógica-7">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-6">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Según datos reales de CEDIS automotrices:</p>
 <ul>
 <li><strong>65% Cross-docking:</strong> Máxima eficiencia, costo mínimo</li>
 <li><strong>30% Buffer:</strong> Flexibilidad operativa, manejo de picos</li>
 <li><strong>5% Kitting:</strong> Valor agregado, servicios especiales</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-6">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-6">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-7.1-crear-punto-de-decisión-de-flujo"><strong>Paso 7.1: Crear Punto de Decisión de Flujo</strong></h4>
 <ol>
 <li>Arrastrar <strong>SelectOutput</strong> a la derecha de <code>SORTING_PROCESS</code></li>
@@ -1413,7 +1400,7 @@ SRC_MAGNA_SUR ───┘
 <td>Usar <code>uniform(0, 1)</code> no <code>random()</code></td>
 </tr>
 </tbody>
-</table><h3 id="✅-checklist">✅ Checklist</h3>
+</table><h3 id="✅-checklist--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.">✅ Checklist  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> SelectOutput configurado con 3 salidas</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código de distribución probabilística correcto</li>
@@ -1421,17 +1408,17 @@ SRC_MAGNA_SUR ───┘
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Delay para Kitting creado con tiempos apropiados</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Porcentajes suman 100%</li>
 </ul>
-<h3 id="paso-8-–-asignación-de-destino-oem"><strong>14. PASO 8 – ASIGNACIÓN DE DESTINO OEM</strong></h3>
-<h3 id="🎯-objetivo-8">🎯 Objetivo</h3>
+<h2 id="paso-8-asignación-de-destino-oem">8. PASO 8 ASIGNACIÓN DE DESTINO OEM**</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-7">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Determinar a qué ensambladora final se dirige cada material.</p>
-<h3 id="🧠-lógica-8">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-7">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Distribución basada en volumen:</p>
 <ul>
 <li><strong>GM Silao (55%):</strong> Mayor volumen</li>
 <li><strong>GM SLP (33%):</strong> Volumen medio</li>
 <li><strong>BMW SLP (12%):</strong> Volumen menor, alto valor</li>
 </ul>
-<h3 id="🛠️-configuración-1">🛠️ Configuración</h3>
+<h3 id="🛠️-configuración--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.">🛠️ Configuración  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-8.1-crear-decisión-de-destino"><strong>Paso 8.1: Crear Decisión de Destino</strong></h4>
 <ol>
 <li>Arrastrar <strong>SelectOutput</strong></li>
@@ -1500,17 +1487,16 @@ SRC_MAGNA_SUR ───┘
              └─(2)─&gt; PREPARE_BMW_SLP
 </code></pre>
 <hr>
-<h2 id="paso-8-–-asignación-de-destino-oem-1">14. PASO 8 – ASIGNACIÓN DE DESTINO OEM</h2>
-<h3 id="🎯-objetivo-9">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-8">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Determinar a qué ensambladora final se dirige cada material y prepararlo para embarque.</p>
-<h3 id="🧠-lógica-9">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-8">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Distribución basada en volumen de producción:</p>
 <ul>
 <li><strong>GM Silao (55%):</strong> Planta más grande, mayor volumen</li>
 <li><strong>GM SLP (33%):</strong> Planta mediana, volumen significativo</li>
 <li><strong>BMW SLP (12%):</strong> Planta premium, volumen menor pero alto valor</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-7">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-7">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-8.1-crear-punto-de-decisión-de-destino"><strong>Paso 8.1: Crear Punto de Decisión de Destino</strong></h4>
 <ol>
 <li>Arrastrar <strong>SelectOutput</strong> a la derecha (posición central)</li>
@@ -1582,7 +1568,7 @@ SRC_MAGNA_SUR ───┘
              ├─(1)─&gt; PREPARE_GM_SLP
              └─(2)─&gt; PREPARE_BMW_SLP
 </code></pre>
-<h3 id="✅-checklist-1">✅ Checklist</h3>
+<h3 id="✅-checklist--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-1">✅ Checklist  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> SelectOutput con 3 salidas para destinos</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código asigna correctamente destinoOEM</li>
@@ -1591,10 +1577,9 @@ SRC_MAGNA_SUR ───┘
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Tiempos diferenciados (BMW mayor tiempo)</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Distribución porcentual suma 100%</li>
 </ul>
-<h2 id="paso-–-crear-variables-kpi-en-main">8.5 PASO – CREAR VARIABLES KPI EN MAIN</h2>
-<h3 id="🎯-objetivo-10">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-9">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Definir variables globales para calcular métricas de desempeño.</p>
-<h3 id="🛠️-configuración-2">🛠️ Configuración</h3>
+<h3 id="🛠️-configuración--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-1">🛠️ Configuración  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <p>En agente <strong>Main</strong>, crear estas variables:</p>
 
 <table>
@@ -1633,10 +1618,10 @@ SRC_MAGNA_SUR ───┘
 </tr>
 </tbody>
 </table><p><strong>Ubicación:</strong> Área superior derecha del canvas de Main</p>
-<h3 id="paso-9-–-salida-y-registro-de-métricas"><strong>15. PASO 9 – SALIDA Y REGISTRO DE MÉTRICAS</strong></h3>
-<h3 id="🎯-objetivo-11">🎯 Objetivo</h3>
+<h2 id="paso-9-salida-y-registro-de-métricas">9. PASO 9 SALIDA Y REGISTRO DE MÉTRICAS**</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-10">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Completar el flujo y registrar indicadores de desempeño.</p>
-<h3 id="🛠️-configuración-3">🛠️ Configuración</h3>
+<h3 id="🛠️-configuración--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-2">🛠️ Configuración  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-9.1-crear-variables-kpi-en-main"><strong>Paso 9.1: Crear Variables KPI en Main</strong></h4>
 
 <table>
@@ -1697,10 +1682,9 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 </code></pre>
 <hr>
 <hr>
-<h2 id="paso-9-–-salida-y-registro-de-métricas-1">15. PASO 9 – SALIDA Y REGISTRO DE MÉTRICAS</h2>
-<h3 id="🎯-objetivo-12">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-11">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Completar el flujo con la salida del sistema y registrar todos los indicadores clave de desempeño.</p>
-<h3 id="🧠-lógica-10">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-9">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>El punto de salida es crítico para:</p>
 <ul>
 <li><strong>Liberar recursos</strong> del sistema</li>
@@ -1708,7 +1692,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <li><strong>Generar reportes</strong> automáticos</li>
 <li><strong>Validar funcionamiento</strong> del modelo</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-8">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-8">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-9.1-crear-variables-globales-para-kpis"><strong>Paso 9.1: Crear Variables Globales para KPIs</strong></h4>
 <p>En agente <strong>Main</strong>, crear estas variables:</p>
 
@@ -1788,7 +1772,7 @@ trucksProcessed <span class="token operator">+=</span> <span class="token number
 totalCycleTime <span class="token operator">+=</span> cicloIndividual<span class="token punctuation">;</span>  <span class="token comment">// Acumular tiempos</span>
 avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="token operator">/</span> trucksProcessed<span class="token punctuation">;</span>  <span class="token comment">// Calcular promedio</span>
 </code></pre>
-<h3 id="✅-checklist-2">✅ Checklist</h3>
+<h3 id="✅-checklist--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-2">✅ Checklist  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 4 variables KPI creadas en Main con valores iniciales</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Sink creado como punto final del flujo</li>
@@ -1796,10 +1780,9 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código On exit implementado correctamente</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> No hay errores de compilación en el código</li>
 </ul>
-<h3 id="paso-10-–-crear-dashboard-de-monitoreo"><strong>16. PASO 10 – CREAR DASHBOARD DE MONITOREO</strong></h3>
-<h3 id="🎯-objetivo-13">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-12">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Panel visual para monitoreo en tiempo real.</p>
-<h3 id="🛠️-configuración-4">🛠️ Configuración</h3>
+<h3 id="🛠️-configuración--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-3">🛠️ Configuración  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-10.1-título-del-dashboard"><strong>Paso 10.1: Título del Dashboard</strong></h4>
 <ul>
 <li><strong>Text:</strong> <code>📊 DASHBOARD - CEDIS SAN BARTOLO</code></li>
@@ -1841,16 +1824,16 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <hr>
 <h1 id="parte-5-recursos-adicionales-y-optimización">PARTE 5: RECURSOS ADICIONALES Y OPTIMIZACIÓN</h1>
 <hr>
-<h2 id="paso-10-–-gestión-de-montacargas-opcional">16. PASO 10 – GESTIÓN DE MONTACARGAS (OPCIONAL)</h2>
-<h3 id="🎯-objetivo-14">🎯 Objetivo</h3>
+<h2 id="paso-10-gestión-de-montacargas-opcional">10. PASO 10 GESTIÓN DE MONTACARGAS (OPCIONAL)</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-13">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Implementar el uso de montacargas como recurso adicional para procesos internos.</p>
-<h3 id="🧠-lógica-11">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-10">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Algunos procesos requieren recursos físicos:</p>
 <ul>
 <li><strong>Montacargas:</strong> Para mover pallets en sorting, buffer y kitting</li>
 <li><strong>Operadores:</strong> Para tareas manuales</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-9">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-9">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-10.1-crear-resourcepool-de-montacargas"><strong>Paso 10.1: Crear ResourcePool de Montacargas</strong></h4>
 <ol>
 <li>En <strong>Main</strong>, arrastrar <strong>Resource Pool</strong></li>
@@ -1878,7 +1861,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 </li>
 </ol>
 <p><strong>Reconectar:</strong> <code>DELAY_RECEP_*</code> → <code>SEIZE_FORK_SORTING</code> → <code>SORTING_PROCESS</code> → <code>RELEASE_FORK_SORTING</code> → <code>FLOW_DECISION</code></p>
-<h3 id="✅-checklist-opcional">✅ Checklist (Opcional)</h3>
+<h3 id="✅-checklist-opcional--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.">✅ Checklist (Opcional)  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> ResourcePool forklifts creado</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Seize/Release agregados en al menos un proceso</li>
@@ -1887,10 +1870,10 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <hr>
 <h1 id="parte-6-dashboard-y-visualización">PARTE 6: DASHBOARD Y VISUALIZACIÓN</h1>
 <hr>
-<h2 id="paso-11-–-crear-dashboard-de-monitoreo">17. PASO 11 – CREAR DASHBOARD DE MONITOREO</h2>
-<h3 id="🎯-objetivo-15">🎯 Objetivo</h3>
+<h2 id="paso-11-crear-dashboard-de-monitoreo">11. PASO 11 CREAR DASHBOARD DE MONITOREO</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-14">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Crear un panel de control visual que muestre en tiempo real el estado del CEDIS y las métricas clave.</p>
-<h3 id="🧠-lógica-12">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-11">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Un dashboard efectivo permite:</p>
 <ul>
 <li><strong>Monitoreo en tiempo real</strong> de operaciones</li>
@@ -1898,7 +1881,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <li><strong>Comunicación clara</strong> de resultados</li>
 <li><strong>Validación visual</strong> del modelo</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-10">🛠️ Configuración Paso a Paso</h3>
+<h3 id="🛠️-configuración-paso-a-paso--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-10">🛠️ Configuración Paso a Paso  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-11.1-crear-título-del-dashboard"><strong>Paso 11.1: Crear Título del Dashboard</strong></h4>
 <ol>
 <li>En <strong>Main</strong>, paleta: <strong>Presentation → Text</strong></li>
@@ -1948,7 +1931,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 </ul>
 </li>
 </ol>
-<h3 id="✅-checklist-3">✅ Checklist</h3>
+<h3 id="✅-checklist--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-3">✅ Checklist  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Título del dashboard creado</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 4 etiquetas estáticas de métricas</li>
@@ -1956,10 +1939,9 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Formato correcto para números decimales</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Dashboard organizado y legible</li>
 </ul>
-<h3 id="paso-11-–-gestión-de-montacargas-opcional"><strong>17. PASO 11 – GESTIÓN DE MONTACARGAS (OPCIONAL)</strong></h3>
-<h3 id="🎯-objetivo-16">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-15">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Implementar montacargas como recurso adicional.</p>
-<h3 id="🛠️-configuración-5">🛠️ Configuración</h3>
+<h3 id="🛠️-configuración--✅-consejo-sigue-el-orden-exacto-para-evitar-errores-en-anylogic.-4">🛠️ Configuración  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</h3>
 <h4 id="paso-11.1-crear-resourcepool"><strong>Paso 11.1: Crear ResourcePool</strong></h4>
 <ul>
 <li><strong>Name:</strong> <code>forklifts</code></li>
@@ -1974,10 +1956,10 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <hr>
 <h1 id="parte-7-ejecución-y-publicación">PARTE 7: EJECUCIÓN Y PUBLICACIÓN</h1>
 <hr>
-<h2 id="paso-12-–-ejecución-y-validación">18. PASO 12 – EJECUCIÓN Y VALIDACIÓN</h2>
-<h3 id="🎯-objetivo-17">🎯 Objetivo</h3>
+<h2 id="paso-12-ejecución-y-validación">12. PASO 12 EJECUCIÓN Y VALIDACIÓN</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-16">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Verificar que el modelo funciona correctamente y produce resultados dentro de rangos esperados.</p>
-<h3 id="🧠-lógica-13">🧠 Lógica</h3>
+<h3 id="🧠-lógica--📌-recuerda-justificaste-esta-lógica-en-tu-ensayo-reducción-de-viajes-eficiencia.-12">🧠 Lógica  📌 <em>Recuerda:</em> Justificaste esta lógica en tu ensayo (reducción de viajes, eficiencia).</h3>
 <p>Las pruebas validan que:</p>
 <ul>
 <li><strong>El flujo es continuo</strong> sin bloqueos</li>
@@ -2020,7 +2002,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <td>65% - 85%</td>
 </tr>
 </tbody>
-</table><h3 id="✅-checklist-4">✅ Checklist</h3>
+</table><h3 id="✅-checklist--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-4">✅ Checklist  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo ejecuta sin errores</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Camiones fluyen de inicio a fin</li>
@@ -2028,8 +2010,8 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Métricas en rangos esperados</li>
 </ul>
 <hr>
-<h2 id="paso-13-–-publicación-en-anylogic-cloud">19. PASO 13 – PUBLICACIÓN EN ANYLOGIC CLOUD</h2>
-<h3 id="🎯-objetivo-18">🎯 Objetivo</h3>
+<h2 id="paso-13-publicación-en-anylogic-cloud">13. PASO 13 PUBLICACIÓN EN ANYLOGIC CLOUD</h2>
+<h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-17">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Publicar el modelo en la nube para compartirlo.</p>
 <h3 id="🛠️-procedimiento">🛠️ Procedimiento</h3>
 <h4 id="paso-13.1-exportar-a-la-nube"><strong>Paso 13.1: Exportar a la Nube</strong></h4>
@@ -2049,7 +2031,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <li>Abrir en navegador web</li>
 <li>Verificar funcionalidad</li>
 </ol>
-<h3 id="✅-checklist-5">✅ Checklist</h3>
+<h3 id="✅-checklist--🧐-verifica-si-todo-coincide-con-los-parámetros-del-cedis-san-bartolo-22000-pallets-24-andenes.-5">✅ Checklist  🧐 <em>Verifica:</em> Si todo coincide con los parámetros del CEDIS San Bartolo (22,000 pallets, 24 andenes).</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo exportado sin errores</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> URL copiada y guardada</li>
@@ -2058,53 +2040,18 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <hr>
 <h2 id="🎯-resumen-de-completitud">🎯 RESUMEN DE COMPLETITUD</h2>
 <h3 id="✅-configuraciones-ahora-completas">✅ <strong>CONFIGURACIONES AHORA COMPLETAS:</strong></h3>
-
-<table>
-<thead>
-<tr>
-<th>Objetivo</th>
-<th>Estado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1. Configurar proyecto AnyLogic</td>
-<td>✅ COMPLETO</td>
-</tr>
-<tr>
-<td>2. Crear agentes (camiones)</td>
-<td>✅ COMPLETO</td>
-</tr>
-<tr>
-<td>3. Dibujar layout del CEDIS</td>
-<td>✅ COMPLETO</td>
-</tr>
-<tr>
-<td>4. Construir diagrama de flujo</td>
-<td>✅ COMPLETO</td>
-</tr>
-<tr>
-<td>5. Gestionar recursos</td>
-<td>✅ COMPLETO</td>
-</tr>
-<tr>
-<td>6. Programar decisiones de ruteo</td>
-<td>✅ COMPLETO</td>
-</tr>
-<tr>
-<td>7. Calcular indicadores (KPIs)</td>
-<td>✅ COMPLETO</td>
-</tr>
-<tr>
-<td>8. Publicar en AnyLogic Cloud</td>
-<td>✅ COMPLETO</td>
-</tr>
-<tr>
-<td>9. Crear dashboard de monitoreo</td>
-<td>✅ COMPLETO</td>
-</tr>
-</tbody>
-</table><h3 id="📊-flujo-completo-implementado">📊 <strong>FLUJO COMPLETO IMPLEMENTADO:</strong></h3>
+<p>| Objetivo | Estado |  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.<br>
+|----------|--------|<br>
+| 1. Configurar proyecto AnyLogic | ✅ COMPLETO |<br>
+| 2. Crear agentes (camiones) | ✅ COMPLETO |<br>
+| 3. Dibujar layout del CEDIS | ✅ COMPLETO |<br>
+| 4. Construir diagrama de flujo | ✅ COMPLETO |<br>
+| 5. Gestionar recursos | ✅ COMPLETO |<br>
+| 6. Programar decisiones de ruteo | ✅ COMPLETO |<br>
+| 7. Calcular indicadores (KPIs) | ✅ COMPLETO |<br>
+| 8. Publicar en AnyLogic Cloud | ✅ COMPLETO |<br>
+| 9. Crear dashboard de monitoreo | ✅ COMPLETO |</p>
+<h3 id="📊-flujo-completo-implementado">📊 <strong>FLUJO COMPLETO IMPLEMENTADO:</strong></h3>
 <pre><code>SRC_LEAR ──┐
 SRC_COND ──┼─&gt; ENTER → Q_ANDEN → SEIZE → UNLOAD → RELEASE → ROUTE_RECEPCION
 SRC_MAGNA ─┘                                         │
@@ -2186,6 +2133,89 @@ SRC_MAGNA ─┘                                         │
 </tr>
 </tbody>
 </table><p><strong>¡Con estas 7 secciones agregadas, el documento estará COMPLETO y funcional!</strong> 🚀</p>
+<h1 id="🔍-auditoría-completa---incoherencias-identificadas">🔍 AUDITORÍA COMPLETA - INCOHERENCIAS IDENTIFICADAS</h1>
+<p>He analizado el documento completo y encontré <strong>múltiples problemas críticos</strong> de estructura y duplicación que impiden su correcta implementación.</p>
+<h2 id="🚨-problemas-principales-identificados">🚨 <strong>PROBLEMAS PRINCIPALES IDENTIFICADOS</strong></h2>
+<h3 id="secciones-duplicadas-y-repetidas">1. <strong>SECCIONES DUPLICADAS Y REPETIDAS</strong></h3>
+<p><strong>Problema:</strong> Hay múltiples secciones con el mismo nombre y contenido:</p>
+<ul>
+<li>❌ <strong>Paso 7 duplicado:</strong> Dos “Paso 7 – Decisión: Cross-docking” diferentes</li>
+<li>❌ <strong>Paso 8 duplicado:</strong> Dos “Paso 8 – Asignación de destino OEM” diferentes</li>
+<li>❌ <strong>Paso 9 duplicado:</strong> Dos “Paso 9 – Salida y registro de métricas” diferentes</li>
+<li>❌ <strong>Dashboard duplicado:</strong> Múltiples secciones de dashboard</li>
+</ul>
+<h3 id="secuencia-numérica-rompida">2. <strong>SECUENCIA NUMÉRICA ROMPIDA</strong></h3>
+<p><strong>Problema:</strong> La numeración de pasos está completamente desorganizada:</p>
+<pre><code>Paso 6 → Paso 7 → [ANÁLISIS] → Paso 7 (otro) → Paso 8 → [8.5] → Paso 9 → Paso 15 → Paso 16 → Paso 17 → Paso 18 → Paso 19
+</code></pre>
+<h3 id="contenido-repetido-innecesariamente">3. <strong>CONTENIDO REPETIDO INNECESARIAMENTE</strong></h3>
+<p><strong>Problema:</strong> Mismo código y configuraciones aparecen múltiples veces:</p>
+<ul>
+<li>Código de <code>FLOW_DECISION</code> repetido 3 veces</li>
+<li>Configuración de variables KPI repetida 2 veces  ✅ <em>Consejo:</em> Sigue el orden exacto para evitar errores en AnyLogic.</li>
+<li>Dashboard configurado múltiples veces</li>
+</ul>
+<h2 id="🔧-correcciones-requeridas---versión-limpia">🔧 <strong>CORRECCIONES REQUERIDAS - VERSIÓN LIMPIA</strong></h2>
+<h3 id="📍-ubicación-eliminar-contenido-duplicado"><strong>📍 UBICACIÓN: ELIMINAR CONTENIDO DUPLICADO</strong></h3>
+<p><strong>ELIMINAR estas secciones completamente:</strong></p>
+<ol>
+<li><strong>❌ ELIMINAR:</strong> Todo desde “## 📋 ANÁLISIS DE COMPLETITUD” hasta antes del “## 13. PASO 7 – DECISIÓN: CROSS-DOCKING”</li>
+<li><strong>❌ ELIMINAR:</strong> La segunda sección “### <strong>13. PASO 7 – DECISIÓN: CROSS-DOCKING O BUFFER ESTRATÉGICO</strong>”</li>
+<li><strong>❌ ELIMINAR:</strong> La sección “### <strong>14. PASO 8 – ASIGNACIÓN DE DESTINO OEM</strong>” (la corta)</li>
+</ol>
+<h3 id="📍-mantener-solo-estas-secciones-principales"><strong>📍 MANTENER SOLO ESTAS SECCIONES PRINCIPALES:</strong></h3>
+<pre><code>PARTE 1: CONFIGURACIÓN INICIAL
+├── 7. PASO 1 – CREAR PROYECTO
+├── 8. PASO 2 – DIBUJAR LAYOUT
+
+PARTE 2: CREACIÓN DE AGENTES Y FUENTES  
+├── 9. PASO 3 – CREAR AGENTE TRUCK
+├── 10. PASO 4 – CREAR FUENTES
+
+PARTE 3: FLUJO DE ENTRADA Y ANDENES
+├── 11. PASO 5 – ENTRADA Y GESTIÓN ANDENES
+├── 12. PASO 6 – RUTEO RECEPCIÓN
+
+PARTE 4: CROSS-DOCKING, BUFFER Y KITTING
+├── 13. PASO 7 – DECISIÓN CROSS-DOCKING
+├── 14. PASO 8 – ASIGNACIÓN DESTINO OEM
+
+PARTE 5: SALIDA Y MÉTRICAS
+├── 15. PASO 9 – SALIDA Y REGISTRO KPIs
+
+PARTE 6: DASHBOARD Y VISUALIZACIÓN
+├── 16. PASO 10 – CREAR DASHBOARD
+
+PARTE 7: EJECUCIÓN Y PUBLICACIÓN
+├── 17. PASO 11 – EJECUCIÓN Y VALIDACIÓN
+├── 18. PASO 12 – PUBLICACIÓN CLOUD
+</code></pre>
+<h2 id="📋-checklist-de-limpieza">📋 <strong>CHECKLIST DE LIMPIEZA</strong></h2>
+<h3 id="✅-para-corregir-el-documento"><strong>✅ PARA CORREGIR EL DOCUMENTO:</strong></h3>
+<ol>
+<li><strong>ELIMINAR</strong> todo desde “## 📋 ANÁLISIS DE COMPLETITUD” hasta antes de “## 13. PASO 7 – DECISIÓN: CROSS-DOCKING”</li>
+<li><strong>ELIMINAR</strong> secciones duplicadas de Pasos 7, 8, 9, 10, 11</li>
+<li><strong>RENOMBRAR</strong> secuencialmente: Paso 13 → Paso 7, Paso 14 → Paso 8, etc.</li>
+<li><strong>VERIFICAR</strong> que cada paso tenga número único y en orden</li>
+<li><strong>CONFIRMAR</strong> que el flujo lógico sea continuo</li>
+</ol>
+<h3 id="🔍-verificación-final-del-flujo"><strong>🔍 VERIFICACIÓN FINAL DEL FLUJO:</strong></h3>
+<pre><code>✅ SRC_LEAR → ENTER → Q_ANDEN → SEIZE → UNLOAD → RELEASE 
+✅ → ROUTE_RECEPCION → DELAY_RECEP_* → SORTING_PROCESS
+✅ → FLOW_DECISION → [Cross/Buffer/Kitting] → DESTINO_OEM
+✅ → PREPARE_* → EXIT_CEDIS → KPIs → DASHBOARD
+</code></pre>
+<h2 id="🎯-resultado-esperado">🎯 <strong>RESULTADO ESPERADO</strong></h2>
+<p><strong>Después de las correcciones, el documento tendrá:</strong></p>
+<ul>
+<li>✅ <strong>Secuencia numérica correcta</strong> (Paso 1 al 12)</li>
+<li>✅ <strong>Contenido sin duplicaciones</strong></li>
+<li>✅ <strong>Flujo lógico continuo</strong> sin saltos</li>
+<li>✅ <strong>Estructura coherente</strong> por partes</li>
+<li>✅ <strong>Instrucciones claras</strong> y únicas</li>
+</ul>
+<p><strong>¡Con estas correcciones, el documento será COHERENTE y FUNCIONAL para implementar!</strong> 🚀</p>
+<p><strong>Recomendación:</strong> Realizar esta limpieza antes de intentar implementar cualquier parte del modelo, ya que las duplicaciones actuales causarán confusión y errores durante la construcción.</p>
 </div>
 </body>
 

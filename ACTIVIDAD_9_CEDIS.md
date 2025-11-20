@@ -1141,11 +1141,49 @@ SRC_MAGNA_SUR ───┘
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Tiempos configurados apropiadamente</li>
 </ul>
 <hr>
-<h1 id="parte-4-cross-docking-buffer-y-kitting">PARTE 4: CROSS-DOCKING, BUFFER Y KITTING</h1>
+<h1 id="🟦-actividad-9-–-modelado-del-cedis-automotriz-san-bartolo-en-anylogic-1">🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</h1>
+<h2 id="📋-análisis-de-completitud-del-documento">📋 ANÁLISIS DE COMPLETITUD DEL DOCUMENTO</h2>
+<h3 id="✅-configuraciones-completadas">✅ <strong>CONFIGURACIONES COMPLETADAS</strong></h3>
+
+<table>
+<thead>
+<tr>
+<th>Sección</th>
+<th>Estado</th>
+<th>Elementos Implementados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Configuración Inicial</strong></td>
+<td>✅ COMPLETO</td>
+<td>Proyecto, unidades (horas/metros), Main activo</td>
+</tr>
+<tr>
+<td><strong>Agente Truck</strong></td>
+<td>✅ COMPLETO</td>
+<td>6 variables con tipos y valores iniciales</td>
+</tr>
+<tr>
+<td><strong>Fuentes de Camiones</strong></td>
+<td>✅ COMPLETO</td>
+<td>3 Sources con rates y código On exit</td>
+</tr>
+<tr>
+<td><strong>Gestión de Andenes</strong></td>
+<td>✅ COMPLETO</td>
+<td>ResourcePool docks (24), flowchart entrada completo</td>
+</tr>
+</tbody>
+</table><h3 id="❌-configuraciones-pendientes---se-requiere-completar">❌ <strong>CONFIGURACIONES PENDIENTES - SE REQUIERE COMPLETAR</strong></h3>
+<hr>
+<h2 id="🔧-secciones-faltantes---implementación-completa">🔧 SECCIONES FALTANTES - IMPLEMENTACIÓN COMPLETA</h2>
+<hr>
+<h1 id="parte-4-cross-docking-buffer-y-kitting-continuación">PARTE 4: CROSS-DOCKING, BUFFER Y KITTING (CONTINUACIÓN)</h1>
 <hr>
 <h2 id="paso-7-–-decisión-cross-docking-o-buffer-estratégico">13. PASO 7 – DECISIÓN: CROSS-DOCKING O BUFFER ESTRATÉGICO</h2>
 <h3 id="🎯-objetivo-6">🎯 Objetivo</h3>
-<p>Implementar la lógica que determina si los materiales pasan directo a embarque o requieren almacenamiento temporal.</p>
+<p>Implementar la lógica que determina si los materiales pasan directo a embarque (cross-docking) o requieren almacenamiento temporal (buffer).</p>
 <h3 id="🧠-lógica-6">🧠 Lógica</h3>
 <p>Según datos reales de CEDIS automotrices:</p>
 <ul>
@@ -1201,59 +1239,41 @@ SRC_MAGNA_SUR ───┘
 </li>
 </ol>
 <p><strong>Ruta 0: Cross-docking</strong> va directo al siguiente paso</p>
-<h3 id="⚠️-problemas-comunes-y-soluciones-6">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+<h4 id="paso-7.4-conectar-las-rutas"><strong>Paso 7.4: Conectar las Rutas</strong></h4>
+<pre><code>SORTING_PROCESS → FLOW_DECISION ─┬─(0)─&gt; [Cross-docking] ─┐
+                                 ├─(1)─&gt; BUFFER_TIME ────┤
+                                 └─(2)─&gt; KITTING_PROCESS ─┘
+</code></pre>
+<h3 id="⚠️-problemas-comunes">⚠️ PROBLEMAS COMUNES</h3>
 
 <table>
 <thead>
 <tr>
 <th>Problema</th>
-<th>Síntoma</th>
 <th>Solución</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Porcentajes incorrectos</strong></td>
-<td>Distribución no coincide</td>
+<td>Porcentajes incorrectos</td>
 <td>Verificar: &lt;0.65=65%, 0.65-0.95=30%, &gt;0.95=5%</td>
 </tr>
 <tr>
-<td><strong>Solo 2 salidas</strong></td>
-<td>No veo tercera opción</td>
+<td>Solo 2 salidas</td>
 <td>Properties → Outputs: cambiar a <code>3</code></td>
 </tr>
 <tr>
-<td><strong>Error uniform</strong></td>
-<td>No reconoce la función</td>
+<td>Error uniform</td>
 <td>Usar <code>uniform(0, 1)</code> no <code>random()</code></td>
 </tr>
-<tr>
-<td><strong>Acumulación en buffer</strong></td>
-<td>Demasiados materiales</td>
-<td>Verificar porcentajes y tiempos</td>
-</tr>
 </tbody>
-</table><h3 id="💡-consejos-de-distribución">💡 CONSEJOS DE DISTRIBUCIÓN</h3>
-<ul>
-<li><strong>Verificar suma:</strong> 65% + 30% + 5% = 100%</li>
-<li><strong>Testear distribución:</strong> Ejecutar y verificar proporciones</li>
-<li><strong>Tiempos diferenciados:</strong> Buffer más largo, kitting más corto</li>
-<li><strong>Flexibilidad:</strong> Puedes ajustar porcentajes según necesidades</li>
-</ul>
-<h3 id="📊-explicación-de-porcentajes">📊 Explicación de Porcentajes</h3>
-<pre><code>uniform(0,1) genera: 0.0 ←----------→ 1.0
-                    │        │       │
-Divisiones:        65%      30%      5%
-                  Cross    Buffer   Kitting
-</code></pre>
-<h3 id="✅-checklist-de-verificación-6">✅ Checklist de Verificación</h3>
+</table><h3 id="✅-checklist">✅ Checklist</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> SelectOutput configurado con 3 salidas</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código de distribución probabilística correcto</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Delay para Buffer creado con tiempos apropiados</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Delay para Kitting creado con tiempos apropiados</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Porcentajes suman 100% (0.65 + 0.30 + 0.05)</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Cross-docking identificado (sin delay específico)</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Porcentajes suman 100%</li>
 </ul>
 <hr>
 <h2 id="paso-8-–-asignación-de-destino-oem">14. PASO 8 – ASIGNACIÓN DE DESTINO OEM</h2>
@@ -1338,58 +1358,13 @@ Divisiones:        65%      30%      5%
              ├─(1)─&gt; PREPARE_GM_SLP
              └─(2)─&gt; PREPARE_BMW_SLP
 </code></pre>
-<h3 id="⚠️-problemas-comunes-y-soluciones-7">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
-
-<table>
-<thead>
-<tr>
-<th>Problema</th>
-<th>Síntoma</th>
-<th>Solución</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Error asignación variable</strong></td>
-<td>No encuentra destinoOEM</td>
-<td>Verificar que la variable existe en agente Truck</td>
-</tr>
-<tr>
-<td><strong>Porcentajes incorrectos</strong></td>
-<td>Distribución no coincide</td>
-<td>0.55=55%, 0.88=55%+33%=88%, resto=12%</td>
-</tr>
-<tr>
-<td><strong>Conexiones múltiples</strong></td>
-<td>Error al conectar</td>
-<td>AnyLogic permite múltiples entradas a un bloque</td>
-</tr>
-<tr>
-<td><strong>Tiempos muy largos</strong></td>
-<td>Acumulación en preparación</td>
-<td>Ajustar tiempos según capacidad real</td>
-</tr>
-</tbody>
-</table><h3 id="💡-consejos-de-asignación">💡 CONSEJOS DE ASIGNACIÓN</h3>
-<ul>
-<li><strong>Priorizar GM Silao:</strong> Mayor volumen, tiempos estándar</li>
-<li><strong>BMW diferenciado:</strong> Tiempos mayores por calidad premium</li>
-<li><strong>Verificar distribución:</strong> Ejecutar y contar destinos</li>
-<li><strong>Flexibilidad:</strong> Los porcentajes se pueden ajustar fácilmente</li>
-</ul>
-<h3 id="📊-distribución-de-destinos">📊 Distribución de Destinos</h3>
-<pre><code>GM Silao:   55%  ← Mayor capacidad
-GM SLP:     33%  ← Capacidad media  
-BMW SLP:    12%  ← Volumen menor, alto valor
-</code></pre>
-<h3 id="✅-checklist-de-verificación-7">✅ Checklist de Verificación</h3>
+<h3 id="✅-checklist-1">✅ Checklist</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> SelectOutput con 3 salidas para destinos</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código asigna correctamente destinoOEM</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Los 3 flujos anteriores conectados al mismo SelectOutput</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 delays de preparación creados (uno por OEM)</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Tiempos diferenciados (BMW mayor tiempo)</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Conexiones correctas desde SelectOutput</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Distribución porcentual suma 100%</li>
 </ul>
 <hr>
@@ -1483,71 +1458,68 @@ trucksProcessed <span class="token operator">+=</span> <span class="token number
 <span class="token comment">// 4. Calcular tiempo promedio de ciclo</span>
 totalCycleTime <span class="token operator">+=</span> cicloIndividual<span class="token punctuation">;</span>  <span class="token comment">// Acumular tiempos</span>
 avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="token operator">/</span> trucksProcessed<span class="token punctuation">;</span>  <span class="token comment">// Calcular promedio</span>
-
-<span class="token comment">// 5. Log opcional para debugging (quitar en versión final)</span>
-<span class="token comment">// traceln("Camión " + trucksProcessed + " - Ciclo: " + cicloIndividual + "h - Pallets: " + agent.pallets);</span>
 </code></pre>
-<h3 id="⚠️-problemas-comunes-y-soluciones-8">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
-
-<table>
-<thead>
-<tr>
-<th>Problema</th>
-<th>Síntoma</th>
-<th>Solución</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Variables no encontradas</strong></td>
-<td>Error “cannot resolve”</td>
-<td>Verificar que variables están en Main, no Truck</td>
-</tr>
-<tr>
-<td><strong>División por cero</strong></td>
-<td>Error en avgCycleTime</td>
-<td>trucksProcessed empieza en 0, cálculo se hace después</td>
-</tr>
-<tr>
-<td><strong>Múltiples conexiones</strong></td>
-<td>Sink rechaza conexiones</td>
-<td>AnyLogic acepta múltiples entradas normalmente</td>
-</tr>
-<tr>
-<td><strong>Valores incorrectos</strong></td>
-<td>Métricas no coinciden</td>
-<td>Revisar fórmulas y inicializaciones</td>
-</tr>
-</tbody>
-</table><h3 id="💡-consejos-de-métricas">💡 CONSEJOS DE MÉTRICAS</h3>
-<ul>
-<li><strong>Inicializar correctamente:</strong> <code>0</code> para int, <code>0.0</code> para double</li>
-<li><strong>Usar +=</strong> para acumuladores</li>
-<li><strong>Cálculo promedio:</strong> Solo después de tener datos</li>
-<li><strong>Verificar valores:</strong> Ejecutar y verificar que números aumentan</li>
-</ul>
-<h3 id="📊-fórmulas-de-métricas">📊 Fórmulas de Métricas</h3>
-<pre><code>Throughput = palletsProcessed / tiempoSimulación
-Utilización = (tiempoOcupado / tiempoTotal) × 100
-Tiempo Ciclo Promedio = totalCycleTime / trucksProcessed
-</code></pre>
-<h3 id="✅-checklist-de-verificación-8">✅ Checklist de Verificación</h3>
+<h3 id="✅-checklist-2">✅ Checklist</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 4 variables KPI creadas en Main con valores iniciales</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Sink creado como punto final del flujo</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Los 3 delays de preparación conectados al Sink</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código On exit implementado correctamente</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> No hay errores de compilación en el código</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Fórmulas de cálculo validadas</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Flowchart completo de inicio a fin</li>
 </ul>
 <hr>
-<h1 id="parte-5-dashboard-y-visualización">PARTE 5: DASHBOARD Y VISUALIZACIÓN</h1>
+<h1 id="parte-5-recursos-adicionales-y-optimización">PARTE 5: RECURSOS ADICIONALES Y OPTIMIZACIÓN</h1>
 <hr>
-<h2 id="paso-10-–-crear-dashboard-de-monitoreo">16. PASO 10 – CREAR DASHBOARD DE MONITOREO</h2>
+<h2 id="paso-10-–-gestión-de-montacargas-opcional">16. PASO 10 – GESTIÓN DE MONTACARGAS (OPCIONAL)</h2>
 <h3 id="🎯-objetivo-9">🎯 Objetivo</h3>
-<p>Crear un panel de control visual que muestre en tiempo real el estado del CEDIS y las métricas clave.</p>
+<p>Implementar el uso de montacargas como recurso adicional para procesos internos.</p>
 <h3 id="🧠-lógica-9">🧠 Lógica</h3>
+<p>Algunos procesos requieren recursos físicos:</p>
+<ul>
+<li><strong>Montacargas:</strong> Para mover pallets en sorting, buffer y kitting</li>
+<li><strong>Operadores:</strong> Para tareas manuales</li>
+</ul>
+<h3 id="🛠️-configuración-paso-a-paso-9">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-10.1-crear-resourcepool-de-montacargas"><strong>Paso 10.1: Crear ResourcePool de Montacargas</strong></h4>
+<ol>
+<li>En <strong>Main</strong>, arrastrar <strong>Resource Pool</strong></li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>forklifts</code></li>
+<li><strong>Capacity:</strong> <code>12</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="paso-10.2-usar-montacargas-en-procesos-clave"><strong>Paso 10.2: Usar Montacargas en Procesos Clave</strong></h4>
+<p><strong>En SORTING_PROCESS:</strong></p>
+<ol>
+<li><strong>ANTES</strong> del delay: Agregar <strong>Seize</strong>
+<ul>
+<li><strong>Name:</strong> <code>SEIZE_FORK_SORTING</code></li>
+<li><strong>Resource:</strong> <code>forklifts</code>, <strong>Quantity:</strong> <code>2</code></li>
+</ul>
+</li>
+<li><strong>DESPUÉS</strong> del delay: Agregar <strong>Release</strong>
+<ul>
+<li><strong>Name:</strong> <code>RELEASE_FORK_SORTING</code></li>
+<li><strong>Resource:</strong> <code>forklifts</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>Reconectar:</strong> <code>DELAY_RECEP_*</code> → <code>SEIZE_FORK_SORTING</code> → <code>SORTING_PROCESS</code> → <code>RELEASE_FORK_SORTING</code> → <code>FLOW_DECISION</code></p>
+<h3 id="✅-checklist-opcional">✅ Checklist (Opcional)</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> ResourcePool forklifts creado</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Seize/Release agregados en al menos un proceso</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> El modelo sigue funcionando correctamente</li>
+</ul>
+<hr>
+<h1 id="parte-6-dashboard-y-visualización">PARTE 6: DASHBOARD Y VISUALIZACIÓN</h1>
+<hr>
+<h2 id="paso-11-–-crear-dashboard-de-monitoreo">17. PASO 11 – CREAR DASHBOARD DE MONITOREO</h2>
+<h3 id="🎯-objetivo-10">🎯 Objetivo</h3>
+<p>Crear un panel de control visual que muestre en tiempo real el estado del CEDIS y las métricas clave.</p>
+<h3 id="🧠-lógica-10">🧠 Lógica</h3>
 <p>Un dashboard efectivo permite:</p>
 <ul>
 <li><strong>Monitoreo en tiempo real</strong> de operaciones</li>
@@ -1555,8 +1527,8 @@ Tiempo Ciclo Promedio = totalCycleTime / trucksProcessed
 <li><strong>Comunicación clara</strong> de resultados</li>
 <li><strong>Validación visual</strong> del modelo</li>
 </ul>
-<h3 id="🛠️-configuración-paso-a-paso-9">🛠️ Configuración Paso a Paso</h3>
-<h4 id="paso-10.1-crear-título-del-dashboard"><strong>Paso 10.1: Crear Título del Dashboard</strong></h4>
+<h3 id="🛠️-configuración-paso-a-paso-10">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-11.1-crear-título-del-dashboard"><strong>Paso 11.1: Crear Título del Dashboard</strong></h4>
 <ol>
 <li>En <strong>Main</strong>, paleta: <strong>Presentation → Text</strong></li>
 <li>Arrastrar a esquina superior derecha</li>
@@ -1564,102 +1536,63 @@ Tiempo Ciclo Promedio = totalCycleTime / trucksProcessed
 <ul>
 <li><strong>Text:</strong> <code>📊 DASHBOARD - CEDIS SAN BARTOLO</code></li>
 <li><strong>Font:</strong> Bold, Size: 18</li>
-<li><strong>Text color:</strong> <code>#2C3E50</code> (Azul oscuro)</li>
+<li><strong>Text color:</strong> <code>#2C3E50</code></li>
 </ul>
 </li>
 </ol>
-<h4 id="paso-10.2-crear-etiquetas-de-métricas"><strong>Paso 10.2: Crear Etiquetas de Métricas</strong></h4>
-<p>Crear textos estáticos para las métricas:</p>
-
-<table>
-<thead>
-<tr>
-<th>Texto</th>
-<th>Posición</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Pallets procesados:</code></td>
-<td>Debajo del título</td>
-</tr>
-<tr>
-<td><code>Camiones procesados:</code></td>
-<td>Debajo del anterior</td>
-</tr>
-<tr>
-<td><code>Tiempo promedio de ciclo (horas):</code></td>
-<td>Debajo del anterior</td>
-</tr>
-<tr>
-<td><code>Utilización de andenes (%):</code></td>
-<td>Debajo del anterior</td>
-</tr>
-</tbody>
-</table><p><strong>Configuración común:</strong></p>
+<h4 id="paso-11.2-crear-etiquetas-y-valores-dinámicos"><strong>Paso 11.2: Crear Etiquetas y Valores Dinámicos</strong></h4>
+<p><strong>Para Pallets Procesados:</strong></p>
+<ol>
+<li><strong>Texto estático:</strong> <code>Pallets procesados:</code></li>
+<li><strong>Texto dinámico:</strong> <code>palletsProcessed</code>
 <ul>
-<li><strong>Font:</strong> Normal, Size: 12</li>
-<li><strong>Text alignment:</strong> Left</li>
-</ul>
-<h4 id="paso-10.3-crear-valores-dinámicos"><strong>Paso 10.3: Crear Valores Dinámicos</strong></h4>
-<p>Para cada métrica, crear un texto vinculado a variables:</p>
-<p><strong>Pallets Procesados:</strong></p>
-<ol>
-<li><strong>Text:</strong> <code>palletsProcessed</code></li>
-<li><strong>Font:</strong> Bold, Size: 14, Color: <code>#27AE60</code> (Verde)</li>
-</ol>
-<p><strong>Camiones Procesados:</strong></p>
-<ol>
-<li><strong>Text:</strong> <code>trucksProcessed</code></li>
-<li><strong>Font:</strong> Bold, Size: 14, Color: <code>#2980B9</code> (Azul)</li>
-</ol>
-<p><strong>Tiempo Promedio:</strong></p>
-<ol>
-<li><strong>Text:</strong> <code>format("%.2f", avgCycleTime)</code></li>
-<li><strong>Font:</strong> Bold, Size: 14, Color: <code>#E67E22</code> (Naranja)</li>
-</ol>
-<p><strong>Utilización Andenes:</strong></p>
-<ol>
-<li><strong>Text:</strong> <code>format("%.1f", docks.utilization() * 100)</code></li>
-<li><strong>Font:</strong> Bold, Size: 14, Color: <code>#E74C3C</code> (Rojo)</li>
-</ol>
-<h4 id="paso-10.4-agregar-gráfica-de-tiempo-opcional"><strong>Paso 10.4: Agregar Gráfica de Tiempo (Opcional)</strong></h4>
-<ol>
-<li>Paleta: <strong>Analysis → Time Plot</strong></li>
-<li>Arrastrar debajo del dashboard</li>
-<li>Configurar:
-<ul>
-<li><strong>Title:</strong> <code>Evolución de Pallets Procesados</code></li>
-<li><strong>Data items:</strong> Add → <code>palletsProcessed</code></li>
-<li><strong>Width:</strong> 300, <strong>Height:</strong> 200</li>
+<li><strong>Font:</strong> Bold, Size: 14, Color: Verde</li>
 </ul>
 </li>
 </ol>
-<h3 id="💡-consejos-de-dashboard">💡 CONSEJOS DE DASHBOARD</h3>
+<p><strong>Para Camiones Procesados:</strong></p>
+<ol>
+<li><strong>Texto estático:</strong> <code>Camiones procesados:</code></li>
+<li><strong>Texto dinámico:</strong> <code>trucksProcessed</code>
 <ul>
-<li><strong>Posición estratégica:</strong> Esquina superior derecha</li>
-<li><strong>Colores significativos:</strong> Verde=bien, Rojo=alerta</li>
-<li><strong>Formato consistente:</strong> 2 decimales para tiempos</li>
-<li><strong>Actualización automática:</strong> Los textos se actualizan solos</li>
+<li><strong>Font:</strong> Bold, Size: 14, Color: Azul</li>
 </ul>
-<h3 id="✅-checklist-de-verificación-9">✅ Checklist de Verificación</h3>
+</li>
+</ol>
+<p><strong>Para Tiempo Promedio:</strong></p>
+<ol>
+<li><strong>Texto estático:</strong> <code>Tiempo promedio (horas):</code></li>
+<li><strong>Texto dinámico:</strong> <code>format("%.2f", avgCycleTime)</code>
+<ul>
+<li><strong>Font:</strong> Bold, Size: 14, Color: Naranja</li>
+</ul>
+</li>
+</ol>
+<p><strong>Para Utilización Andenes:</strong></p>
+<ol>
+<li><strong>Texto estático:</strong> <code>Utilización andenes (%):</code></li>
+<li><strong>Texto dinámico:</strong> <code>format("%.1f", docks.utilization() * 100)</code>
+<ul>
+<li><strong>Font:</strong> Bold, Size: 14, Color: Rojo</li>
+</ul>
+</li>
+</ol>
+<h3 id="✅-checklist-3">✅ Checklist</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Título del dashboard creado</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 4 etiquetas estáticas de métricas</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 4 valores dinámicos vinculados a variables</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Formato correcto para números decimales</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Gráfica de tiempo opcional agregada</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Colores consistentes y significativos</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Dashboard organizado y legible</li>
 </ul>
 <hr>
-<h1 id="parte-6-ejecución-y-publicación">PARTE 6: EJECUCIÓN Y PUBLICACIÓN</h1>
+<h1 id="parte-7-ejecución-y-publicación">PARTE 7: EJECUCIÓN Y PUBLICACIÓN</h1>
 <hr>
-<h2 id="paso-11-–-ejecución-y-pruebas">17. PASO 11 – EJECUCIÓN Y PRUEBAS</h2>
-<h3 id="🎯-objetivo-10">🎯 Objetivo</h3>
+<h2 id="paso-12-–-ejecución-y-validación">18. PASO 12 – EJECUCIÓN Y VALIDACIÓN</h2>
+<h3 id="🎯-objetivo-11">🎯 Objetivo</h3>
 <p>Verificar que el modelo funciona correctamente y produce resultados dentro de rangos esperados.</p>
-<h3 id="🧠-lógica-10">🧠 Lógica</h3>
-<p>Las pruebas validad que:</p>
+<h3 id="🧠-lógica-11">🧠 Lógica</h3>
+<p>Las pruebas validan que:</p>
 <ul>
 <li><strong>El flujo es continuo</strong> sin bloqueos</li>
 <li><strong>Las métricas son razonables</strong> según diseño</li>
@@ -1667,186 +1600,147 @@ Tiempo Ciclo Promedio = totalCycleTime / trucksProcessed
 <li><strong>No hay errores</strong> de programación</li>
 </ul>
 <h3 id="🛠️-procedimiento-de-pruebas">🛠️ Procedimiento de Pruebas</h3>
-<h4 id="paso-11.1-ejecución-inicial"><strong>Paso 11.1: Ejecución Inicial</strong></h4>
+<h4 id="paso-12.1-ejecución-inicial"><strong>Paso 12.1: Ejecución Inicial</strong></h4>
 <ol>
-<li>Click en botón <strong>Run</strong> (▶️) en barra superior</li>
-<li>Esperar que se abra ventana de simulación</li>
-<li>Observar comportamiento por 5-10 minutos reales</li>
+<li>Click en botón <strong>Run</strong> (▶️)</li>
+<li>Observar comportamiento por 5-10 minutos</li>
+<li>Verificar flujo continuo de camiones</li>
 </ol>
-<h4 id="paso-11.2-verificación-visual"><strong>Paso 11.2: Verificación Visual</strong></h4>
-<p><strong>Lo que DEBES ver:</strong></p>
-<ul>
-<li>✅ Camiones aparecen en Sources</li>
-<li>✅ Fluyen continuamente por el flowchart</li>
-<li>✅ Se distribuyen entre rutas Norte/Sur</li>
-<li>✅ Toman diferentes caminos (Cross-dock/Buffer/Kitting)</li>
-<li>✅ Dashboard se actualiza en tiempo real</li>
-<li>✅ No hay acumulaciones excesivas en colas</li>
-</ul>
-<p><strong>Señales de ALERTA:</strong></p>
-<ul>
-<li>❌ Camiones atorados en algún punto</li>
-<li>❌ Colas que crecen infinitamente</li>
-<li>❌ Recursos con 0% o 100% utilización constante</li>
-<li>❌ KPIs que no cambian</li>
-</ul>
-<h4 id="paso-11.3-validación-de-métricas"><strong>Paso 11.3: Validación de Métricas</strong></h4>
-<p>Después de 24 horas simuladas (2-3 minutos reales):</p>
+<h4 id="paso-12.2-validación-de-métricas"><strong>Paso 12.2: Validación de Métricas</strong></h4>
+<p>Después de 24 horas simuladas:</p>
 
 <table>
 <thead>
 <tr>
 <th>KPI</th>
 <th>Rango Esperado</th>
-<th>Tu Resultado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Pallets procesados</strong></td>
 <td>6,000 - 8,000</td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Camiones procesados</strong></td>
 <td>200 - 300</td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Tiempo ciclo promedio</strong></td>
 <td>2.5 - 4.5 horas</td>
-<td></td>
 </tr>
 <tr>
 <td><strong>Utilización andenes</strong></td>
 <td>65% - 85%</td>
-<td></td>
 </tr>
 </tbody>
-</table><h3 id="⚠️-ajustes-comunes">⚠️ AJUSTES COMUNES</h3>
-<p><strong>Si llegada es muy alta:</strong></p>
-<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// En Sources, reducir tasas:</span>
-<span class="token function">uniform</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment">// Menos camiones por hora</span>
-</code></pre>
-<p><strong>Si utilización es 100%:</strong></p>
-<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// En docks, aumentar capacidad:</span>
-capacity <span class="token operator">=</span> <span class="token number">28</span>  <span class="token comment">// Más andenes</span>
-</code></pre>
-<p><strong>Si tiempos ciclo son muy altos:</strong></p>
-<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// En delays, reducir tiempos:</span>
-<span class="token function">triangular</span><span class="token punctuation">(</span><span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span>  <span class="token comment">// Más rápido</span>
-</code></pre>
-<h3 id="✅-checklist-de-validación">✅ Checklist de Validación</h3>
+</table><h3 id="✅-checklist-4">✅ Checklist</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo ejecuta sin errores</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Camiones fluyen de inicio a fin</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Dashboard muestra datos reales</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Métricas en rangos esperados</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> No hay bloqueos en el sistema</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Recursos se utilizan balanceadamente</li>
 </ul>
 <hr>
-<h2 id="paso-12-–-publicación-en-anylogic-cloud">18. PASO 12 – PUBLICACIÓN EN ANYLOGIC CLOUD</h2>
-<h3 id="🎯-objetivo-11">🎯 Objetivo</h3>
-<p>Publicar el modelo en la nube para compartirlo con el profesor y compañeros.</p>
-<h3 id="🧠-lógica-11">🧠 Lógica</h3>
-<p>AnyLogic Cloud permite:</p>
-<ul>
-<li><strong>Acceso desde cualquier navegador</strong></li>
-<li><strong>Compartir sin instalar software</strong></li>
-<li><strong>Ejecución en servidores remotos</strong></li>
-<li><strong>Colaboración y revisión</strong></li>
-</ul>
-<h3 id="🛠️-procedimiento-de-publicación">🛠️ Procedimiento de Publicación</h3>
-<h4 id="paso-12.1-exportar-a-la-nube"><strong>Paso 12.1: Exportar a la Nube</strong></h4>
+<h2 id="paso-13-–-publicación-en-anylogic-cloud">19. PASO 13 – PUBLICACIÓN EN ANYLOGIC CLOUD</h2>
+<h3 id="🎯-objetivo-12">🎯 Objetivo</h3>
+<p>Publicar el modelo en la nube para compartirlo.</p>
+<h3 id="🛠️-procedimiento">🛠️ Procedimiento</h3>
+<h4 id="paso-13.1-exportar-a-la-nube"><strong>Paso 13.1: Exportar a la Nube</strong></h4>
 <ol>
 <li>Menú: <strong>File → Export → To AnyLogic Cloud…</strong></li>
-<li>Iniciar sesión o crear cuenta gratuita</li>
-<li>Configurar publicación:
+<li>Configurar:
 <ul>
 <li><strong>Model name:</strong> <code>CEDIS_SanBartolo_TuApellido_Matricula</code></li>
 <li><strong>Access:</strong> <code>Public</code></li>
-<li><strong>Description:</strong> <code>Modelo CEDIS Automotriz - Actividad 9</code></li>
 </ul>
 </li>
 <li>Click en <strong>Upload</strong></li>
 </ol>
-<h4 id="paso-12.2-probar-en-navegador"><strong>Paso 12.2: Probar en Navegador</strong></h4>
+<h4 id="paso-13.2-probar-en-navegador"><strong>Paso 13.2: Probar en Navegador</strong></h4>
 <ol>
 <li>Copiar URL proporcionada</li>
 <li>Abrir en navegador web</li>
-<li>Click en <strong>Run model</strong></li>
-<li>Verificar que funciona igual que local</li>
+<li>Verificar funcionalidad</li>
 </ol>
-<h3 id="✅-checklist-de-publicación">✅ Checklist de Publicación</h3>
+<h3 id="✅-checklist-5">✅ Checklist</h3>
 <ul>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo exportado sin errores</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> URL copiada y guardada</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo accesible públicamente</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Funcionalidad verificada en navegador</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> KPIs visibles y actualizándose</li>
 </ul>
 <hr>
-<h2 id="🎉-¡felicitaciones">🎉 ¡FELICITACIONES!</h2>
-<p>Has completado exitosamente el modelo del CEDIS Automotriz San Bartolo en AnyLogic. Tu modelo incluye:</p>
-<h3 id="✅-características-implementadas">✅ <strong>Características Implementadas:</strong></h3>
-<ul>
-<li>Flujo completo de camiones desde 3 proveedores</li>
-<li>Sistema de andenes con recursos limitados</li>
-<li>Ruteo inteligente por regiones</li>
-<li>Tres rutas operativas (Cross-dock/Buffer/Kitting)</li>
-<li>Asignación a 3 destinos OEM finales</li>
-<li>Dashboard con métricas en tiempo real</li>
-<li>Cálculo automático de KPIs</li>
-</ul>
-<h3 id="📊-capacidades-del-modelo">📊 <strong>Capacidades del Modelo:</strong></h3>
-<ul>
-<li><strong>Throughput:</strong> ~7,000 pallets/día</li>
-<li><strong>Recursos:</strong> 24 andenes gestionados</li>
-<li><strong>Flexibilidad:</strong> Parámetros ajustables</li>
-<li><strong>Visualización:</strong> Dashboard integrado</li>
-<li><strong>Validación:</strong> Métricas en tiempo real</li>
-</ul>
-<h3 id="🚀-próximos-pasos">🚀 <strong>Próximos Pasos:</strong></h3>
-<ol>
-<li><strong>Documentar</strong> el modelo en reporte final</li>
-<li><strong>Capturar</strong> evidencias de funcionamiento</li>
-<li><strong>Analizar</strong> resultados y cuellos de botella</li>
-<li><strong>Proponer</strong> mejoras basadas en simulación</li>
-</ol>
-<p><strong>¡Excelente trabajo! Has creado una herramienta profesional de simulación logística.</strong></p>
-<hr>
-<h2 id="📋-checklist-final-de-entrega">📋 CHECKLIST FINAL DE ENTREGA</h2>
-<h3 id="🔧-modelo-anylogic">🔧 <strong>Modelo AnyLogic:</strong></h3>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Proyecto con nombre personalizado</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Unidades configuradas en horas y metros</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Layout visual del CEDIS completo</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Agente Truck con 6 variables</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 Sources configurados correctamente</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Flowchart completo funcionando</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> ResourcePool de andenes (capacidad 24)</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Decisiones de ruteo programadas</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 rutas operativas implementadas</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Asignación a 3 destinos OEM</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Variables KPI en Main</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Dashboard funcional</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo ejecuta sin errores</li>
-</ul>
-<h3 id="🌐-publicación">🌐 <strong>Publicación:</strong></h3>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo subido a AnyLogic Cloud</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Enlace funcional y público</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> KPIs visibles en versión web</li>
-</ul>
-<h3 id="📄-documentación">📄 <strong>Documentación:</strong></h3>
-<ul>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Reporte completo en formato PDF</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 6 capturas de pantalla obligatorias</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Tabla de resultados con KPIs</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Análisis de cuellos de botella</li>
-<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Conclusión personal reflexiva</li>
-</ul>
+<h2 id="🎯-resumen-de-completitud">🎯 RESUMEN DE COMPLETITUD</h2>
+<h3 id="✅-configuraciones-ahora-completas">✅ <strong>CONFIGURACIONES AHORA COMPLETAS:</strong></h3>
+
+<table>
+<thead>
+<tr>
+<th>Objetivo</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Configurar proyecto AnyLogic</td>
+<td>✅ COMPLETO</td>
+</tr>
+<tr>
+<td>2. Crear agentes (camiones)</td>
+<td>✅ COMPLETO</td>
+</tr>
+<tr>
+<td>3. Dibujar layout del CEDIS</td>
+<td>✅ COMPLETO</td>
+</tr>
+<tr>
+<td>4. Construir diagrama de flujo</td>
+<td>✅ COMPLETO</td>
+</tr>
+<tr>
+<td>5. Gestionar recursos</td>
+<td>✅ COMPLETO</td>
+</tr>
+<tr>
+<td>6. Programar decisiones de ruteo</td>
+<td>✅ COMPLETO</td>
+</tr>
+<tr>
+<td>7. Calcular indicadores (KPIs)</td>
+<td>✅ COMPLETO</td>
+</tr>
+<tr>
+<td>8. Publicar en AnyLogic Cloud</td>
+<td>✅ COMPLETO</td>
+</tr>
+<tr>
+<td>9. Crear dashboard de monitoreo</td>
+<td>✅ COMPLETO</td>
+</tr>
+</tbody>
+</table><h3 id="📊-flujo-completo-implementado">📊 <strong>FLUJO COMPLETO IMPLEMENTADO:</strong></h3>
+<pre><code>SRC_LEAR ──┐
+SRC_COND ──┼─&gt; ENTER → Q_ANDEN → SEIZE → UNLOAD → RELEASE → ROUTE_RECEPCION
+SRC_MAGNA ─┘                                         │
+                                                     ↓
+                                              ┌─ RECEP_NORTE ─┐
+                                              │               │
+                                              └─ RECEP_SUR ───┘
+                                                     │
+                                                SORTING_PROCESS
+                                                     │
+                                               FLOW_DECISION
+                                              /      |      \
+                                      Cross-docking Buffer Kitting
+                                            |        |        |
+                                            ↓        ↓        ↓
+                                         DESTINO_OEM (Convergen)
+                                            /        |        \
+                                    GM_SILAO     GM_SLP     BMW_SLP
+                                       |            |           |
+                                       ↓            ↓           ↓
+                                    EXIT_CEDIS → KPIs &amp; Dashboard
+</code></pre>
 <p><strong>¡Listo para entregar! 🎯</strong></p>
 </div>
 </body>

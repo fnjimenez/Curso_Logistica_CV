@@ -15,12 +15,11 @@
 <p>💡 <strong>Tip Global:</strong> Usa colores y nombres claros en el layout para que tu simulación sea fácil de interpretar. Esto refleja el diseño conceptual que planteaste (áreas de sorting, buffer y kitting).</p>
 <p>⚠️ <strong>Error Común:</strong> No olvides configurar las unidades (horas y metros) antes de avanzar. Si fallas aquí, todo el modelo será inconsistente.</p>
 <hr>
-<div align="center"> <img src="https://github.com/fnjimenez/Curso_Logistica_CV/blob/main/CEDIS.png?raw=true" alt="CEDIS Layout" width="600"> </div>
 <h1 id="🟦-actividad-9-–-modelado-del-cedis-automotriz-san-bartolo-en-anylogic">🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</h1>
 <h3 id="curso-logística-y-cadena-de-valor">Curso: Logística y Cadena de Valor</h3>
 <h3 id="sistemas-de-almacenamiento-y-cedis">Sistemas de Almacenamiento y CEDIS</h3>
 <h3 id="versión-2025---edición--para-principiantes">Versión: 2025 - EDICIÓN  PARA PRINCIPIANTES</h3>
-<hr>
+<h2 id="div-aligncenter-img-srchttpsgithub.comfnjimenezcurso_logistica_cvblobmaincedis.pngrawtrue-altcedis-layout-width600-div"><div align="center"> <img src="https://github.com/fnjimenez/Curso_Logistica_CV/blob/main/CEDIS.png?raw=true" alt="CEDIS Layout" width="600"> </div></h2>
 <h2 id="📌-antes-de-empezar---lee-esto-primero">📌 ANTES DE EMPEZAR - LEE ESTO PRIMERO</h2>
 <h3 id="¿qué-voy-a-hacer-en-esta-actividad">¿Qué voy a hacer en esta actividad?</h3>
 <p>Vas a construir un <strong>modelo de simulación</strong> del CEDIS (Centro de Distribución) San Bartolo en el software AnyLogic. Este CEDIS distribuye piezas automotrices a tres plantas ensambladoras: GM Silao, GM San Luis Potosí y BMW San Luis Potosí.</p>

@@ -16,22 +16,6 @@
 <hr>
 <h1 id="📑-tabla-de-contenido">📑 Tabla de Contenido</h1>
 <ul>
-<li><a href="#antes-de-empezar">ANTES DE EMPEZAR</a></li>
-<li><a href="#datos-de-identificaci%C3%B3n">DATOS DE IDENTIFICACIÓN</a></li>
-<li><a href="#objetivos">OBJETIVOS</a></li>
-<li><a href="#requisitos-previos">REQUISITOS PREVIOS</a></li>
-<li><a href="#paso-1">PASO 1: CREAR PROYECTO</a></li>
-<li><a href="#paso-2">PASO 2: DIBUJAR LAYOUT</a></li>
-<li><a href="#paso-3">PASO 3: CREAR AGENTE TRUCK</a></li>
-<li><a href="#paso-4">PASO 4: CREAR FUENTES</a></li>
-<li><a href="#paso-5">PASO 5: GESTIÓN DE ANDENES</a></li>
-<li><a href="#paso-6">PASO 6: RUTEO RECEPCIÓN</a></li>
-<li><a href="#paso-7">PASO 7: CROSS-DOCKING</a></li>
-<li><a href="#paso-8">PASO 8: DESTINO OEM</a></li>
-<li><a href="#paso-9">PASO 9: SALIDA Y KPIs</a></li>
-<li><a href="#paso-10">PASO 10: DASHBOARD</a></li>
-<li><a href="#paso-11">PASO 11: VALIDACIÓN</a></li>
-<li><a href="#paso-12">PASO 12: PUBLICACIÓN</a></li>
 <li><a href="#curso:-log%C3%ADstica-y-cadena-de-valor">Curso: Logística y Cadena de Valor</a></li>
 <li><a href="#unidad:-sistemas-de-almacenamiento-y-cedis">Sistemas de Almacenamiento y CEDIS</a></li>
 <li><a href="#versi%C3%B3n:-2025---edici%C3%B3n-mejorada-para-principiantes">Versión: 2025 - EDICIÓN PARA PRINCIPIANTES</a></li>
@@ -215,10 +199,10 @@
 <li><a href="#%F0%9F%8E%AF-**resultado-esperado**">🎯 <strong>RESULTADO ESPERADO</strong></a></li>
 </ul>
 <hr>
-<p>Mejor te paso el codigo # 🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</p>
+<h1 id="🟦-actividad-9-–-modelado-del-cedis-automotriz-san-bartolo-en-anylogic-1">🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</h1>
 <h3 id="curso-logística-y-cadena-de-valor">Curso: Logística y Cadena de Valor</h3>
 <h3 id="unidad-sistemas-de-almacenamiento-y-cedis">Unidad: Sistemas de Almacenamiento y CEDIS</h3>
-<h3 id="versión-2025---edición-mejorada-para-principiantes">Versión: 2025 - EDICIÓN MEJORADA PARA PRINCIPIANTES</h3>
+<h3 id="versión-2025---edición--para-principiantes">Versión: 2025 - EDICIÓN  PARA PRINCIPIANTES</h3>
 <hr>
 <h2 id="📌-antes-de-empezar---lee-esto-primero">📌 ANTES DE EMPEZAR - LEE ESTO PRIMERO</h2>
 <h3 id="¿qué-voy-a-hacer-en-esta-actividad">¿Qué voy a hacer en esta actividad?</h3>
@@ -331,17 +315,84 @@
 </blockquote>
 <hr>
 <h2 id="objetivos-específicos">4. OBJETIVOS ESPECÍFICOS</h2>
-<p>| # | Objetivo | Estado | Prioridad |  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.<br>
-|—|----------|--------|-----------|<br>
-| 1 | Configurar proyecto AnyLogic con unidades correctas | | 🔴 ALTA |<br>
-| 2 | Crear agentes (camiones) con información de carga y destino | | 🔴 ALTA |<br>
-| 3 | Dibujar layout básico del CEDIS | | 🟡 MEDIA |<br>
-| 4 | Construir diagrama de flujo con bloques Process Modeling | | 🔴 ALTA |<br>
-| 5 | Gestionar recursos (andenes, montacargas) | | 🔴 ALTA |<br>
-| 6 | Programar decisiones de ruteo | | 🟡 MEDIA |<br>
-| 7 | Calcular indicadores (KPIs) | | 🟢 BAJA |<br>
-| 8 | Publicar modelo en AnyLogic Cloud | | 🟢 BAJA |<br>
-| 9 | Crear dashboard de monitoreo | | 🟡 MEDIA |</p>
+<h1 id="objetivos-específicos-1">4. OBJETIVOS ESPECÍFICOS</h1>
+
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Objetivo</th>
+<th>Estado</th>
+<th>Prioridad</th>
+<th>Observaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Configurar proyecto AnyLogic con unidades correctas</td>
+<td></td>
+<td>🔴 ALTA</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Crear agentes (camiones) con información de carga y destino</td>
+<td></td>
+<td>🔴 ALTA</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dibujar layout básico del CEDIS</td>
+<td></td>
+<td>🟡 MEDIA</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Construir diagrama de flujo con bloques Process Modeling</td>
+<td></td>
+<td>🔴 ALTA</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Gestionar recursos (andenes, montacargas)</td>
+<td></td>
+<td>🔴 ALTA</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Programar decisiones de ruteo</td>
+<td></td>
+<td>🟡 MEDIA</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Calcular indicadores (KPIs)</td>
+<td></td>
+<td>🟢 BAJA</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Publicar modelo en AnyLogic Cloud</td>
+<td></td>
+<td>🟢 BAJA</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Crear dashboard de monitoreo</td>
+<td></td>
+<td>🟡 MEDIA</td>
+<td></td>
+</tr>
+</tbody>
+</table><p><strong>💡 Tip:</strong> Este paso conecta con tu diseño conceptual de la Actividad 6.</p>
 <hr>
 <h2 id="requisitos-previos">5. REQUISITOS PREVIOS</h2>
 <h3 id="📦-software-necesario">📦 Software Necesario</h3>
@@ -1329,7 +1380,7 @@ SRC_MAGNA_SUR ───┘
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Tiempos configurados apropiadamente</li>
 </ul>
 <hr>
-<h1 id="🟦-actividad-9-–-modelado-del-cedis-automotriz-san-bartolo-en-anylogic-1">🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</h1>
+<h1 id="🟦-actividad-9-–-modelado-del-cedis-automotriz-san-bartolo-en-anylogic-2">🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</h1>
 <h2 id="paso-7-decisión-cross-docking-o-buffer-estratégico">7. PASO 7 DECISIÓN: CROSS-DOCKING O BUFFER ESTRATÉGICO</h2>
 <h3 id="🎯-objetivo--💡-tip-este-paso-conecta-con-tu-diseño-conceptual-de-la-actividad-6.-6">🎯 Objetivo  💡 <em>Tip:</em> Este paso conecta con tu diseño conceptual de la Actividad 6.</h3>
 <p>Implementar la lógica que determina si los materiales pasan directo a embarque (cross-docking) o requieren almacenamiento temporal (buffer).</p>

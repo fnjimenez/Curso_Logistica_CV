@@ -1281,6 +1281,49 @@ SRC_MAGNA_SUR ───┘
                                  ├─(1)─&gt; BUFFER_TIME ────┤
                                  └─(2)─&gt; KITTING_PROCESS ─┘
 </code></pre>
+<h4 id="paso-6.2-delays-de-recepción"><strong>Paso 6.2: Delays de Recepción</strong></h4>
+
+<table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Nombre</th>
+<th>Delay Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delay</td>
+<td><code>DELAY_RECEP_NORTE</code></td>
+<td><code>triangular(0.15, 0.25, 0.40)</code></td>
+</tr>
+<tr>
+<td>Delay</td>
+<td><code>DELAY_RECEP_SUR</code></td>
+<td><code>triangular(0.15, 0.25, 0.40)</code></td>
+</tr>
+</tbody>
+</table><p><strong>Conexiones:</strong></p>
+<ul>
+<li>Rama 0 de <code>ROUTE_RECEPCION</code> → <code>DELAY_RECEP_NORTE</code></li>
+<li>Rama 1 de <code>ROUTE_RECEPCION</code> → <code>DELAY_RECEP_SUR</code></li>
+</ul>
+<h4 id="paso-6.3-proceso-de-clasificación-central"><strong>Paso 6.3: Proceso de Clasificación Central</strong></h4>
+<ol>
+<li>Arrastrar <strong>Delay</strong> al centro-derecha</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>SORTING_PROCESS</code></li>
+<li><strong>Delay time:</strong> <code>triangular(0.2, 0.4, 0.8)</code></li>
+</ul>
+</li>
+<li><strong>Conectar:</strong>
+<ul>
+<li><code>DELAY_RECEP_NORTE</code> → <code>SORTING_PROCESS</code></li>
+<li><code>DELAY_RECEP_SUR</code> → <code>SORTING_PROCESS</code></li>
+</ul>
+</li>
+</ol>
 <hr>
 <h1 id="parte-4-cross-docking-buffer-y-kitting-continuación">PARTE 4: CROSS-DOCKING, BUFFER Y KITTING (CONTINUACIÓN)</h1>
 <hr>
@@ -1548,10 +1591,52 @@ SRC_MAGNA_SUR ───┘
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Tiempos diferenciados (BMW mayor tiempo)</li>
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Distribución porcentual suma 100%</li>
 </ul>
-<h3 id="paso-9-–-salida-y-registro-de-métricas"><strong>15. PASO 9 – SALIDA Y REGISTRO DE MÉTRICAS</strong></h3>
+<h2 id="paso-–-crear-variables-kpi-en-main">8.5 PASO – CREAR VARIABLES KPI EN MAIN</h2>
 <h3 id="🎯-objetivo-10">🎯 Objetivo</h3>
-<p>Completar el flujo y registrar indicadores de desempeño.</p>
+<p>Definir variables globales para calcular métricas de desempeño.</p>
 <h3 id="🛠️-configuración-2">🛠️ Configuración</h3>
+<p>En agente <strong>Main</strong>, crear estas variables:</p>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Tipo</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>palletsProcessed</code></td>
+<td>int</td>
+<td><code>0</code></td>
+<td>Contador total de pallets</td>
+</tr>
+<tr>
+<td><code>trucksProcessed</code></td>
+<td>int</td>
+<td><code>0</code></td>
+<td>Contador total de camiones</td>
+</tr>
+<tr>
+<td><code>avgCycleTime</code></td>
+<td>double</td>
+<td><code>0.0</code></td>
+<td>Tiempo promedio en sistema</td>
+</tr>
+<tr>
+<td><code>totalCycleTime</code></td>
+<td>double</td>
+<td><code>0.0</code></td>
+<td>Acumulador para cálculo promedio</td>
+</tr>
+</tbody>
+</table><p><strong>Ubicación:</strong> Área superior derecha del canvas de Main</p>
+<h3 id="paso-9-–-salida-y-registro-de-métricas"><strong>15. PASO 9 – SALIDA Y REGISTRO DE MÉTRICAS</strong></h3>
+<h3 id="🎯-objetivo-11">🎯 Objetivo</h3>
+<p>Completar el flujo y registrar indicadores de desempeño.</p>
+<h3 id="🛠️-configuración-3">🛠️ Configuración</h3>
 <h4 id="paso-9.1-crear-variables-kpi-en-main"><strong>Paso 9.1: Crear Variables KPI en Main</strong></h4>
 
 <table>
@@ -1613,7 +1698,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <hr>
 <hr>
 <h2 id="paso-9-–-salida-y-registro-de-métricas-1">15. PASO 9 – SALIDA Y REGISTRO DE MÉTRICAS</h2>
-<h3 id="🎯-objetivo-11">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo-12">🎯 Objetivo</h3>
 <p>Completar el flujo con la salida del sistema y registrar todos los indicadores clave de desempeño.</p>
 <h3 id="🧠-lógica-10">🧠 Lógica</h3>
 <p>El punto de salida es crítico para:</p>
@@ -1712,9 +1797,9 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> No hay errores de compilación en el código</li>
 </ul>
 <h3 id="paso-10-–-crear-dashboard-de-monitoreo"><strong>16. PASO 10 – CREAR DASHBOARD DE MONITOREO</strong></h3>
-<h3 id="🎯-objetivo-12">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo-13">🎯 Objetivo</h3>
 <p>Panel visual para monitoreo en tiempo real.</p>
-<h3 id="🛠️-configuración-3">🛠️ Configuración</h3>
+<h3 id="🛠️-configuración-4">🛠️ Configuración</h3>
 <h4 id="paso-10.1-título-del-dashboard"><strong>Paso 10.1: Título del Dashboard</strong></h4>
 <ul>
 <li><strong>Text:</strong> <code>📊 DASHBOARD - CEDIS SAN BARTOLO</code></li>
@@ -1757,7 +1842,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <h1 id="parte-5-recursos-adicionales-y-optimización">PARTE 5: RECURSOS ADICIONALES Y OPTIMIZACIÓN</h1>
 <hr>
 <h2 id="paso-10-–-gestión-de-montacargas-opcional">16. PASO 10 – GESTIÓN DE MONTACARGAS (OPCIONAL)</h2>
-<h3 id="🎯-objetivo-13">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo-14">🎯 Objetivo</h3>
 <p>Implementar el uso de montacargas como recurso adicional para procesos internos.</p>
 <h3 id="🧠-lógica-11">🧠 Lógica</h3>
 <p>Algunos procesos requieren recursos físicos:</p>
@@ -1803,7 +1888,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <h1 id="parte-6-dashboard-y-visualización">PARTE 6: DASHBOARD Y VISUALIZACIÓN</h1>
 <hr>
 <h2 id="paso-11-–-crear-dashboard-de-monitoreo">17. PASO 11 – CREAR DASHBOARD DE MONITOREO</h2>
-<h3 id="🎯-objetivo-14">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo-15">🎯 Objetivo</h3>
 <p>Crear un panel de control visual que muestre en tiempo real el estado del CEDIS y las métricas clave.</p>
 <h3 id="🧠-lógica-12">🧠 Lógica</h3>
 <p>Un dashboard efectivo permite:</p>
@@ -1872,9 +1957,9 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Dashboard organizado y legible</li>
 </ul>
 <h3 id="paso-11-–-gestión-de-montacargas-opcional"><strong>17. PASO 11 – GESTIÓN DE MONTACARGAS (OPCIONAL)</strong></h3>
-<h3 id="🎯-objetivo-15">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo-16">🎯 Objetivo</h3>
 <p>Implementar montacargas como recurso adicional.</p>
-<h3 id="🛠️-configuración-4">🛠️ Configuración</h3>
+<h3 id="🛠️-configuración-5">🛠️ Configuración</h3>
 <h4 id="paso-11.1-crear-resourcepool"><strong>Paso 11.1: Crear ResourcePool</strong></h4>
 <ul>
 <li><strong>Name:</strong> <code>forklifts</code></li>
@@ -1890,7 +1975,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 <h1 id="parte-7-ejecución-y-publicación">PARTE 7: EJECUCIÓN Y PUBLICACIÓN</h1>
 <hr>
 <h2 id="paso-12-–-ejecución-y-validación">18. PASO 12 – EJECUCIÓN Y VALIDACIÓN</h2>
-<h3 id="🎯-objetivo-16">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo-17">🎯 Objetivo</h3>
 <p>Verificar que el modelo funciona correctamente y produce resultados dentro de rangos esperados.</p>
 <h3 id="🧠-lógica-13">🧠 Lógica</h3>
 <p>Las pruebas validan que:</p>
@@ -1944,7 +2029,7 @@ avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="t
 </ul>
 <hr>
 <h2 id="paso-13-–-publicación-en-anylogic-cloud">19. PASO 13 – PUBLICACIÓN EN ANYLOGIC CLOUD</h2>
-<h3 id="🎯-objetivo-17">🎯 Objetivo</h3>
+<h3 id="🎯-objetivo-18">🎯 Objetivo</h3>
 <p>Publicar el modelo en la nube para compartirlo.</p>
 <h3 id="🛠️-procedimiento">🛠️ Procedimiento</h3>
 <h4 id="paso-13.1-exportar-a-la-nube"><strong>Paso 13.1: Exportar a la Nube</strong></h4>

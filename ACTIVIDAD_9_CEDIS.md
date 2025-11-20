@@ -4,16 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>xxxxxx</title>
+  <title>ACTIVIDAD_9_CEDIS.md</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
 
 <body class="stackedit">
-  <div class="stackedit__html"><h1 id="actividad-9-–-manual-final-completo">ACTIVIDAD 9 – MANUAL FINAL COMPLETO</h1>
-<p>�# 🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</p>
+  <div class="stackedit__html"><h1 id="🟦-actividad-9-–-modelado-del-cedis-automotriz-san-bartolo-en-anylogic">🟦 ACTIVIDAD 9 – MODELADO DEL CEDIS AUTOMOTRIZ SAN BARTOLO EN ANYLOGIC</h1>
 <h3 id="curso-logística-y-cadena-de-valor">Curso: Logística y Cadena de Valor</h3>
 <h3 id="unidad-sistemas-de-almacenamiento-y-cedis">Unidad: Sistemas de Almacenamiento y CEDIS</h3>
-<h3 id="versión-2025---edición-para-principiantes">Versión: 2025 - EDICIÓN PARA PRINCIPIANTES</h3>
+<h3 id="versión-2025---edición-mejorada-para-principiantes">Versión: 2025 - EDICIÓN MEJORADA PARA PRINCIPIANTES</h3>
 <hr>
 <h2 id="📌-antes-de-empezar---lee-esto-primero">📌 ANTES DE EMPEZAR - LEE ESTO PRIMERO</h2>
 <h3 id="¿qué-voy-a-hacer-en-esta-actividad">¿Qué voy a hacer en esta actividad?</h3>
@@ -21,1023 +20,1834 @@
 <h3 id="¿qué-es-un-modelo-de-simulación">¿Qué es un modelo de simulación?</h3>
 <p>Es como un <strong>videojuego de tu CEDIS</strong> donde puedes ver cómo entran camiones, se descargan, los materiales circulan por el almacén y salen hacia los clientes. Te permite probar diferentes configuraciones sin construir el almacén real.</p>
 <h3 id="¿qué-necesito-saber-antes">¿Qué necesito saber antes?</h3>
-<p>✅ <strong>No necesitas ser experto en programación</strong></p>
-<p>✅ Este documento te guía paso a paso</p>
-<p>✅ Cada sección tiene: 🎯 Objetivo | 🧠 Explicación | 🛠️ Qué hacer | 💡 Consejos</p>
-<p>✅ Si te atoras, busca las secciones <strong>"⚠️ PROBLEMAS COMUNES"</strong></p>
+<p>✅ <strong>No necesitas ser experto en programación</strong><br>
+✅ Este documento te guía paso a paso<br>
+✅ Cada sección tiene: 🎯 Objetivo | 🧠 Explicación | 🛠️ Qué hacer | 💡 Consejos<br>
+✅ Si te atoras, busca las secciones <strong>"⚠️ PROBLEMAS COMUNES"</strong></p>
 <h3 id="tiempo-estimado">Tiempo estimado</h3>
 <ul>
-<li>
-<p><strong>Primera vez:</strong> 4-6 horas</p>
-</li>
-<li>
-<p><strong>Con experiencia:</strong> 2-3 horas</p>
-</li>
+<li><strong>Primera vez:</strong> 4-6 horas</li>
+<li><strong>Con experiencia:</strong> 2-3 horas</li>
 </ul>
 <hr>
 <h2 id="datos-de-identificación">1. DATOS DE IDENTIFICACIÓN</h2>
-<p>| Campo | Información a completar |</p>
-<p>|-------|------------------------|</p>
-<p>| Nombre del estudiante | |</p>
-<p>| Matrícula | |</p>
-<p>| Carrera | |</p>
-<p>| Grupo | |</p>
-<p>| Fecha de entrega | |</p>
-<p>| Nombre del CEDIS modelado | CEDIS AUTOMOTRIZ SAN BARTOLO |</p>
-<hr>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Información a completar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre del estudiante</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Matrícula</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Carrera</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Grupo</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Fecha de entrega</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Nombre del CEDIS modelado</strong></td>
+<td>CEDIS AUTOMOTRIZ SAN BARTOLO</td>
+</tr>
+</tbody>
+</table><hr>
 <h2 id="contexto-y-vínculo-con-actividades-anteriores">2. CONTEXTO Y VÍNCULO CON ACTIVIDADES ANTERIORES</h2>
 <h3 id="🔗-¿de-dónde-viene-este-proyecto">🔗 ¿De dónde viene este proyecto?</h3>
 <p>Esta Actividad 9 <strong>completa el trabajo</strong> que hiciste en:</p>
 <ul>
-<li>
-<p><strong>Actividad 6:</strong> Diseñaste el CEDIS San Bartolo en papel (capacidad, áreas, flujos)</p>
-</li>
-<li>
-<p><strong>Actividad 7:</strong> Analizaste qué industrias podrían ubicarse en la región</p>
-</li>
-<li>
-<p><strong>Actividad 8 (opcional):</strong> Usaste métodos cuantitativos para decisiones logísticas</p>
-</li>
+<li><strong>Actividad 6:</strong> Diseñaste el CEDIS San Bartolo en papel (capacidad, áreas, flujos)</li>
+<li><strong>Actividad 7:</strong> Analizaste qué industrias podrían ubicarse en la región</li>
+<li><strong>Actividad 8 (opcional):</strong> Usaste métodos cuantitativos para decisiones logísticas</li>
 </ul>
 <p>Ahora vas a <strong>dar vida a ese diseño</strong> en una simulación digital.</p>
 <h3 id="🎯-¿qué-voy-a-simular">🎯 ¿Qué voy a simular?</h3>
 <ol>
-<li>
-<p><strong>Entrada:</strong> Camiones de 3 proveedores (Lear, Condumex, Magna)</p>
-</li>
-<li>
-<p><strong>Procesos internos:</strong> Descarga → Clasificación → Almacenamiento → Preparación</p>
-</li>
-<li>
-<p><strong>Salida:</strong> Despacho hacia GM Silao, GM SLP y BMW SLP</p>
-</li>
+<li><strong>Entrada:</strong> Camiones de 3 proveedores (Lear, Condumex, Magna)</li>
+<li><strong>Procesos internos:</strong> Descarga → Clasificación → Almacenamiento → Preparación</li>
+<li><strong>Salida:</strong> Despacho hacia GM Silao, GM SLP y BMW SLP</li>
 </ol>
 <h3 id="📊-datos-clave-del-cedis-actividad-6">📊 Datos clave del CEDIS (Actividad 6)</h3>
-<p>| Parámetro | Valor |</p>
-<p>|-----------|-------|</p>
-<p>| Capacidad | 22,000 pallets |</p>
-<p>| Entrada diaria | ~7,100 pallets |</p>
-<p>| Salida diaria | ~7,700 pallets |</p>
-<p>| Andenes | 24 (8 recepción + 16 embarque) |</p>
-<p>| Cross-docking | 65% de los materiales |</p>
-<hr>
+
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Valor</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Capacidad</strong></td>
+<td>22,000 pallets</td>
+<td>Capacidad máxima de almacenamiento</td>
+</tr>
+<tr>
+<td><strong>Entrada diaria</strong></td>
+<td>~7,100 pallets</td>
+<td>Flujo promedio de entrada</td>
+</tr>
+<tr>
+<td><strong>Salida diaria</strong></td>
+<td>~7,700 pallets</td>
+<td>Flujo promedio de salida</td>
+</tr>
+<tr>
+<td><strong>Andenes</strong></td>
+<td>24 total</td>
+<td>8 recepción + 16 embarque</td>
+</tr>
+<tr>
+<td><strong>Cross-docking</strong></td>
+<td>65%</td>
+<td>Materiales que pasan directo sin almacenarse</td>
+</tr>
+</tbody>
+</table><hr>
 <h2 id="objetivo-general">3. OBJETIVO GENERAL</h2>
 <blockquote>
 <p><strong>Construir y documentar un modelo funcional del CEDIS en AnyLogic</strong> que simule camiones entrando, procesos de descarga, clasificación, almacenamiento y despacho hacia tres clientes automotrices, con recursos, tiempos y KPIs medibles.</p>
 </blockquote>
 <hr>
 <h2 id="objetivos-específicos">4. OBJETIVOS ESPECÍFICOS</h2>
-<p>| # | Objetivo | Estado |</p>
-<p>|—|----------|--------|</p>
-<p>| 1 | Configurar un proyecto AnyLogic con unidades correctas | |</p>
-<p>| 2 | Crear agentes (camiones) con información de carga y destino | |</p>
-<p>| 3 | Dibujar el layout básico del CEDIS | |</p>
-<p>| 4 | Construir un diagrama de flujo (flowchart) con bloques Process Modeling | |</p>
-<p>| 5 | Gestionar recursos (andenes, montacargas) | |</p>
-<p>| 6 | Programar decisiones de ruteo (hacia dónde va cada camión) | |</p>
-<p>| 7 | Calcular indicadores (KPIs) como pallets procesados y tiempos | |</p>
-<p>| 8 | Publicar el modelo en AnyLogic Cloud | |</p>
-<p>| 9 | Crear un dashboard de monitoreo | |</p>
-<hr>
-<h2 id="requisitos-previos">5. REQUISITOS PREVIOS</h2>
-<h3 id="software">Software</h3>
-<ul>
-<li><strong>AnyLogic</strong> instalado (versión PLE o superior)</li>
-</ul>
-<p>👉 Descarga gratuita: <a href="https://www.anylogic.com/downloads/">www.anylogic.com</a></p>
-<h3 id="conocimientos">Conocimientos</h3>
-<ul>
-<li>
-<p>Haber completado Actividades 6 y 7</p>
-</li>
-<li>
-<p>Haber visto el video introductorio de AnyLogic (proporcionado por el profesor)</p>
-</li>
-</ul>
-<h3 id="materiales">Materiales</h3>
-<ul>
-<li>
-<p>Layout del CEDIS San Bartolo (imagen PNG/JPG proporcionada)</p>
-</li>
-<li>
-<p>Este documento MD como guía</p>
-</li>
-</ul>
-<!-- En tu documento HTML existente -->
-<section id="layout-cedis">
-</section><h2>Layout del CEDIS</h2>
-<p>&lt;img  src=“<a href="https://raw.githubusercontent.com/fnjimenez/Curso_Logistica_CV/main/layoutt.png">https://raw.githubusercontent.com/fnjimenez/Curso_Logistica_CV/main/layoutt.png</a>”</p>
-<p>alt=“Layout CEDIS San Bartolo”&gt;</p>
 
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Objetivo</th>
+<th>Estado</th>
+<th>Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Configurar proyecto AnyLogic con unidades correctas</td>
+<td></td>
+<td>🔴 ALTA</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Crear agentes (camiones) con información de carga y destino</td>
+<td></td>
+<td>🔴 ALTA</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dibujar layout básico del CEDIS</td>
+<td></td>
+<td>🟡 MEDIA</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Construir diagrama de flujo con bloques Process Modeling</td>
+<td></td>
+<td>🔴 ALTA</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Gestionar recursos (andenes, montacargas)</td>
+<td></td>
+<td>🔴 ALTA</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Programar decisiones de ruteo</td>
+<td></td>
+<td>🟡 MEDIA</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Calcular indicadores (KPIs)</td>
+<td></td>
+<td>🟢 BAJA</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Publicar modelo en AnyLogic Cloud</td>
+<td></td>
+<td>🟢 BAJA</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Crear dashboard de monitoreo</td>
+<td></td>
+<td>🟡 MEDIA</td>
+</tr>
+</tbody>
+</table><hr>
+<h2 id="requisitos-previos">5. REQUISITOS PREVIOS</h2>
+<h3 id="📦-software-necesario">📦 Software Necesario</h3>
+<ul>
+<li><strong>AnyLogic</strong> instalado (versión PLE o superior)<br>
+👉 Descarga gratuita: <a href="https://www.anylogic.com/downloads/">www.anylogic.com</a></li>
+</ul>
+<h3 id="🧠-conocimientos-previos">🧠 Conocimientos Previos</h3>
+<ul>
+<li>Haber completado Actividades 6 y 7</li>
+<li>Haber visto el video introductorio de AnyLogic (proporcionado por el profesor)</li>
+</ul>
+<h3 id="📎-materiales-de-referencia">📎 Materiales de Referencia</h3>
+<ul>
+<li>Layout del CEDIS San Bartolo (imagen PNG/JPG proporcionada)</li>
+<li>Este documento como guía principal</li>
+<li>Datos de la Actividad 6 para parámetros</li>
+</ul>
+<h3 id="🖼️-layout-de-referencia">🖼️ Layout de Referencia</h3>
+<p><img src="https://raw.githubusercontent.com/fnjimenez/Curso_Logistica_CV/main/layoutt.png" alt="Layout CEDIS San Bartolo"></p>
 <hr>
 <h2 id="¿cómo-usar-este-documento">6. ¿CÓMO USAR ESTE DOCUMENTO?</h2>
-<h3 id="📖-estructura-de-cada-paso">📖 Estructura de cada paso</h3>
-<p>Cada sección sigue este formato:</p>
-<pre><code>
-🎯 OBJETIVO → Qué vas a lograr
-
-🧠 LÓGICA → Por qué lo haces así
-
+<h3 id="📖-estructura-de-cada-paso">📖 Estructura de Cada Paso</h3>
+<p>Cada sección sigue este formato estándar:</p>
+<pre><code>🎯 OBJETIVO → Qué vas a lograr en este paso
+🧠 LÓGICA → Por qué lo haces así y cómo funciona
 🛠️ CONFIGURACIÓN → Instrucciones técnicas paso a paso
-
-💻 CÓDIGO (si aplica) → Qué escribir en AnyLogic
-
-💡 CONSEJOS → Trucos útiles
-
-⚠️ PROBLEMAS COMUNES → Qué hacer si algo falla
-
+💻 CÓDIGO → Qué escribir exactamente en AnyLogic
+💡 CONSEJOS → Trucos y mejores prácticas
+⚠️ PROBLEMAS COMUNES → Soluciones rápidas a errores frecuentes
 </code></pre>
-<h3 id="✅-checklist-de-avance">✅ Checklist de avance</h3>
-<p>Al final de cada sección marca:</p>
+<h3 id="✅-sistema-de-checklist">✅ Sistema de Checklist</h3>
+<p>Al final de cada sección encontrarás:</p>
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Completado y funciona</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Completado pero tengo dudas</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> No pude completarlo</p>
-</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> <strong>Completado y funciona</strong> - Todo correcto</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> <strong>Completado pero tengo dudas</strong> - Necesitas revisión</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> <strong>No pude completarlo</strong> - Busca ayuda en problemas comunes</li>
 </ul>
+<h3 id="🎯-flujo-recomendado">🎯 Flujo Recomendado</h3>
+<ol>
+<li><strong>Lee completamente</strong> cada paso antes de ejecutar</li>
+<li><strong>Sigue el orden numérico</strong> estrictamente</li>
+<li><strong>Ejecuta y verifica</strong> después de cada paso importante</li>
+<li><strong>Documenta problemas</strong> para referencia futura</li>
+</ol>
 <hr>
 <h1 id="parte-1-configuración-inicial">PARTE 1: CONFIGURACIÓN INICIAL</h1>
 <hr>
 <h2 id="paso-1-–-crear-el-proyecto-y-configurar-unidades">7. PASO 1 – CREAR EL PROYECTO Y CONFIGURAR UNIDADES</h2>
 <h3 id="🎯-objetivo">🎯 Objetivo</h3>
-<p>Crear un proyecto nuevo en AnyLogic con las unidades correctas (horas y metros).</p>
+<p>Crear un proyecto nuevo en AnyLogic con las unidades correctas (horas y metros) para el modelo del CEDIS.</p>
 <h3 id="🧠-lógica">🧠 Lógica</h3>
-<p>Trabajaremos en un solo agente llamado <code>Main</code> que contendrá todo:</p>
+<p>Trabajaremos en un solo agente llamado <code>Main</code> que contendrá todos los elementos:</p>
 <ul>
-<li>
-<p>El dibujo del CEDIS (layout)</p>
-</li>
-<li>
-<p>El diagrama de flujo de camiones</p>
-</li>
-<li>
-<p>Los recursos (andenes, montacargas)</p>
-</li>
-<li>
-<p>Los indicadores de desempeño</p>
-</li>
+<li>El dibujo del layout del CEDIS</li>
+<li>El diagrama de flujo completo de camiones</li>
+<li>Los recursos compartidos (andenes, montacargas)</li>
+<li>Los indicadores de desempeño (KPIs)</li>
 </ul>
-<h3 id="🛠️-configuración">🛠️ Configuración</h3>
-<h4 id="paso-1.1-crear-el-proyecto"><strong>Paso 1.1: Crear el proyecto</strong></h4>
+<h3 id="🛠️-configuración-paso-a-paso">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-1.1-crear-el-proyecto"><strong>Paso 1.1: Crear el Proyecto</strong></h4>
 <ol>
-<li>
-<p>Abrir AnyLogic</p>
-</li>
-<li>
-<p>Menú <strong>File → New Model…</strong></p>
-</li>
-<li>
-<p>Asignar nombre: <code>CEDIS_SanBartolo_TuApellido</code></p>
-</li>
-<li>
-<p>Click en <strong>Finish</strong></p>
-</li>
-</ol>
-<h4 id="paso-1.2-configurar-unidades-de-tiempo"><strong>Paso 1.2: Configurar unidades de tiempo</strong></h4>
-<ol>
-<li>
-<p>En panel izquierdo <strong>Projects</strong>, click en el <strong>nombre del modelo</strong></p>
-</li>
-<li>
-<p>En Properties, buscar sección <strong>Environment</strong></p>
-</li>
-<li>
-<p>Configurar:</p>
-</li>
-</ol>
+<li>Abrir AnyLogic desde el escritorio</li>
+<li>Menú <strong>File → New Model…</strong></li>
+<li>En el cuadro de diálogo:
 <ul>
-<li>
-<p><strong>Time units:</strong> seleccionar <code>hour</code> (hora)</p>
-</li>
-<li>
-<p><strong>Length units:</strong> seleccionar <code>meter</code> (metro)</p>
-</li>
+<li><strong>Model name:</strong> <code>CEDIS_SanBartolo_TuApellido</code> (ej: <code>CEDIS_SanBartolo_Garcia</code>)</li>
+<li><strong>Location:</strong> Seleccionar carpeta de tu preferencia</li>
 </ul>
-<h4 id="paso-1.3-verificar-que-main-está-activo"><strong>Paso 1.3: Verificar que Main está activo</strong></h4>
-<ol>
-<li>
-<p>En panel izquierdo, hacer doble click en <strong>Main</strong></p>
 </li>
-<li>
-<p>Debe abrirse una ventana blanca de trabajo (canvas)</p>
+<li>Click en <strong>Finish</strong></li>
+</ol>
+<h4 id="paso-1.2-configurar-unidades-de-tiempo-y-espacio"><strong>Paso 1.2: Configurar Unidades de Tiempo y Espacio</strong></h4>
+<ol>
+<li>En el panel izquierdo <strong>Projects</strong>, hacer click en el <strong>nombre del modelo</strong> (no en Main)</li>
+<li>En la parte inferior, buscar la pestaña <strong>Properties</strong></li>
+<li>Expandir la sección <strong>Environment</strong></li>
+<li>Configurar valores:
+<ul>
+<li><strong>Time units:</strong> seleccionar <code>hour</code> (hora)</li>
+<li><strong>Length units:</strong> seleccionar <code>meter</code> (metro)</li>
+</ul>
 </li>
 </ol>
-<h3 id="⚠️-problemas-comunes">⚠️ PROBLEMAS COMUNES</h3>
-<p>| Problema | Solución |</p>
-<p>|----------|----------|</p>
-<p>| No encuentro “Environment” | Click en el nombre del PROYECTO (no en Main) |</p>
-<p>| No aparece Main | Menú Projects → click derecho → New Agent Type → Nombre: Main |</p>
-<p>| Las unidades no se guardan | Cerrar y reabrir el proyecto |</p>
-<h3 id="✅-checklist">✅ Checklist</h3>
+<h4 id="paso-1.3-verificar-que-main-está-activo"><strong>Paso 1.3: Verificar que Main está Activo</strong></h4>
+<ol>
+<li>En panel izquierdo, hacer doble click en <strong>Main</strong></li>
+<li>Debe abrirse una ventana blanca de trabajo (canvas)</li>
+<li>Verificar que en la parte superior dice: <strong>Main (Agent Type)</strong></li>
+</ol>
+<h3 id="⚠️-problemas-comunes-y-soluciones">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Síntoma</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No encuentro "Environment"</strong></td>
+<td>No aparece la sección en Properties</td>
+<td>Click en el nombre del PROYECTO, no en Main</td>
+</tr>
+<tr>
+<td><strong>No aparece Main</strong></td>
+<td>El agente Main no está visible</td>
+<td>Menú Projects → click derecho → New Agent Type → Nombre: Main</td>
+</tr>
+<tr>
+<td><strong>Las unidades no se guardan</strong></td>
+<td>Al cerrar se pierde la configuración</td>
+<td>Cerrar y reabrir el proyecto, verificar en Properties</td>
+</tr>
+<tr>
+<td><strong>Error al crear proyecto</strong></td>
+<td>AnyLogic se cierra o da error</td>
+<td>Verificar espacio en disco y permisos de la carpeta</td>
+</tr>
+</tbody>
+</table><h3 id="💡-consejos-prácticos">💡 CONSEJOS PRÁCTICOS</h3>
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Proyecto creado con nombre correcto</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Unidades configuradas en horas y metros</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Main está abierto y listo para trabajar</p>
-</li>
+<li><strong>Nombra bien el proyecto</strong> desde el inicio para evitar confusiones</li>
+<li><strong>Las unidades son críticas</strong> - horas para tiempos, metros para distancias</li>
+<li><strong>Guarda frecuentemente</strong> con Ctrl+S durante el proceso</li>
+<li><strong>Mantén Main abierto</strong> - es tu área de trabajo principal</li>
+</ul>
+<h3 id="✅-checklist-de-verificación">✅ Checklist de Verificación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Proyecto creado con nombre personalizado correcto</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Unidades configuradas en horas y metros en Environment</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Main está abierto y visible en el canvas</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Puedo ver la ventana de Properties en la parte inferior</li>
 </ul>
 <hr>
 <h2 id="paso-2-–-dibujar-el-layout-del-cedis">8. PASO 2 – DIBUJAR EL LAYOUT DEL CEDIS</h2>
 <h3 id="🎯-objetivo-1">🎯 Objetivo</h3>
-<p>Crear la representación visual del CEDIS usando el layout proporcionado como referencia.</p>
+<p>Crear la representación visual del CEDIS usando el layout proporcionado como referencia, definiendo claramente todas las zonas operativas.</p>
 <h3 id="🧠-lógica-1">🧠 Lógica</h3>
-<p>Vamos a dibujar:</p>
+<p>Un buen layout visual ayuda a:</p>
 <ul>
-<li>
-<p>La nave principal del CEDIS</p>
-</li>
-<li>
-<p>Las zonas funcionales (Recepción, Sorting, Buffer, Kitting, Embarques)</p>
-</li>
-<li>
-<p>Opcionalmente, insertar la imagen del layout como fondo</p>
-</li>
+<li>Entender el flujo de materiales</li>
+<li>Ubicar correctamente los procesos</li>
+<li>Comunicar el diseño a otras personas</li>
+<li>Debuggear problemas en la simulación</li>
 </ul>
-<h3 id="🛠️-configuración-1">🛠️ Configuración</h3>
-<h4 id="paso-2.1-insertar-la-imagen-de-fondo-recomendado"><strong>Paso 2.1: Insertar la imagen de fondo (RECOMENDADO)</strong></h4>
+<h3 id="🛠️-configuración-paso-a-paso-1">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-2.1-insertar-la-imagen-de-fondo-altamente-recomendado"><strong>Paso 2.1: Insertar la Imagen de Fondo (ALTAMENTE RECOMENDADO)</strong></h4>
 <ol>
-<li>
-<p>Guardar la imagen del layout en tu computadora</p>
-</li>
-<li>
-<p>En AnyLogic, con Main abierto, ir a menú <strong>Insert → Image…</strong></p>
-</li>
-<li>
-<p>Buscar la imagen y hacer click en <strong>Open</strong></p>
-</li>
-<li>
-<p>Click en el canvas para colocarla</p>
-</li>
-<li>
-<p>Ajustar tamaño arrastrando las esquinas</p>
-</li>
+<li>Descargar la imagen <code>layoutt.png</code> desde GitHub</li>
+<li>En AnyLogic, con Main abierto, ir a menú <strong>Insert → Image…</strong></li>
+<li>Navegar y seleccionar la imagen, click en <strong>Open</strong></li>
+<li>Click en el canvas para colocarla como referencia</li>
+<li>Ajustar tamaño arrastrando desde las esquinas</li>
 </ol>
-<p><strong>Para que no se mueva:</strong></p>
-<ol start="6">
-<li>
-<p>Click derecho sobre la imagen → <strong>Order → Send to Back</strong></p>
-</li>
-<li>
-<p>Click derecho → <strong>Lock</strong></p>
-</li>
-</ol>
-<h4 id="paso-2.2-dibujar-las-zonas-principales"><strong>Paso 2.2: Dibujar las zonas principales</strong></h4>
-<p>En la paleta izquierda, buscar <strong>Presentation → Space Markup</strong>:</p>
-<p>| Zona | Color sugerido |</p>
-<p>|------|----------------|</p>
-<p>| Recepción Norte | Amarillo claro |</p>
-<p>| Recepción Sur | Amarillo claro |</p>
-<p>| Sorting | Azul claro |</p>
-<p>| Buffer Estratégico | Amarillo |</p>
-<p>| Kitting | Azul claro |</p>
-<p>| Embarques GM Silao | Azul claro |</p>
-<p>| Embarques GM SLP | Azul claro |</p>
-<p>| Embarques BMW SLP | Azul claro |</p>
-<h4 id="paso-2.3-agregar-etiquetas-de-texto"><strong>Paso 2.3: Agregar etiquetas de texto</strong></h4>
+<p><strong>Para fijar la imagen y que no estorbe:</strong><br>
+6. Click derecho sobre la imagen → <strong>Order → Send to Back</strong><br>
+7. Click derecho → <strong>Lock</strong> (para que no se mueva accidentalmente)</p>
+<h4 id="paso-2.2-dibujar-las-zonas-principales-con-rectángulos"><strong>Paso 2.2: Dibujar las Zonas Principales con Rectángulos</strong></h4>
+<p>En la paleta izquierda, buscar <strong>Presentation → Space Markup → Rectangular Node</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th>Zona</th>
+<th>Color Sugerido</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recepción Norte</td>
+<td><code>#FFF2CC</code> (Amarillo claro)</td>
+<td>Entrada camiones región norte</td>
+</tr>
+<tr>
+<td>Recepción Sur</td>
+<td><code>#FFF2CC</code> (Amarillo claro)</td>
+<td>Entrada camiones región sur</td>
+</tr>
+<tr>
+<td>Sorting</td>
+<td><code>#D5E8D4</code> (Verde claro)</td>
+<td>Clasificación de materiales</td>
+</tr>
+<tr>
+<td>Buffer Estratégico</td>
+<td><code>#F8CECC</code> (Rojo claro)</td>
+<td>Almacenamiento temporal</td>
+</tr>
+<tr>
+<td>Kitting</td>
+<td><code>#DAE8FC</code> (Azul claro)</td>
+<td>Valor agregado</td>
+</tr>
+<tr>
+<td>Embarques GM Silao</td>
+<td><code>#E1D5E7</code> (Morado claro)</td>
+<td>Salida GM Silao</td>
+</tr>
+<tr>
+<td>Embarques GM SLP</td>
+<td><code>#E1D5E7</code> (Morado claro)</td>
+<td>Salida GM San Luis</td>
+</tr>
+<tr>
+<td>Embarques BMW SLP</td>
+<td><code>#E1D5E7</code> (Morado claro)</td>
+<td>Salida BMW</td>
+</tr>
+</tbody>
+</table><p><strong>Para cada rectángulo:</strong></p>
 <ol>
-<li>
-<p>En la paleta, buscar <strong>Presentation → Text</strong></p>
-</li>
-<li>
-<p>Arrastrar al canvas</p>
-</li>
-<li>
-<p>Escribir el nombre de cada zona</p>
-</li>
-<li>
-<p>Cambiar tamaño de fuente: 14-16</p>
-</li>
+<li>Arrastrar <strong>Rectangular Node</strong> al canvas</li>
+<li>Dibujar sobre la zona correspondiente en la imagen</li>
+<li>Click derecho → <strong>Properties → Fill color</strong> → Elegir color</li>
+<li><strong>Line color:</strong> Gris oscuro para mejor contorno</li>
 </ol>
-<h3 id="💡-consejos">💡 CONSEJOS</h3>
+<h4 id="paso-2.3-agregar-etiquetas-de-texto-identificadoras"><strong>Paso 2.3: Agregar Etiquetas de Texto Identificadoras</strong></h4>
+<ol>
+<li>En paleta izquierda: <strong>Presentation → Text</strong></li>
+<li>Arrastrar al canvas y colocar sobre cada zona</li>
+<li>Configurar texto según esta tabla:</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>Texto</th>
+<th>Tamaño Fuente</th>
+<th>Color</th>
+<th>Ubicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“RECEPCIÓN NORTE”</td>
+<td>16</td>
+<td>Negro</td>
+<td>Sobre recepción norte</td>
+</tr>
+<tr>
+<td>“RECEPCIÓN SUR”</td>
+<td>16</td>
+<td>Negro</td>
+<td>Sobre recepción sur</td>
+</tr>
+<tr>
+<td>“SORTING”</td>
+<td>14</td>
+<td>Negro</td>
+<td>Sobre área sorting</td>
+</tr>
+<tr>
+<td>“BUFFER ESTRATÉGICO”</td>
+<td>12</td>
+<td>Negro</td>
+<td>Sobre buffer</td>
+</tr>
+<tr>
+<td>“KITTING”</td>
+<td>14</td>
+<td>Negro</td>
+<td>Sobre kitting</td>
+</tr>
+<tr>
+<td>“EMBARQUES GM SILAO”</td>
+<td>12</td>
+<td>Negro</td>
+<td>Sobre embarques GM Silao</td>
+</tr>
+<tr>
+<td>“EMBARQUES GM SLP”</td>
+<td>12</td>
+<td>Negro</td>
+<td>Sobre embarques GM SLP</td>
+</tr>
+<tr>
+<td>“EMBARQUES BMW SLP”</td>
+<td>12</td>
+<td>Negro</td>
+<td>Sobre embarques BMW</td>
+</tr>
+</tbody>
+</table><h3 id="⚠️-problemas-comunes-y-soluciones-1">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Síntoma</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>La imagen tapa todo</strong></td>
+<td>No se ven los rectángulos</td>
+<td>Click derecho → Order → Send to Back</td>
+</tr>
+<tr>
+<td><strong>No puedo mover la imagen</strong></td>
+<td>La imagen está bloqueada</td>
+<td>Click derecho → Unlock temporalmente</td>
+</tr>
+<tr>
+<td><strong>Los rectángulos no se ven</strong></td>
+<td>Sólo se ve el borde</td>
+<td>Properties → Fill color → Elegir color sólido</td>
+</tr>
+<tr>
+<td><strong>El texto se sale</strong></td>
+<td>Las etiquetas no caben</td>
+<td>Reducir tamaño de fuente o usar abreviaciones</td>
+</tr>
+</tbody>
+</table><h3 id="💡-consejos-de-diseño">💡 CONSEJOS DE DISEÑO</h3>
 <ul>
-<li>
-<p>No necesitas ser perfecto, solo que se distinga cada zona</p>
-</li>
-<li>
-<p>Usa colores similares al layout proporcionado</p>
-</li>
+<li><strong>Usa colores consistentes</strong> - mismo color para funciones similares</li>
+<li><strong>Mantén proporciones</strong> - no necesita ser exacto, pero sí reconocible</li>
+<li><strong>Deja espacio para el flowchart</strong> - el layout va a la izquierda, flowchart a la derecha</li>
+<li><strong>Grupa elementos relacionados</strong> - recepciones juntas, embarques juntos</li>
+<li><strong>Usa la función Snap</strong> - ayuda a alinear elementos perfectamente</li>
 </ul>
-<h3 id="⚠️-problemas-comunes-1">⚠️ PROBLEMAS COMUNES</h3>
-<p>| Problema | Solución |</p>
-<p>|----------|----------|</p>
-<p>| La imagen tapa todo | Click derecho → Order → Send to Back |</p>
-<p>| No puedo mover la imagen | Click derecho → Unlock |</p>
-<p>| Los rectángulos no se ven | Cambiar Fill color y agregar borde |</p>
-<h3 id="✅-checklist-1">✅ Checklist</h3>
+<h3 id="🎨-esquema-de-colores-recomendado">🎨 Esquema de Colores Recomendado</h3>
+<pre><code>Recepción:    #FFF2CC  (Amarillo - Entrada)
+Procesamiento: #D5E8D4  (Verde - Transformación)
+Almacenamiento: #F8CECC  (Rojo - Buffer)
+Salida:       #E1D5E7  (Morado - Embarques)
+</code></pre>
+<h3 id="✅-checklist-de-verificación-1">✅ Checklist de Verificación</h3>
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Imagen de fondo insertada y bloqueada</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> 8 zonas dibujadas con rectángulos</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Etiquetas de texto agregadas</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Layout se ve claro y organizado</p>
-</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Imagen de fondo insertada y bloqueada en posición</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 8 zonas dibujadas con rectángulos de colores diferenciados</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Todas las etiquetas de texto agregadas y legibles</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Colores consistentes según la función de cada zona</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Layout organizado y fácil de entender</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Espacio reservado para el diagrama de flujo</li>
 </ul>
 <hr>
 <h1 id="parte-2-creación-de-agentes-y-fuentes">PARTE 2: CREACIÓN DE AGENTES Y FUENTES</h1>
 <hr>
 <h2 id="paso-3-–-crear-el-agente-truck">9. PASO 3 – CREAR EL AGENTE <code>Truck</code></h2>
 <h3 id="🎯-objetivo-2">🎯 Objetivo</h3>
-<p>Definir la “ficha técnica” de los camiones que entrarán al CEDIS.</p>
+<p>Definir la “ficha técnica” de los camiones que entrarán al CEDIS con todos sus atributos necesarios.</p>
 <h3 id="🧠-lógica-2">🧠 Lógica</h3>
-<p>Cada camión necesita saber:</p>
+<p>Cada camión es un <strong>agente</strong> que fluye por el sistema y necesita almacenar información específica:</p>
 <ul>
-<li>
-<p>¿De qué proveedor viene? (Lear, Condumex, Magna)</p>
-</li>
-<li>
-<p>¿De qué región? (Norte o Sur)</p>
-</li>
-<li>
-<p>¿Cuántos pallets trae?</p>
-</li>
-<li>
-<p>¿A qué cliente irá? (GM Silao, GM SLP, BMW SLP)</p>
-</li>
-<li>
-<p>¿Cuándo entró y salió? (para calcular tiempos)</p>
-</li>
+<li><strong>Origen:</strong> Proveedor y región de procedencia</li>
+<li><strong>Carga:</strong> Cantidad de pallets que transporta</li>
+<li><strong>Destino:</strong> Cliente final al que va dirigido</li>
+<li><strong>Tiempos:</strong> Registro de entrada y salida para métricas</li>
 </ul>
-<h3 id="🛠️-configuración-2">🛠️ Configuración</h3>
-<h4 id="paso-3.1-crear-el-agente-truck"><strong>Paso 3.1: Crear el agente Truck</strong></h4>
+<h3 id="🛠️-configuración-paso-a-paso-2">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-3.1-crear-el-agente-truck"><strong>Paso 3.1: Crear el Agente Truck</strong></h4>
 <ol>
-<li>
-<p>En panel <strong>Projects</strong>, click derecho en <strong>Agent Types</strong></p>
-</li>
-<li>
-<p>Seleccionar <strong>New Agent Type…</strong></p>
-</li>
-<li>
-<p>Nombre: <code>Truck</code></p>
-</li>
-<li>
-<p>Click en <strong>Finish</strong></p>
-</li>
-</ol>
-<h4 id="paso-3.2-agregar-atributos-variables"><strong>Paso 3.2: Agregar atributos (variables)</strong></h4>
-<p>| Nombre | Tipo | Valor inicial | ¿Para qué sirve? |</p>
-<p>|--------|------|---------------|------------------|</p>
-<p>| <code>proveedor</code> | String | <code>""</code> | Nombre del proveedor |</p>
-<p>| <code>region</code> | String | <code>""</code> | Norte o Sur |</p>
-<p>| <code>destinoOEM</code> | String | <code>""</code> | GM_SILAO, GM_SLP o BMW_SLP |</p>
-<p>| <code>pallets</code> | int | <code>0</code> | Número de pallets que trae |</p>
-<p>| <code>tEntradaSistema</code> | double | <code>0</code> | Hora en que entró |</p>
-<p>| <code>tSalidaSistema</code> | double | <code>0</code> | Hora en que salió |</p>
-<p><strong>Cómo crear cada variable:</strong></p>
-<ol>
-<li>
-<p>Arrastrar <strong>Variable</strong> al canvas de Truck</p>
-</li>
-<li>
-<p>En Properties configurar Name, Type y Initial value</p>
-</li>
-</ol>
-<h3 id="⚠️-problemas-comunes-2">⚠️ PROBLEMAS COMUNES</h3>
-<p>| Problema | Solución |</p>
-<p>|----------|----------|</p>
-<p>| No encuentro “Variable” | Buscar en paleta superior, sección Agent |</p>
-<p>| Me pide “initial value” | Para String usa <code>""</code>, para int/double usa <code>0</code> |</p>
-<p>| Las variables no aparecen | Asegúrate de estar en el canvas de Truck |</p>
-<h3 id="✅-checklist-2">✅ Checklist</h3>
+<li>En panel <strong>Projects</strong>, click derecho en <strong>Agent Types</strong></li>
+<li>Seleccionar <strong>New Agent Type…</strong></li>
+<li>En el diálogo:
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Agente Truck creado</p>
+<li><strong>Name:</strong> <code>Truck</code></li>
+<li><strong>Default population:</strong> Dejar en blanco</li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> 6 variables agregadas correctamente</p>
+<li>Click en <strong>Finish</strong></li>
+</ol>
+<h4 id="paso-3.2-agregar-atributos-variables-al-agente"><strong>Paso 3.2: Agregar Atributos (Variables) al Agente</strong></h4>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Tipo</th>
+<th>Valor Inicial</th>
+<th>Descripción</th>
+<th>Uso en el Modelo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>proveedor</code></td>
+<td>String</td>
+<td><code>""</code></td>
+<td>Nombre del proveedor</td>
+<td>Decisiones de ruteo y estadísticas</td>
+</tr>
+<tr>
+<td><code>region</code></td>
+<td>String</td>
+<td><code>""</code></td>
+<td>Norte o Sur</td>
+<td>Determinar recepción destino</td>
+</tr>
+<tr>
+<td><code>destinoOEM</code></td>
+<td>String</td>
+<td><code>""</code></td>
+<td>GM_SILAO, GM_SLP, BMW_SLP</td>
+<td>Asignación final de embarque</td>
+</tr>
+<tr>
+<td><code>pallets</code></td>
+<td>int</td>
+<td><code>0</code></td>
+<td>Cantidad de pallets</td>
+<td>Cálculo de throughput</td>
+</tr>
+<tr>
+<td><code>tEntradaSistema</code></td>
+<td>double</td>
+<td><code>0.0</code></td>
+<td>Hora de entrada</td>
+<td>Cálculo de tiempo de ciclo</td>
+</tr>
+<tr>
+<td><code>tSalidaSistema</code></td>
+<td>double</td>
+<td><code>0.0</code></td>
+<td>Hora de salida</td>
+<td>Cálculo de tiempo de ciclo</td>
+</tr>
+</tbody>
+</table><p><strong>Procedimiento para cada variable:</strong></p>
+<ol>
+<li>En el canvas de <strong>Truck</strong>, paleta superior: <strong>Agent → Variable</strong></li>
+<li>Arrastrar al canvas (puedes organizarlas verticalmente)</li>
+<li>En <strong>Properties</strong> configurar:
+<ul>
+<li><strong>Name:</strong> Nombre exacto de la variable</li>
+<li><strong>Type:</strong> Seleccionar tipo correcto</li>
+<li><strong>Initial value:</strong> Valor por defecto</li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Todas las variables tienen el tipo correcto</p>
-</li>
+</ol>
+<h3 id="⚠️-problemas-comunes-y-soluciones-2">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Síntoma</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No encuentro "Variable"</strong></td>
+<td>No aparece en paleta</td>
+<td>Buscar en pestaña Agent (icono de estrella)</td>
+</tr>
+<tr>
+<td><strong>Error de tipo de dato</strong></td>
+<td>No acepta el valor inicial</td>
+<td>String: <code>""</code>, int: <code>0</code>, double: <code>0.0</code></td>
+</tr>
+<tr>
+<td><strong>Variables no visibles</strong></td>
+<td>No aparecen en el agente</td>
+<td>Verificar que estás en canvas de Truck, no Main</td>
+</tr>
+<tr>
+<td><strong>Error de nombre</strong></td>
+<td>Caracteres inválidos</td>
+<td>Usar solo letras, números, sin espacios</td>
+</tr>
+</tbody>
+</table><h3 id="💡-consejos-de-buenas-prácticas">💡 CONSEJOS DE BUENAS PRÁCTICAS</h3>
+<ul>
+<li><strong>Nombres descriptivos:</strong> Usar <code>tEntradaSistema</code> no <code>tiempo1</code></li>
+<li><strong>Organización visual:</strong> Agrupar variables relacionadas</li>
+<li><strong>Comentarios:</strong> Agregar notas si es necesario</li>
+<li><strong>Tipos correctos:</strong> String para texto, int para enteros, double para decimales</li>
+</ul>
+<h3 id="✅-checklist-de-verificación-2">✅ Checklist de Verificación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Agente Truck creado en Agent Types</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 6 variables agregadas con nombres exactos</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Todos los tipos de datos configurados correctamente</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Valores iniciales apropiados para cada tipo</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Variables organizadas y visibles en el canvas</li>
 </ul>
 <hr>
 <h2 id="paso-4-–-crear-las-fuentes-de-camiones">10. PASO 4 – CREAR LAS FUENTES DE CAMIONES</h2>
 <h3 id="🎯-objetivo-3">🎯 Objetivo</h3>
-<p>Configurar cómo y cuándo llegarán camiones al CEDIS desde cada proveedor.</p>
+<p>Configurar la generación automática de camiones desde los tres proveedores principales con sus características específicas.</p>
 <h3 id="🧠-lógica-3">🧠 Lógica</h3>
-<p>Tenemos 3 proveedores principales:</p>
+<p>Cada proveedor tiene patrones únicos:</p>
 <ul>
-<li>
-<p><strong>Lear</strong> (región Norte): Envía camiones con 26 pallets</p>
-</li>
-<li>
-<p><strong>Condumex</strong> (región Sur): Envía camiones con 24 pallets</p>
-</li>
-<li>
-<p><strong>Magna</strong> (región Sur): Envía camiones con 28 pallets</p>
-</li>
+<li><strong>Frecuencias diferentes</strong> de llegada</li>
+<li><strong>Regiones específicas</strong> de origen</li>
+<li><strong>Capacidades distintas</strong> de carga</li>
+<li><strong>Horarios preferentes</strong> de entrega</li>
 </ul>
-<p>Usaremos <strong>bloques Source</strong> para generar camiones automáticamente.</p>
-<h3 id="🛠️-configuración-3">🛠️ Configuración</h3>
-<h4 id="paso-4.1-abrir-la-paleta-de-process-modeling"><strong>Paso 4.1: Abrir la paleta de Process Modeling</strong></h4>
+<h3 id="🛠️-configuración-paso-a-paso-3">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-4.1-preparar-el-ambiente-de-trabajo"><strong>Paso 4.1: Preparar el Ambiente de Trabajo</strong></h4>
 <ol>
-<li>
-<p>Ir al agente <strong>Main</strong></p>
-</li>
-<li>
-<p>En paleta izquierda, buscar <strong>Process Modeling Library</strong></p>
-</li>
+<li>Regresar al agente <strong>Main</strong> (doble click en Projects)</li>
+<li>En paleta izquierda, verificar que <strong>Process Modeling Library</strong> está visible</li>
+<li>Si no está: <strong>View → Palettes → Process Modeling Library</strong></li>
 </ol>
-<h4 id="paso-4.2-configuración-de-sources"><strong>Paso 4.2: Configuración de Sources</strong></h4>
-<p>| Proveedor | Nombre Source | Arrival rate | Pallets |</p>
-<p>|-----------|---------------|--------------|---------|</p>
-<p>| Lear | <code>SRC_LEAR_NORTE</code> | <code>uniform(2, 4)</code> | 26 |</p>
-<p>| Condumex | <code>SRC_CONDUMEX_SUR</code> | <code>uniform(1, 3)</code> | 24 |</p>
-<p>| Magna | <code>SRC_MAGNA_SUR</code> | <code>uniform(1.5, 3.5)</code> | 28 |</p>
-<p><strong>Código para cada Source (On exit):</strong></p>
-<pre class=" language-java"><code class="prism  language-java">
-<span class="token comment">// Para SRC_LEAR_NORTE</span>
+<h4 id="paso-4.2-configuración-de-sources-por-proveedor"><strong>Paso 4.2: Configuración de Sources por Proveedor</strong></h4>
 
-agent<span class="token punctuation">.</span>proveedor  <span class="token operator">=</span>  <span class="token string">"LEAR"</span><span class="token punctuation">;</span>
-
-agent<span class="token punctuation">.</span>region  <span class="token operator">=</span>  <span class="token string">"NORTE"</span><span class="token punctuation">;</span>
-
-agent<span class="token punctuation">.</span>pallets  <span class="token operator">=</span>  <span class="token number">26</span><span class="token punctuation">;</span>
-
-agent<span class="token punctuation">.</span>tEntradaSistema  <span class="token operator">=</span>  <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-</code></pre>
-<pre class=" language-java"><code class="prism  language-java">
-<span class="token comment">// Para SRC_CONDUMEX_SUR</span>
-
-agent<span class="token punctuation">.</span>proveedor  <span class="token operator">=</span>  <span class="token string">"CONDUMEX"</span><span class="token punctuation">;</span>
-
-agent<span class="token punctuation">.</span>region  <span class="token operator">=</span>  <span class="token string">"SUR"</span><span class="token punctuation">;</span>
-
-agent<span class="token punctuation">.</span>pallets  <span class="token operator">=</span>  <span class="token number">24</span><span class="token punctuation">;</span>
-
-agent<span class="token punctuation">.</span>tEntradaSistema  <span class="token operator">=</span>  <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-</code></pre>
-<pre class=" language-java"><code class="prism  language-java">
-<span class="token comment">// Para SRC_MAGNA_SUR</span>
-
-agent<span class="token punctuation">.</span>proveedor  <span class="token operator">=</span>  <span class="token string">"MAGNA"</span><span class="token punctuation">;</span>
-
-agent<span class="token punctuation">.</span>region  <span class="token operator">=</span>  <span class="token string">"SUR"</span><span class="token punctuation">;</span>
-
-agent<span class="token punctuation">.</span>pallets  <span class="token operator">=</span>  <span class="token number">28</span><span class="token punctuation">;</span>
-
-agent<span class="token punctuation">.</span>tEntradaSistema  <span class="token operator">=</span>  <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-</code></pre>
-<h3 id="💡-consejos-1">💡 CONSEJOS</h3>
+<table>
+<thead>
+<tr>
+<th>Proveedor</th>
+<th>Source Name</th>
+<th>Arrival Rate</th>
+<th>Pallets</th>
+<th>Región</th>
+<th>Horario Pico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lear</strong></td>
+<td><code>SRC_LEAR_NORTE</code></td>
+<td><code>uniform(2, 4)</code></td>
+<td>26</td>
+<td>NORTE</td>
+<td>Mañana</td>
+</tr>
+<tr>
+<td><strong>Condumex</strong></td>
+<td><code>SRC_CONDUMEX_SUR</code></td>
+<td><code>uniform(1, 3)</code></td>
+<td>24</td>
+<td>SUR</td>
+<td>Tarde</td>
+</tr>
+<tr>
+<td><strong>Magna</strong></td>
+<td><code>SRC_MAGNA_SUR</code></td>
+<td><code>uniform(1.5, 3.5)</code></td>
+<td>28</td>
+<td>SUR</td>
+<td>Mixto</td>
+</tr>
+</tbody>
+</table><p><strong>Procedimiento para cada Source:</strong></p>
+<p><strong>Para Lear (Norte):</strong></p>
+<ol>
+<li>Arrastrar <strong>Source</strong> desde Process Modeling Library</li>
+<li>Configurar Properties:
 <ul>
-<li>
-<p>Coloca los 3 Sources uno debajo del otro en el lado izquierdo</p>
-</li>
-<li>
-<p>Puedes ajustar las tasas de llegada después</p>
-</li>
+<li><strong>Name:</strong> <code>SRC_LEAR_NORTE</code></li>
+<li><strong>Agent type:</strong> <code>Truck</code> (debe aparecer en la lista)</li>
+<li><strong>Arrival rate:</strong> <code>uniform(2, 4)</code></li>
 </ul>
-<h3 id="⚠️-problemas-comunes-3">⚠️ PROBLEMAS COMUNES</h3>
-<p>| Problema | Solución |</p>
-<p>|----------|----------|</p>
-<p>| No encuentro “On exit” | Hacer scroll hacia abajo en Properties |</p>
-<p>| Error en el código | Verifica las comillas <code>"</code> y puntos y coma <code>;</code> |</p>
-<p>| No aparece “Truck” en Agent type | Asegúrate de haber creado el agente Truck primero |</p>
-<h3 id="✅-checklist-3">✅ Checklist</h3>
+</li>
+<li>En <strong>On exit (action)</strong> escribir:</li>
+</ol>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Configurar camiones Lear - Región Norte</span>
+agent<span class="token punctuation">.</span>proveedor <span class="token operator">=</span> <span class="token string">"LEAR"</span><span class="token punctuation">;</span>
+agent<span class="token punctuation">.</span>region <span class="token operator">=</span> <span class="token string">"NORTE"</span><span class="token punctuation">;</span>
+agent<span class="token punctuation">.</span>pallets <span class="token operator">=</span> <span class="token number">26</span><span class="token punctuation">;</span>
+agent<span class="token punctuation">.</span>tEntradaSistema <span class="token operator">=</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Registrar hora de entrada</span>
+</code></pre>
+<p><strong>Para Condumex (Sur):</strong></p>
+<ol>
+<li>Arrastrar otro <strong>Source</strong></li>
+<li>Configurar Properties:
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 Sources creados y nombrados correctamente</p>
+<li><strong>Name:</strong> <code>SRC_CONDUMEX_SUR</code></li>
+<li><strong>Agent type:</strong> <code>Truck</code></li>
+<li><strong>Arrival rate:</strong> <code>uniform(1, 3)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Cada Source tiene su rate configurado</p>
+<li>En <strong>On exit</strong> escribir:</li>
+</ol>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Configurar camiones Condumex - Región Sur</span>
+agent<span class="token punctuation">.</span>proveedor <span class="token operator">=</span> <span class="token string">"CONDUMEX"</span><span class="token punctuation">;</span>
+agent<span class="token punctuation">.</span>region <span class="token operator">=</span> <span class="token string">"SUR"</span><span class="token punctuation">;</span>
+agent<span class="token punctuation">.</span>pallets <span class="token operator">=</span> <span class="token number">24</span><span class="token punctuation">;</span>
+agent<span class="token punctuation">.</span>tEntradaSistema <span class="token operator">=</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Para Magna (Sur):</strong></p>
+<ol>
+<li>Arrastrar tercer <strong>Source</strong></li>
+<li>Configurar Properties:
+<ul>
+<li><strong>Name:</strong> <code>SRC_MAGNA_SUR</code></li>
+<li><strong>Agent type:</strong> <code>Truck</code></li>
+<li><strong>Arrival rate:</strong> <code>uniform(1.5, 3.5)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> El código On exit funciona sin errores</p>
-</li>
+<li>En <strong>On exit</strong> escribir:</li>
+</ol>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Configurar camiones Magna - Región Sur</span>
+agent<span class="token punctuation">.</span>proveedor <span class="token operator">=</span> <span class="token string">"MAGNA"</span><span class="token punctuation">;</span>
+agent<span class="token punctuation">.</span>region <span class="token operator">=</span> <span class="token string">"SUR"</span><span class="token punctuation">;</span>
+agent<span class="token punctuation">.</span>pallets <span class="token operator">=</span> <span class="token number">28</span><span class="token punctuation">;</span>
+agent<span class="token punctuation">.</span>tEntradaSistema <span class="token operator">=</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="⚠️-problemas-comunes-y-soluciones-3">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Síntoma</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No aparece "Truck"</strong></td>
+<td>No hay opción en Agent type</td>
+<td>Verificar que el agente Truck está creado</td>
+</tr>
+<tr>
+<td><strong>Error en código On exit</strong></td>
+<td>Línea roja subrayada</td>
+<td>Revisar puntos y coma, comillas, nombres exactos</td>
+</tr>
+<tr>
+<td><strong>No encuentro "On exit"</strong></td>
+<td>No veo la sección</td>
+<td>Scroll hacia abajo en Properties, buscar “Action”</td>
+</tr>
+<tr>
+<td><strong>Uniform no funciona</strong></td>
+<td>Error en distribución</td>
+<td>Verificar sintaxis: <code>uniform(min, max)</code></td>
+</tr>
+</tbody>
+</table><h3 id="💡-consejos-de-configuración">💡 CONSEJOS DE CONFIGURACIÓN</h3>
+<ul>
+<li><strong>Posicionamiento:</strong> Colocar Sources en lado izquierdo del canvas, uno bajo otro</li>
+<li><strong>Nomenclatura:</strong> Usar prefijos <code>SRC_</code> para identificar fácilmente</li>
+<li><strong>Tasas realistas:</strong> <code>uniform(2, 4)</code> = entre 2-4 camiones/hora</li>
+<li><strong>Verificación inmediata:</strong> Ejecutar modelo para ver si generan camiones</li>
+</ul>
+<h3 id="📊-explicación-de-distribuciones">📊 Explicación de Distribuciones</h3>
+<ul>
+<li><strong><code>uniform(2, 4)</code>:</strong> Valores entre 2-4 con igual probabilidad</li>
+<li><strong>Resultado:</strong> ~3 camiones/hora en promedio</li>
+<li><strong>Cálculo diario:</strong> 3 cam/h × 24h × 26 pallets = ~1,872 pallets/día</li>
+</ul>
+<h3 id="✅-checklist-de-verificación-3">✅ Checklist de Verificación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 Sources creados con nombres descriptivos</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Cada Source configurado con Agent type: Truck</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Arrival rates específicos para cada proveedor</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código On exit correcto en cada Source</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> No hay errores (líneas rojas) en el código</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Sources posicionados ordenadamente en canvas</li>
 </ul>
 <hr>
 <h1 id="parte-3-flujo-de-entrada-y-andenes">PARTE 3: FLUJO DE ENTRADA Y ANDENES</h1>
 <hr>
 <h2 id="paso-5-–-entrada-al-cedis-y-gestión-de-andenes">11. PASO 5 – ENTRADA AL CEDIS Y GESTIÓN DE ANDENES</h2>
 <h3 id="🎯-objetivo-4">🎯 Objetivo</h3>
-<p>Simular que los 3 flujos de camiones entran al CEDIS, esperan si no hay andén disponible, descargan y liberan el andén.</p>
+<p>Implementar el sistema de recepción donde camiones esperan, ocupan andenes, descargan y liberan recursos.</p>
 <h3 id="🧠-lógica-4">🧠 Lógica</h3>
-<p>Secuencia de eventos:</p>
-<ol>
-<li>
-<p>Camiones de 3 proveedores → Se juntan en un punto de entrada</p>
-</li>
-<li>
-<p>Si no hay andén disponible → Esperan en cola</p>
-</li>
-<li>
-<p>Cuando hay andén → Lo ocupan</p>
-</li>
-<li>
-<p>Descargan (tarda tiempo) → Liberan el andén</p>
-</li>
-</ol>
-<h3 id="🛠️-configuración-4">🛠️ Configuración</h3>
-<h4 id="paso-5.1-crear-el-resourcepool-de-andenes"><strong>Paso 5.1: Crear el ResourcePool de andenes</strong></h4>
-<ol>
-<li>
-<p>En paleta de Main, buscar <strong>Agent → Resource Pool</strong></p>
-</li>
-<li>
-<p>Arrastrar al canvas (fuera del flowchart)</p>
-</li>
-<li>
-<p>Configurar:</p>
-</li>
-</ol>
+<p>Los andenes son recursos limitados que deben gestionarse eficientemente:</p>
 <ul>
-<li>
-<p><strong>Name:</strong>  <code>docks</code></p>
+<li><strong>Cola de espera</strong> cuando no hay andenes disponibles</li>
+<li><strong>Seize (tomar)</strong> andén cuando se libera uno</li>
+<li><strong>Delay (proceso)</strong> de descarga con tiempo variable</li>
+<li><strong>Release (liberar)</strong> andén para siguiente camión</li>
+</ul>
+<h3 id="🛠️-configuración-paso-a-paso-4">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-5.1-crear-resourcepool-de-andenes"><strong>Paso 5.1: Crear ResourcePool de Andenes</strong></h4>
+<ol>
+<li>En agente <strong>Main</strong>, paleta: <strong>Agent → Resource Pool</strong></li>
+<li>Arrastrar al canvas (colocar en área superior derecha)</li>
+<li>Configurar Properties:
+<ul>
+<li><strong>Name:</strong> <code>docks</code></li>
+<li><strong>Type:</strong> <code>Resource Units</code></li>
+<li><strong>Capacity:</strong> <code>24</code></li>
+<li><strong>Show name:</strong> Activado</li>
+</ul>
 </li>
-<li>
-<p><strong>Type:</strong>  <code>Resource Units</code></p>
+</ol>
+<h4 id="paso-5.2-construir-flowchart-de-entrada"><strong>Paso 5.2: Construir Flowchart de Entrada</strong></h4>
+<p><strong>Bloque 1: Enter (Punto de Entrada Consolidado)</strong></p>
+<ol>
+<li>Arrastrar <strong>Enter</strong> desde Process Modeling Library</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>ENTER_CEDIS</code></li>
+</ul>
 </li>
-<li>
-<p><strong>Capacity:</strong>  <code>24</code></p>
+<li><strong>Conectar los 3 Sources al Enter:</strong>
+<ul>
+<li>Click en punto naranja de cada Source</li>
+<li>Arrastrar línea hasta el Enter</li>
+<li>Repetir para los 3 Sources</li>
+</ul>
+</li>
+</ol>
+<p><strong>Bloque 2: Queue (Cola de Espera)</strong></p>
+<ol>
+<li>Arrastrar <strong>Queue</strong> a la derecha del Enter</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>Q_ANDEN</code></li>
+<li><strong>Capacity:</strong> <code>unlimited</code></li>
+<li><strong>Show name:</strong> Activado</li>
+</ul>
+</li>
+</ol>
+<p><strong>Bloque 3: Seize (Tomar Andén)</strong></p>
+<ol>
+<li>Arrastrar <strong>Seize</strong> a la derecha de Queue</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>SEIZE_ANDEN</code></li>
+<li><strong>Resource sets:</strong> Click <strong>Add</strong>
+<ul>
+<li><strong>Resource:</strong> <code>docks</code></li>
+<li><strong>Quantity:</strong> <code>1</code></li>
+</ul>
 </li>
 </ul>
-<h4 id="paso-5.2-flowchart-de-entrada"><strong>Paso 5.2: Flowchart de entrada</strong></h4>
-<p>| Bloque | Nombre | Configuración |</p>
-<p>|--------|--------|---------------|</p>
-<p>| Enter | <code>ENTER_CEDIS</code> | Conexión de los 3 Sources |</p>
-<p>| Queue | <code>Q_ANDEN</code> | Capacity: <code>unlimited</code> |</p>
-<p>| Seize | <code>SEIZE_ANDEN</code> | Resource: <code>docks</code>, Quantity: <code>1</code> |</p>
-<p>| Delay | <code>UNLOAD</code> | Delay time: <code>triangular(0.3, 0.6, 1.0)</code> |</p>
-<p>| Release | <code>RELEASE_ANDEN</code> | Resource: <code>docks</code> |</p>
-<p><strong>Conexiones:</strong></p>
-<pre><code>
-SRC_LEAR ──┐
-
-SRC_COND ──┼──&gt; ENTER_CEDIS → Q_ANDEN → SEIZE_ANDEN → UNLOAD → RELEASE_ANDEN
-
-SRC_MAGNA ─┘
-
-</code></pre>
-<h3 id="⚠️-problemas-comunes-4">⚠️ PROBLEMAS COMUNES</h3>
-<p>| Problema | Solución |</p>
-<p>|----------|----------|</p>
-<p>| No puedo conectar bloques | Asegúrate de arrastrar desde el punto naranja |</p>
-<p>| Seize no encuentra “docks” | Primero crea el ResourcePool docks |</p>
-<p>| Error “Cannot resolve symbol docks” | El ResourcePool debe estar en Main, no en Truck |</p>
-<h3 id="✅-checklist-4">✅ Checklist</h3>
+</li>
+</ol>
+<p><strong>Bloque 4: Delay (Proceso de Descarga)</strong></p>
+<ol>
+<li>Arrastrar <strong>Delay</strong> a la derecha de Seize</li>
+<li>Configurar:
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> ResourcePool <code>docks</code> creado con capacidad 24</p>
+<li><strong>Name:</strong> <code>UNLOAD</code></li>
+<li><strong>Delay time:</strong> <code>triangular(0.3, 0.6, 1.0)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Enter conecta los 3 Sources</p>
+</ol>
+<p><strong>Bloque 5: Release (Liberar Andén)</strong></p>
+<ol>
+<li>Arrastrar <strong>Release</strong> a la derecha de Delay</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>RELEASE_ANDEN</code></li>
+<li><strong>Resource sets:</strong> Click <strong>Add</strong> → <code>docks</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Flowchart completo funcionando</p>
+</ol>
+<h4 id="paso-5.3-conectar-todo-el-flowchart"><strong>Paso 5.3: Conectar Todo el Flowchart</strong></h4>
+<pre><code>SRC_LEAR_NORTE ──┐
+SRC_CONDUMEX_SUR ┼──&gt; ENTER_CEDIS → Q_ANDEN → SEIZE_ANDEN → UNLOAD → RELEASE_ANDEN
+SRC_MAGNA_SUR ───┘
+</code></pre>
+<p><strong>Conexiones específicas:</strong></p>
+<ul>
+<li>Cada Source → Enter (desde punto naranja)</li>
+<li>Enter → Queue</li>
+<li>Queue → Seize</li>
+<li>Seize → Delay</li>
+<li>Delay → Release</li>
+</ul>
+<h3 id="⚠️-problemas-comunes-y-soluciones-4">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Síntoma</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No puedo conectar</strong></td>
+<td>Línea no se crea</td>
+<td>Arrastrar desde punto naranja, no del bloque</td>
+</tr>
+<tr>
+<td><strong>Seize no encuentra docks</strong></td>
+<td>Error “cannot resolve”</td>
+<td>Verificar que ResourcePool está en Main</td>
+</tr>
+<tr>
+<td><strong>Conexión incorrecta</strong></td>
+<td>Línea roja punteada</td>
+<td>Rehacer conexión, verificar dirección</td>
+</tr>
+<tr>
+<td><strong>Capacity agotada</strong></td>
+<td>Cola infinita</td>
+<td>Revisar Release está conectado</td>
+</tr>
+</tbody>
+</table><h3 id="💡-consejos-de-flowchart">💡 CONSEJOS DE FLOWCHART</h3>
+<ul>
+<li><strong>Alinear horizontalmente</strong> para mejor visualización</li>
+<li><strong>Espaciar uniformemente</strong> entre bloques</li>
+<li><strong>Usar nombres descriptivos</strong> en todos los bloques</li>
+<li><strong>Agrupar lógicamente</strong> procesos relacionados</li>
+<li><strong>Dejar espacio</strong> para expansiones futuras</li>
+</ul>
+<h3 id="⏱️-tiempos-de-proceso-explicados">⏱️ Tiempos de Proceso Explicados</h3>
+<ul>
+<li><strong><code>triangular(0.3, 0.6, 1.0)</code>:</strong>
+<ul>
+<li>Mínimo: 0.3 horas (18 minutos)</li>
+<li>Más probable: 0.6 horas (36 minutos)</li>
+<li>Máximo: 1.0 hora (60 minutos)</li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Todas las conexiones funcionan</p>
-</li>
+<li><strong>Justificación:</strong> Depende de tipo de carga, personal disponible, etc.</li>
+</ul>
+<h3 id="✅-checklist-de-verificación-4">✅ Checklist de Verificación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> ResourcePool <code>docks</code> creado con capacidad 24</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Enter conecta los 3 Sources correctamente</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Queue con capacidad unlimited</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Seize configurado con resource <code>docks</code>, quantity 1</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Delay con distribución triangular de tiempos</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Release configurado con resource <code>docks</code></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Todas las conexiones en secuencia correcta</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> No hay líneas rojas de error</li>
 </ul>
 <hr>
 <h2 id="paso-6-–-ruteo-hacia-recepción-norte-o-sur">12. PASO 6 – RUTEO HACIA RECEPCIÓN NORTE O SUR</h2>
 <h3 id="🎯-objetivo-5">🎯 Objetivo</h3>
-<p>Enviar cada camión a la zona de recepción correcta según su región de origen.</p>
+<p>Implementar la decisión que dirige cada camión a la zona de recepción correcta según su región de origen.</p>
 <h3 id="🧠-lógica-5">🧠 Lógica</h3>
-<p>Después de liberar el andén:</p>
+<p>La separación por regiones permite:</p>
 <ul>
-<li>
-<p>Si <code>agent.region == "NORTE"</code> → va a Recepción Norte</p>
-</li>
-<li>
-<p>Si <code>agent.region == "SUR"</code> → va a Recepción Sur</p>
-</li>
+<li><strong>Optimizar flujos</strong> internos</li>
+<li><strong>Balancear cargas</strong> de trabajo</li>
+<li><strong>Manejar características</strong> específicas por región</li>
+<li><strong>Preparar para procesos</strong> diferenciados</li>
 </ul>
-<p>Usaremos un bloque <strong>SelectOutput</strong> para decidir.</p>
-<h3 id="🛠️-configuración-5">🛠️ Configuración</h3>
-<h4 id="paso-6.1-crear-el-bloque-de-decisión"><strong>Paso 6.1: Crear el bloque de decisión</strong></h4>
+<h3 id="🛠️-configuración-paso-a-paso-5">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-6.1-crear-bloque-de-decisión"><strong>Paso 6.1: Crear Bloque de Decisión</strong></h4>
 <ol>
-<li>
-<p>Arrastrar <strong>SelectOutput</strong></p>
-</li>
-<li>
-<p>Configurar:</p>
-</li>
-</ol>
+<li>Arrastrar <strong>SelectOutput</strong> desde Process Modeling Library</li>
+<li>Colocar a la derecha de <code>RELEASE_ANDEN</code></li>
+<li>Configurar Properties:
 <ul>
-<li>
-<p><strong>Name:</strong>  <code>ROUTE_RECEPCION</code></p>
-</li>
-<li>
-<p><strong>Type:</strong>  <code>Condition</code></p>
-</li>
-<li>
-<p><strong>Condition:</strong>  <code>By code</code></p>
-</li>
+<li><strong>Name:</strong> <code>ROUTE_RECEPCION</code></li>
+<li><strong>Type:</strong> <code>Condition</code></li>
+<li><strong>Condition:</strong> <code>By code</code></li>
+<li><strong>Outputs:</strong> <code>2</code></li>
 </ul>
-<ol start="3">
-<li>Código:</li>
+</li>
 </ol>
-<pre class=" language-java"><code class="prism  language-java">
+<h4 id="paso-6.2-programar-la-lógica-de-decisión"><strong>Paso 6.2: Programar la Lógica de Decisión</strong></h4>
+<p>En el campo de código del SelectOutput:</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Decidir ruta según región del camión</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>agent<span class="token punctuation">.</span>region<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"NORTE"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-<span class="token keyword">return</span>  <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// Rama 0 = Recepción Norte</span>
-
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// Rama 0: Recepción Norte</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-
-<span class="token keyword">return</span>  <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// Rama 1 = Recepción Sur</span>
-
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// Rama 1: Recepción Sur</span>
 <span class="token punctuation">}</span>
-
 </code></pre>
-<h4 id="paso-6.2-delays-de-recepción"><strong>Paso 6.2: Delays de recepción</strong></h4>
-<p>| Bloque | Nombre | Delay time |</p>
-<p>|--------|--------|------------|</p>
-<p>| Delay | <code>DELAY_RECEP_NORTE</code> | <code>triangular(0.15, 0.25, 0.40)</code> |</p>
-<p>| Delay | <code>DELAY_RECEP_SUR</code> | <code>triangular(0.15, 0.25, 0.40)</code> |</p>
-<p>| Delay | <code>SORTING_PROCESS</code> | <code>triangular(0.2, 0.4, 0.8)</code> |</p>
-<p><strong>Conexiones:</strong></p>
-<pre><code>
-RELEASE_ANDEN → ROUTE_RECEPCION ─┬─(0)─&gt; DELAY_RECEP_NORTE ─┐
-
-│ ├─&gt; SORTING_PROCESS
-
-└─(1)─&gt; DELAY_RECEP_SUR ───┘
-
-</code></pre>
-<h3 id="⚠️-problemas-comunes-5">⚠️ PROBLEMAS COMUNES</h3>
-<p>| Problema | Solución |</p>
-<p>|----------|----------|</p>
-<p>| Error: “equals not found” | Usa <code>agent.region.equals("NORTE")</code> no <code>==</code> |</p>
-<p>| SelectOutput solo tiene 1 salida | Properties → Outputs: 2 |</p>
-<p>| No sé cuál es la rama 0 | Rama superior = 0, inferior = 1 |</p>
-<h3 id="✅-checklist-5">✅ Checklist</h3>
+<h4 id="paso-6.3-crear-delays-de-procesamiento-por-recepción"><strong>Paso 6.3: Crear Delays de Procesamiento por Recepción</strong></h4>
+<p><strong>Para Recepción Norte:</strong></p>
+<ol>
+<li>Arrastrar <strong>Delay</strong> arriba a la derecha del SelectOutput</li>
+<li>Configurar:
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> SelectOutput configurado con código correcto</p>
+<li><strong>Name:</strong> <code>DELAY_RECEP_NORTE</code></li>
+<li><strong>Delay time:</strong> <code>triangular(0.15, 0.25, 0.40)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> 2 delays de recepción creados</p>
+</ol>
+<p><strong>Para Recepción Sur:</strong></p>
+<ol>
+<li>Arrastrar <strong>Delay</strong> abajo a la derecha del SelectOutput</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>DELAY_RECEP_SUR</code></li>
+<li><strong>Delay time:</strong> <code>triangular(0.15, 0.25, 0.40)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Ambas ramas conectadas a SORTING_PROCESS</p>
+</ol>
+<p><strong>Proceso de Sorting (Común):</strong></p>
+<ol>
+<li>Arrastrar <strong>Delay</strong> al centro-derecha</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>SORTING_PROCESS</code></li>
+<li><strong>Delay time:</strong> <code>triangular(0.2, 0.4, 0.8)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> El flowchart se ve organizado</p>
-</li>
+</ol>
+<h4 id="paso-6.4-conectar-las-rutas"><strong>Paso 6.4: Conectar las Rutas</strong></h4>
+<pre><code>RELEASE_ANDEN → ROUTE_RECEPCION ─┬─(0)─&gt; DELAY_RECEP_NORTE ─┐
+                                 │                           ├─&gt; SORTING_PROCESS
+                                 └─(1)─&gt; DELAY_RECEP_SUR ───┘
+</code></pre>
+<p><strong>Conexiones específicas:</strong></p>
+<ul>
+<li><code>RELEASE_ANDEN</code> → <code>ROUTE_RECEPCION</code></li>
+<li>Rama 0 (superior) → <code>DELAY_RECEP_NORTE</code></li>
+<li>Rama 1 (inferior) → <code>DELAY_RECEP_SUR</code></li>
+<li>Ambos delays → <code>SORTING_PROCESS</code></li>
+</ul>
+<h3 id="⚠️-problemas-comunes-y-soluciones-5">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Síntoma</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Error "equals"</strong></td>
+<td>No reconoce el método</td>
+<td>Usar <code>agent.region.equals("NORTE")</code> no <code>==</code></td>
+</tr>
+<tr>
+<td><strong>Solo 1 salida</strong></td>
+<td>No veo segunda rama</td>
+<td>Properties → Outputs: cambiar a <code>2</code></td>
+</tr>
+<tr>
+<td><strong>Rama incorrecta</strong></td>
+<td>Camiones van a zona equivocada</td>
+<td>Verificar return 0 y return 1</td>
+</tr>
+<tr>
+<td><strong>No se conectan</strong></td>
+<td>Líneas no permitidas</td>
+<td>AnyLogic permite múltiples entradas a un bloque</td>
+</tr>
+</tbody>
+</table><h3 id="💡-consejos-de-ruteo">💡 CONSEJOS DE RUTEO</h3>
+<ul>
+<li><strong>Testear decisiones:</strong> Ejecutar y verificar que camiones van a zonas correctas</li>
+<li><strong>Balance visual:</strong> Organizar ramas simétricamente</li>
+<li><strong>Tiempos realistas:</strong> Recepción más rápida que descarga</li>
+<li><strong>Preparar para expansión:</strong> Dejar espacio para más zonas si es necesario</li>
+</ul>
+<h3 id="⏱️-tiempos-de-recepción">⏱️ Tiempos de Recepción</h3>
+<ul>
+<li><strong>Recepción:</strong> <code>triangular(0.15, 0.25, 0.40)</code> = 9-24 minutos</li>
+<li><strong>Sorting:</strong> <code>triangular(0.2, 0.4, 0.8)</code> = 12-48 minutos</li>
+<li><strong>Diferenciación:</strong> Tiempos similares entre Norte/Sur para simplicidad</li>
+</ul>
+<h3 id="✅-checklist-de-verificación-5">✅ Checklist de Verificación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> SelectOutput configurado con 2 salidas</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código de decisión funciona sin errores</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 2 delays de recepción creados (Norte/Sur)</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Delay de sorting común creado</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Conexiones correctas desde SelectOutput</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Ambas ramas conectadas a Sorting</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Tiempos configurados apropiadamente</li>
 </ul>
 <hr>
 <h1 id="parte-4-cross-docking-buffer-y-kitting">PARTE 4: CROSS-DOCKING, BUFFER Y KITTING</h1>
 <hr>
 <h2 id="paso-7-–-decisión-cross-docking-o-buffer-estratégico">13. PASO 7 – DECISIÓN: CROSS-DOCKING O BUFFER ESTRATÉGICO</h2>
 <h3 id="🎯-objetivo-6">🎯 Objetivo</h3>
-<p>Simular que el 65% de los pallets pasan directo a embarques (cross-docking) y el 35% va a almacenamiento temporal (buffer).</p>
+<p>Implementar la lógica que determina si los materiales pasan directo a embarque o requieren almacenamiento temporal.</p>
 <h3 id="🧠-lógica-6">🧠 Lógica</h3>
-<p>Según el diseño de la Actividad 6:</p>
+<p>Según datos reales de CEDIS automotrices:</p>
 <ul>
-<li>
-<p><strong>65%</strong> → Cross-docking (flujo directo)</p>
-</li>
-<li>
-<p><strong>30%</strong> → Buffer estratégico</p>
-</li>
-<li>
-<p><strong>5%</strong> → Kitting/Valor agregado</p>
-</li>
+<li><strong>65% Cross-docking:</strong> Máxima eficiencia, costo mínimo</li>
+<li><strong>30% Buffer:</strong> Flexibilidad operativa, manejo de picos</li>
+<li><strong>5% Kitting:</strong> Valor agregado, servicios especiales</li>
 </ul>
-<h3 id="🛠️-configuración-6">🛠️ Configuración</h3>
-<h4 id="paso-7.1-crear-la-decisión-de-flujo"><strong>Paso 7.1: Crear la decisión de flujo</strong></h4>
+<h3 id="🛠️-configuración-paso-a-paso-6">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-7.1-crear-punto-de-decisión-de-flujo"><strong>Paso 7.1: Crear Punto de Decisión de Flujo</strong></h4>
 <ol>
-<li>
-<p>Arrastrar <strong>SelectOutput</strong></p>
-</li>
-<li>
-<p>Configurar:</p>
-</li>
-</ol>
+<li>Arrastrar <strong>SelectOutput</strong> a la derecha de <code>SORTING_PROCESS</code></li>
+<li>Configurar Properties:
 <ul>
-<li>
-<p><strong>Name:</strong>  <code>FLOW_DECISION</code></p>
-</li>
-<li>
-<p><strong>Type:</strong>  <code>Condition</code></p>
-</li>
-<li>
-<p><strong>Condition:</strong>  <code>By code</code></p>
-</li>
-<li>
-<p><strong>Outputs:</strong>  <code>3</code></p>
-</li>
+<li><strong>Name:</strong> <code>FLOW_DECISION</code></li>
+<li><strong>Type:</strong> <code>Condition</code></li>
+<li><strong>Condition:</strong> <code>By code</code></li>
+<li><strong>Outputs:</strong> <code>3</code> (Cambiar de 2 a 3)</li>
 </ul>
-<ol start="3">
-<li>Código:</li>
+</li>
 </ol>
-<pre class=" language-java"><code class="prism  language-java">
-<span class="token keyword">double</span>  r  <span class="token operator">=</span>  <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="paso-7.2-programar-distribución-probabilística"><strong>Paso 7.2: Programar Distribución Probabilística</strong></h4>
+<p>En el campo de código:</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Decidir ruta según porcentajes predefinidos</span>
+<span class="token keyword">double</span> randomValue <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span>  <span class="token number">0.65</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-<span class="token keyword">return</span>  <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// Cross-docking directo (65%)</span>
-
-<span class="token punctuation">}</span> <span class="token keyword">else</span>  <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span>  <span class="token number">0.95</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-<span class="token keyword">return</span>  <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// Buffer estratégico (30%)</span>
-
+<span class="token keyword">if</span> <span class="token punctuation">(</span>randomValue <span class="token operator">&lt;</span> <span class="token number">0.65</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// 65% - Cross-docking directo</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>randomValue <span class="token operator">&lt;</span> <span class="token number">0.95</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// 30% - Buffer estratégico (0.65 + 0.30 = 0.95)</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-
-<span class="token keyword">return</span>  <span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">// Kitting / Valor agregado (5%)</span>
-
+    <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>  <span class="token comment">// 5% - Kitting/Valor agregado</span>
 <span class="token punctuation">}</span>
-
 </code></pre>
-<h4 id="paso-7.2-procesos-por-flujo"><strong>Paso 7.2: Procesos por flujo</strong></h4>
-<p>| Flujo | Bloque | Nombre | Delay time |</p>
-<p>|-------|--------|--------|------------|</p>
-<p>| Cross-docking | (Directo) | - | - |</p>
-<p>| Buffer | Delay | <code>BUFFER_TIME</code> | <code>triangular(1, 3, 6)</code> |</p>
-<p>| Kitting | Delay | <code>KITTING_PROCESS</code> | <code>triangular(0.15, 0.30, 0.50)</code> |</p>
-<h3 id="⚠️-problemas-comunes-6">⚠️ PROBLEMAS COMUNES</h3>
-<p>| Problema | Solución |</p>
-<p>|----------|----------|</p>
-<p>| Error en el código | Verifica que usas <code>&lt;</code> no <code>&lt;=</code> |</p>
-<p>| Solo veo 2 salidas | Cambia Outputs a <code>3</code> en Properties |</p>
-<p>| No entiendo los porcentajes | 0.65=65%, 0.95=95%, &gt;0.95=5% |</p>
-<h3 id="✅-checklist-6">✅ Checklist</h3>
+<h4 id="paso-7.3-crear-procesos-para-cada-ruta"><strong>Paso 7.3: Crear Procesos para Cada Ruta</strong></h4>
+<p><strong>Ruta 1: Buffer Estratégico</strong></p>
+<ol>
+<li>Arrastrar <strong>Delay</strong> en posición media-derecha</li>
+<li>Configurar:
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> FLOW_DECISION configurado con 3 salidas</p>
+<li><strong>Name:</strong> <code>BUFFER_TIME</code></li>
+<li><strong>Delay time:</strong> <code>triangular(1, 3, 6)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código de decisión funciona sin errores</p>
+</ol>
+<p><strong>Ruta 2: Kitting/Valor Agregado</strong></p>
+<ol>
+<li>Arrastrar <strong>Delay</strong> en posición inferior-derecha</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>KITTING_PROCESS</code></li>
+<li><strong>Delay time:</strong> <code>triangular(0.15, 0.30, 0.50)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> BUFFER_TIME creado</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> KITTING_PROCESS creado</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Los 3 flujos están claros visualmente</p>
-</li>
+</ol>
+<p><strong>Ruta 0: Cross-docking</strong> va directo al siguiente paso</p>
+<h3 id="⚠️-problemas-comunes-y-soluciones-6">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Síntoma</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Porcentajes incorrectos</strong></td>
+<td>Distribución no coincide</td>
+<td>Verificar: &lt;0.65=65%, 0.65-0.95=30%, &gt;0.95=5%</td>
+</tr>
+<tr>
+<td><strong>Solo 2 salidas</strong></td>
+<td>No veo tercera opción</td>
+<td>Properties → Outputs: cambiar a <code>3</code></td>
+</tr>
+<tr>
+<td><strong>Error uniform</strong></td>
+<td>No reconoce la función</td>
+<td>Usar <code>uniform(0, 1)</code> no <code>random()</code></td>
+</tr>
+<tr>
+<td><strong>Acumulación en buffer</strong></td>
+<td>Demasiados materiales</td>
+<td>Verificar porcentajes y tiempos</td>
+</tr>
+</tbody>
+</table><h3 id="💡-consejos-de-distribución">💡 CONSEJOS DE DISTRIBUCIÓN</h3>
+<ul>
+<li><strong>Verificar suma:</strong> 65% + 30% + 5% = 100%</li>
+<li><strong>Testear distribución:</strong> Ejecutar y verificar proporciones</li>
+<li><strong>Tiempos diferenciados:</strong> Buffer más largo, kitting más corto</li>
+<li><strong>Flexibilidad:</strong> Puedes ajustar porcentajes según necesidades</li>
+</ul>
+<h3 id="📊-explicación-de-porcentajes">📊 Explicación de Porcentajes</h3>
+<pre><code>uniform(0,1) genera: 0.0 ←----------→ 1.0
+                    │        │       │
+Divisiones:        65%      30%      5%
+                  Cross    Buffer   Kitting
+</code></pre>
+<h3 id="✅-checklist-de-verificación-6">✅ Checklist de Verificación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> SelectOutput configurado con 3 salidas</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código de distribución probabilística correcto</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Delay para Buffer creado con tiempos apropiados</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Delay para Kitting creado con tiempos apropiados</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Porcentajes suman 100% (0.65 + 0.30 + 0.05)</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Cross-docking identificado (sin delay específico)</li>
 </ul>
 <hr>
-<h2 id="paso-8-–-asignación-de-destino-oem-gm-silao-gm-slp-bmw-slp">14. PASO 8 – ASIGNACIÓN DE DESTINO OEM (GM SILAO, GM SLP, BMW SLP)</h2>
+<h2 id="paso-8-–-asignación-de-destino-oem">14. PASO 8 – ASIGNACIÓN DE DESTINO OEM</h2>
 <h3 id="🎯-objetivo-7">🎯 Objetivo</h3>
-<p>Decidir a qué cliente final irán los materiales: GM Silao, GM San Luis Potosí o BMW San Luis Potosí.</p>
+<p>Determinar a qué ensambladora final se dirige cada material y prepararlo para embarque.</p>
 <h3 id="🧠-lógica-7">🧠 Lógica</h3>
-<p>Distribución de destinos:</p>
+<p>Distribución basada en volumen de producción:</p>
 <ul>
-<li>
-<p><strong>55%</strong> → GM Silao</p>
-</li>
-<li>
-<p><strong>33%</strong> → GM San Luis Potosí</p>
-</li>
-<li>
-<p><strong>12%</strong> → BMW San Luis Potosí</p>
-</li>
+<li><strong>GM Silao (55%):</strong> Planta más grande, mayor volumen</li>
+<li><strong>GM SLP (33%):</strong> Planta mediana, volumen significativo</li>
+<li><strong>BMW SLP (12%):</strong> Planta premium, volumen menor pero alto valor</li>
 </ul>
-<h3 id="🛠️-configuración-7">🛠️ Configuración</h3>
-<h4 id="paso-8.1-crear-bloque-de-asignación"><strong>Paso 8.1: Crear bloque de asignación</strong></h4>
+<h3 id="🛠️-configuración-paso-a-paso-7">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-8.1-crear-punto-de-decisión-de-destino"><strong>Paso 8.1: Crear Punto de Decisión de Destino</strong></h4>
 <ol>
-<li>
-<p>Arrastrar <strong>SelectOutput</strong></p>
-</li>
-<li>
-<p>Configurar:</p>
-</li>
-</ol>
+<li>Arrastrar <strong>SelectOutput</strong> a la derecha (posición central)</li>
+<li>Configurar Properties:
 <ul>
-<li>
-<p><strong>Name:</strong>  <code>DESTINO_OEM</code></p>
-</li>
-<li>
-<p><strong>Type:</strong>  <code>Condition</code></p>
-</li>
-<li>
-<p><strong>Condition:</strong>  <code>By code</code></p>
-</li>
-<li>
-<p><strong>Outputs:</strong>  <code>3</code></p>
-</li>
+<li><strong>Name:</strong> <code>DESTINO_OEM</code></li>
+<li><strong>Type:</strong> <code>Condition</code></li>
+<li><strong>Condition:</strong> <code>By code</code></li>
+<li><strong>Outputs:</strong> <code>3</code></li>
 </ul>
-<ol start="3">
-<li>Código:</li>
+</li>
 </ol>
-<pre class=" language-java"><code class="prism  language-java">
-<span class="token keyword">double</span>  r  <span class="token operator">=</span>  <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h4 id="paso-8.2-programar-asignación-de-destino"><strong>Paso 8.2: Programar Asignación de Destino</strong></h4>
+<p>En el campo de código:</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Asignar destino final según porcentajes OEM</span>
+<span class="token keyword">double</span> r <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span>  <span class="token number">0.55</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-agent<span class="token punctuation">.</span>destinoOEM  <span class="token operator">=</span>  <span class="token string">"GM_SILAO"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">return</span>  <span class="token number">0</span><span class="token punctuation">;</span>
-
-<span class="token punctuation">}</span> <span class="token keyword">else</span>  <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span>  <span class="token number">0.88</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-agent<span class="token punctuation">.</span>destinoOEM  <span class="token operator">=</span>  <span class="token string">"GM_SLP"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">return</span>  <span class="token number">1</span><span class="token punctuation">;</span>
-
+<span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> <span class="token number">0.55</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    agent<span class="token punctuation">.</span>destinoOEM <span class="token operator">=</span> <span class="token string">"GM_SILAO"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// 55% - GM Silao</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> <span class="token number">0.88</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    agent<span class="token punctuation">.</span>destinoOEM <span class="token operator">=</span> <span class="token string">"GM_SLP"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// 33% - GM SLP (0.55 + 0.33 = 0.88)</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-
-agent<span class="token punctuation">.</span>destinoOEM  <span class="token operator">=</span>  <span class="token string">"BMW_SLP"</span><span class="token punctuation">;</span>
-
-<span class="token keyword">return</span>  <span class="token number">2</span><span class="token punctuation">;</span>
-
+    agent<span class="token punctuation">.</span>destinoOEM <span class="token operator">=</span> <span class="token string">"BMW_SLP"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>  <span class="token comment">// 12% - BMW SLP</span>
 <span class="token punctuation">}</span>
-
 </code></pre>
-<h4 id="paso-8.2-conectar-flujos-anteriores"><strong>Paso 8.2: Conectar flujos anteriores</strong></h4>
+<h4 id="paso-8.3-conectar-todos-los-flujos-anteriores"><strong>Paso 8.3: Conectar Todos los Flujos Anteriores</strong></h4>
+<p><strong>Conectar las 3 rutas al mismo SelectOutput:</strong></p>
 <ul>
-<li>
-<p>Rama 0 de <code>FLOW_DECISION</code> → <code>DESTINO_OEM</code></p>
-</li>
-<li>
-<p><code>BUFFER_TIME</code> → <code>DESTINO_OEM</code></p>
-</li>
-<li>
-<p><code>KITTING_PROCESS</code> → <code>DESTINO_OEM</code></p>
-</li>
+<li>Rama 0 de <code>FLOW_DECISION</code> (Cross-docking) → <code>DESTINO_OEM</code></li>
+<li><code>BUFFER_TIME</code> → <code>DESTINO_OEM</code></li>
+<li><code>KITTING_PROCESS</code> → <code>DESTINO_OEM</code></li>
 </ul>
-<h4 id="paso-8.3-preparación-por-cliente"><strong>Paso 8.3: Preparación por cliente</strong></h4>
-<p>| Cliente | Bloque | Nombre | Delay time |</p>
-<p>|---------|--------|--------|------------|</p>
-<p>| GM Silao | Delay | <code>PREPARE_GM_SILAO</code> | <code>triangular(0.25, 0.40, 0.60)</code> |</p>
-<p>| GM SLP | Delay | <code>PREPARE_GM_SLP</code> | <code>triangular(0.25, 0.40, 0.60)</code> |</p>
-<p>| BMW SLP | Delay | <code>PREPARE_BMW_SLP</code> | <code>triangular(0.30, 0.45, 0.70)</code> |</p>
-<h3 id="⚠️-problemas-comunes-7">⚠️ PROBLEMAS COMUNES</h3>
-<p>| Problema | Solución |</p>
-<p>|----------|----------|</p>
-<p>| Error: “Cannot assign to destinoOEM” | Verifica que creaste la variable en Truck |</p>
-<p>| Los porcentajes no suman 100% | 55% + 33% + 12% = 100% ✓ |</p>
-<p>| No sé cuál es cada rama | 0=arriba, 1=medio, 2=abajo |</p>
-<h3 id="✅-checklist-7">✅ Checklist</h3>
+<h4 id="paso-8.4-crear-procesos-de-preparación-por-cliente"><strong>Paso 8.4: Crear Procesos de Preparación por Cliente</strong></h4>
+<p><strong>Para GM Silao:</strong></p>
+<ol>
+<li>Arrastrar <strong>Delay</strong> arriba a la derecha</li>
+<li>Configurar:
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> DESTINO_OEM configurado con 3 salidas</p>
+<li><strong>Name:</strong> <code>PREPARE_GM_SILAO</code></li>
+<li><strong>Delay time:</strong> <code>triangular(0.25, 0.40, 0.60)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código asigna destinoOEM correctamente</p>
+</ol>
+<p><strong>Para GM SLP:</strong></p>
+<ol>
+<li>Arrastrar <strong>Delay</strong> al centro-derecha</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>PREPARE_GM_SLP</code></li>
+<li><strong>Delay time:</strong> <code>triangular(0.25, 0.40, 0.60)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 bloques PREPARE creados</p>
+</ol>
+<p><strong>Para BMW SLP:</strong></p>
+<ol>
+<li>Arrastrar <strong>Delay</strong> abajo a la derecha</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>PREPARE_BMW_SLP</code></li>
+<li><strong>Delay time:</strong> <code>triangular(0.30, 0.45, 0.70)</code></li>
+</ul>
 </li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Todas las conexiones funcionan</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> El flowchart se ve organizado</p>
-</li>
+</ol>
+<h4 id="paso-8.5-conectar-destinos"><strong>Paso 8.5: Conectar Destinos</strong></h4>
+<pre><code>DESTINO_OEM ─┬─(0)─&gt; PREPARE_GM_SILAO
+             ├─(1)─&gt; PREPARE_GM_SLP
+             └─(2)─&gt; PREPARE_BMW_SLP
+</code></pre>
+<h3 id="⚠️-problemas-comunes-y-soluciones-7">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Síntoma</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Error asignación variable</strong></td>
+<td>No encuentra destinoOEM</td>
+<td>Verificar que la variable existe en agente Truck</td>
+</tr>
+<tr>
+<td><strong>Porcentajes incorrectos</strong></td>
+<td>Distribución no coincide</td>
+<td>0.55=55%, 0.88=55%+33%=88%, resto=12%</td>
+</tr>
+<tr>
+<td><strong>Conexiones múltiples</strong></td>
+<td>Error al conectar</td>
+<td>AnyLogic permite múltiples entradas a un bloque</td>
+</tr>
+<tr>
+<td><strong>Tiempos muy largos</strong></td>
+<td>Acumulación en preparación</td>
+<td>Ajustar tiempos según capacidad real</td>
+</tr>
+</tbody>
+</table><h3 id="💡-consejos-de-asignación">💡 CONSEJOS DE ASIGNACIÓN</h3>
+<ul>
+<li><strong>Priorizar GM Silao:</strong> Mayor volumen, tiempos estándar</li>
+<li><strong>BMW diferenciado:</strong> Tiempos mayores por calidad premium</li>
+<li><strong>Verificar distribución:</strong> Ejecutar y contar destinos</li>
+<li><strong>Flexibilidad:</strong> Los porcentajes se pueden ajustar fácilmente</li>
+</ul>
+<h3 id="📊-distribución-de-destinos">📊 Distribución de Destinos</h3>
+<pre><code>GM Silao:   55%  ← Mayor capacidad
+GM SLP:     33%  ← Capacidad media  
+BMW SLP:    12%  ← Volumen menor, alto valor
+</code></pre>
+<h3 id="✅-checklist-de-verificación-7">✅ Checklist de Verificación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> SelectOutput con 3 salidas para destinos</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código asigna correctamente destinoOEM</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Los 3 flujos anteriores conectados al mismo SelectOutput</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 delays de preparación creados (uno por OEM)</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Tiempos diferenciados (BMW mayor tiempo)</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Conexiones correctas desde SelectOutput</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Distribución porcentual suma 100%</li>
 </ul>
 <hr>
-<h2 id="paso-9-–-salida-del-cedis-y-registro-de-métricas">15. PASO 9 – SALIDA DEL CEDIS Y REGISTRO DE MÉTRICAS</h2>
+<h2 id="paso-9-–-salida-y-registro-de-métricas">15. PASO 9 – SALIDA Y REGISTRO DE MÉTRICAS</h2>
 <h3 id="🎯-objetivo-8">🎯 Objetivo</h3>
-<p>Crear el punto de salida del CEDIS y registrar los indicadores clave (KPIs).</p>
+<p>Completar el flujo con la salida del sistema y registrar todos los indicadores clave de desempeño.</p>
 <h3 id="🧠-lógica-8">🧠 Lógica</h3>
-<p>Al salir, cada camión debe:</p>
+<p>El punto de salida es crítico para:</p>
+<ul>
+<li><strong>Liberar recursos</strong> del sistema</li>
+<li><strong>Calcular métricas</strong> de desempeño</li>
+<li><strong>Generar reportes</strong> automáticos</li>
+<li><strong>Validar funcionamiento</strong> del modelo</li>
+</ul>
+<h3 id="🛠️-configuración-paso-a-paso-8">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-9.1-crear-variables-globales-para-kpis"><strong>Paso 9.1: Crear Variables Globales para KPIs</strong></h4>
+<p>En agente <strong>Main</strong>, crear estas variables:</p>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Tipo</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>palletsProcessed</code></td>
+<td>int</td>
+<td><code>0</code></td>
+<td>Contador total de pallets</td>
+</tr>
+<tr>
+<td><code>trucksProcessed</code></td>
+<td>int</td>
+<td><code>0</code></td>
+<td>Contador total de camiones</td>
+</tr>
+<tr>
+<td><code>avgCycleTime</code></td>
+<td>double</td>
+<td><code>0.0</code></td>
+<td>Tiempo promedio en sistema</td>
+</tr>
+<tr>
+<td><code>totalCycleTime</code></td>
+<td>double</td>
+<td><code>0.0</code></td>
+<td>Acumulador para cálculo promedio</td>
+</tr>
+</tbody>
+</table><p><strong>Procedimiento:</strong></p>
 <ol>
-<li>
-<p>Registrar su hora de salida</p>
-</li>
-<li>
-<p>Actualizar contadores de pallets y camiones</p>
-</li>
-<li>
-<p>Calcular tiempo de ciclo</p>
-</li>
-<li>
-<p>Desaparecer del sistema</p>
+<li>En <strong>Main</strong>, paleta: <strong>Agent → Variable</strong></li>
+<li>Crear las 4 variables en área superior del canvas</li>
+<li>Configurar Name, Type y Initial Value para cada una</li>
+</ol>
+<h4 id="paso-9.2-crear-punto-de-salida"><strong>Paso 9.2: Crear Punto de Salida</strong></h4>
+<ol>
+<li>Arrastrar <strong>Sink</strong> desde Process Modeling Library</li>
+<li>Colocar a la derecha de los 3 delays de preparación</li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>EXIT_CEDIS</code></li>
+</ul>
 </li>
 </ol>
-<h3 id="🛠️-configuración-8">🛠️ Configuración</h3>
-<h4 id="paso-9.1-crear-variables-globales-en-main"><strong>Paso 9.1: Crear variables globales en Main</strong></h4>
-<p>| Nombre | Tipo | Valor inicial | ¿Para qué sirve? |</p>
-<p>|--------|------|---------------|------------------|</p>
-<p>| <code>palletsProcessed</code> | int | <code>0</code> | Total de pallets procesados |</p>
-<p>| <code>trucksProcessed</code> | int | <code>0</code> | Total de camiones procesados |</p>
-<p>| <code>avgCycleTime</code> | double | <code>0.0</code> | Tiempo promedio en el CEDIS |</p>
-<p>| <code>totalCycleTime</code> | double | <code>0.0</code> | Suma de todos los tiempos |</p>
-<h4 id="paso-9.2-crear-sink-y-conexiones"><strong>Paso 9.2: Crear Sink y conexiones</strong></h4>
-<ol>
-<li>
-<p>Arrastrar <strong>Sink</strong></p>
-</li>
-<li>
-<p><strong>Name:</strong>  <code>EXIT_CEDIS</code></p>
-</li>
-<li>
-<p>Conectar los 3 PREPARE al Sink</p>
-</li>
-</ol>
-<h4 id="paso-9.3-código-en-exit_cedis-on-exit"><strong>Paso 9.3: Código en EXIT_CEDIS (On exit)</strong></h4>
-<pre class=" language-java"><code class="prism  language-java">
-<span class="token comment">// Registrar hora de salida</span>
+<h4 id="paso-9.3-conectar-todas-las-rutas-finales"><strong>Paso 9.3: Conectar Todas las Rutas Finales</strong></h4>
+<p>Conectar los 3 delays de preparación al Sink:</p>
+<ul>
+<li><code>PREPARE_GM_SILAO</code> → <code>EXIT_CEDIS</code></li>
+<li><code>PREPARE_GM_SLP</code> → <code>EXIT_CEDIS</code></li>
+<li><code>PREPARE_BMW_SLP</code> → <code>EXIT_CEDIS</code></li>
+</ul>
+<h4 id="paso-9.4-programar-registro-de-métricas"><strong>Paso 9.4: Programar Registro de Métricas</strong></h4>
+<p>En el bloque <code>EXIT_CEDIS</code>, sección <strong>On exit</strong>:</p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// ===== REGISTRO DE MÉTRICAS AL SALIR =====</span>
 
-agent<span class="token punctuation">.</span>tSalidaSistema  <span class="token operator">=</span>  <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 1. Registrar hora de salida del sistema</span>
+agent<span class="token punctuation">.</span>tSalidaSistema <span class="token operator">=</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  
+<span class="token comment">// 2. Calcular tiempo de ciclo individual</span>
+<span class="token keyword">double</span> cicloIndividual <span class="token operator">=</span> agent<span class="token punctuation">.</span>tSalidaSistema <span class="token operator">-</span> agent<span class="token punctuation">.</span>tEntradaSistema<span class="token punctuation">;</span>
 
-<span class="token comment">// Calcular tiempo de ciclo de este camión</span>
+<span class="token comment">// 3. Actualizar contadores de volumen</span>
+palletsProcessed <span class="token operator">+=</span> agent<span class="token punctuation">.</span>pallets<span class="token punctuation">;</span>  <span class="token comment">// Sumar pallets procesados</span>
+trucksProcessed <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>               <span class="token comment">// Incrementar contador de camiones</span>
 
-<span class="token keyword">double</span>  tCiclo  <span class="token operator">=</span>  agent<span class="token punctuation">.</span>tSalidaSistema  <span class="token operator">-</span>  agent<span class="token punctuation">.</span>tEntradaSistema<span class="token punctuation">;</span>
+<span class="token comment">// 4. Calcular tiempo promedio de ciclo</span>
+totalCycleTime <span class="token operator">+=</span> cicloIndividual<span class="token punctuation">;</span>  <span class="token comment">// Acumular tiempos</span>
+avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="token operator">/</span> trucksProcessed<span class="token punctuation">;</span>  <span class="token comment">// Calcular promedio</span>
 
-  
-
-<span class="token comment">// Actualizar contadores</span>
-
-palletsProcessed <span class="token operator">+=</span>  agent<span class="token punctuation">.</span>pallets<span class="token punctuation">;</span>
-
-trucksProcessed <span class="token operator">+=</span>  <span class="token number">1</span><span class="token punctuation">;</span>
-
-  
-
-<span class="token comment">// Actualizar tiempo promedio</span>
-
-totalCycleTime <span class="token operator">+=</span> tCiclo<span class="token punctuation">;</span>
-
-avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="token operator">/</span> trucksProcessed<span class="token punctuation">;</span>
-
+<span class="token comment">// 5. Log opcional para debugging (quitar en versión final)</span>
+<span class="token comment">// traceln("Camión " + trucksProcessed + " - Ciclo: " + cicloIndividual + "h - Pallets: " + agent.pallets);</span>
 </code></pre>
-<h3 id="⚠️-problemas-comunes-8">⚠️ PROBLEMAS COMUNES</h3>
-<p>| Problema | Solución |</p>
-<p>|----------|----------|</p>
-<p>| Error: “palletsProcessed cannot be resolved” | Crea primero las variables en Main |</p>
-<p>| Sink no acepta múltiples entradas | Sí acepta, conecta normalmente |</p>
-<p>| avgCycleTime da error | Usa <code>0.0</code> como inicial, no <code>0</code> |</p>
-<h3 id="✅-checklist-8">✅ Checklist</h3>
+<h3 id="⚠️-problemas-comunes-y-soluciones-8">⚠️ PROBLEMAS COMUNES Y SOLUCIONES</h3>
+
+<table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Síntoma</th>
+<th>Solución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Variables no encontradas</strong></td>
+<td>Error “cannot resolve”</td>
+<td>Verificar que variables están en Main, no Truck</td>
+</tr>
+<tr>
+<td><strong>División por cero</strong></td>
+<td>Error en avgCycleTime</td>
+<td>trucksProcessed empieza en 0, cálculo se hace después</td>
+</tr>
+<tr>
+<td><strong>Múltiples conexiones</strong></td>
+<td>Sink rechaza conexiones</td>
+<td>AnyLogic acepta múltiples entradas normalmente</td>
+</tr>
+<tr>
+<td><strong>Valores incorrectos</strong></td>
+<td>Métricas no coinciden</td>
+<td>Revisar fórmulas y inicializaciones</td>
+</tr>
+</tbody>
+</table><h3 id="💡-consejos-de-métricas">💡 CONSEJOS DE MÉTRICAS</h3>
 <ul>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> 4 variables creadas en Main</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> EXIT_CEDIS creado y conectado</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código On exit funciona sin errores</p>
-</li>
-<li class="task-list-item">
-<p><input type="checkbox" class="task-list-item-checkbox" disabled=""> Flowchart completo conectado de inicio a fin</p>
-</li>
+<li><strong>Inicializar correctamente:</strong> <code>0</code> para int, <code>0.0</code> para double</li>
+<li><strong>Usar +=</strong> para acumuladores</li>
+<li><strong>Cálculo promedio:</strong> Solo después de tener datos</li>
+<li><strong>Verificar valores:</strong> Ejecutar y verificar que números aumentan</li>
+</ul>
+<h3 id="📊-fórmulas-de-métricas">📊 Fórmulas de Métricas</h3>
+<pre><code>Throughput = palletsProcessed / tiempoSimulación
+Utilización = (tiempoOcupado / tiempoTotal) × 100
+Tiempo Ciclo Promedio = totalCycleTime / trucksProcessed
+</code></pre>
+<h3 id="✅-checklist-de-verificación-8">✅ Checklist de Verificación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 4 variables KPI creadas en Main con valores iniciales</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Sink creado como punto final del flujo</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Los 3 delays de preparación conectados al Sink</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Código On exit implementado correctamente</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> No hay errores de compilación en el código</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Fórmulas de cálculo validadas</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Flowchart completo de inicio a fin</li>
 </ul>
 <hr>
-<p><em>[El documento continúa con las demás partes…]</em></p>
+<h1 id="parte-5-dashboard-y-visualización">PARTE 5: DASHBOARD Y VISUALIZACIÓN</h1>
 <hr>
-<h2 id="🎯-resumen-de-mejoras-aplicadas">🎯 RESUMEN DE MEJORAS APLICADAS</h2>
-<h3 id="✅-tablas-mejoradas">✅ <strong>Tablas Mejoradas:</strong></h3>
+<h2 id="paso-10-–-crear-dashboard-de-monitoreo">16. PASO 10 – CREAR DASHBOARD DE MONITOREO</h2>
+<h3 id="🎯-objetivo-9">🎯 Objetivo</h3>
+<p>Crear un panel de control visual que muestre en tiempo real el estado del CEDIS y las métricas clave.</p>
+<h3 id="🧠-lógica-9">🧠 Lógica</h3>
+<p>Un dashboard efectivo permite:</p>
 <ul>
-<li>
-<p><strong>Estructura clara</strong> con bordes y alineación</p>
-</li>
-<li>
-<p><strong>Encabezados destacados</strong> para mejor legibilidad</p>
-</li>
-<li>
-<p><strong>Contenido organizado</strong> en columnas lógicas</p>
-</li>
-<li>
-<p><strong>Espaciado consistente</strong> entre celdas</p>
-</li>
+<li><strong>Monitoreo en tiempo real</strong> de operaciones</li>
+<li><strong>Identificación rápida</strong> de problemas</li>
+<li><strong>Comunicación clara</strong> de resultados</li>
+<li><strong>Validación visual</strong> del modelo</li>
 </ul>
-<h3 id="✅-formato-consistente">✅ <strong>Formato Consistente:</strong></h3>
+<h3 id="🛠️-configuración-paso-a-paso-9">🛠️ Configuración Paso a Paso</h3>
+<h4 id="paso-10.1-crear-título-del-dashboard"><strong>Paso 10.1: Crear Título del Dashboard</strong></h4>
+<ol>
+<li>En <strong>Main</strong>, paleta: <strong>Presentation → Text</strong></li>
+<li>Arrastrar a esquina superior derecha</li>
+<li>Configurar:
 <ul>
-<li>
-<p><strong>Jerarquía visual</strong> mejorada con emojis y símbolos</p>
-</li>
-<li>
-<p><strong>Secciones bien delimitadas</strong> con líneas separadoras</p>
-</li>
-<li>
-<p><strong>Checklists uniformes</strong> en todas las secciones</p>
-</li>
-<li>
-<p><strong>Problemas comunes</strong> en formato tabla para rápida consulta</p>
-</li>
+<li><strong>Text:</strong> <code>📊 DASHBOARD - CEDIS SAN BARTOLO</code></li>
+<li><strong>Font:</strong> Bold, Size: 18</li>
+<li><strong>Text color:</strong> <code>#2C3E50</code> (Azul oscuro)</li>
 </ul>
-<h3 id="✅-navegación-mejorada">✅ <strong>Navegación Mejorada:</strong></h3>
+</li>
+</ol>
+<h4 id="paso-10.2-crear-etiquetas-de-métricas"><strong>Paso 10.2: Crear Etiquetas de Métricas</strong></h4>
+<p>Crear textos estáticos para las métricas:</p>
+
+<table>
+<thead>
+<tr>
+<th>Texto</th>
+<th>Posición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Pallets procesados:</code></td>
+<td>Debajo del título</td>
+</tr>
+<tr>
+<td><code>Camiones procesados:</code></td>
+<td>Debajo del anterior</td>
+</tr>
+<tr>
+<td><code>Tiempo promedio de ciclo (horas):</code></td>
+<td>Debajo del anterior</td>
+</tr>
+<tr>
+<td><code>Utilización de andenes (%):</code></td>
+<td>Debajo del anterior</td>
+</tr>
+</tbody>
+</table><p><strong>Configuración común:</strong></p>
 <ul>
-<li>
-<p><strong>Índice visual</strong> con partes claramente identificadas</p>
-</li>
-<li>
-<p><strong>Referencias cruzadas</strong> entre tablas y contenido</p>
-</li>
-<li>
-<p><strong>Flujos diagramados</strong> en formato texto claro</p>
-</li>
+<li><strong>Font:</strong> Normal, Size: 12</li>
+<li><strong>Text alignment:</strong> Left</li>
 </ul>
-<p>El documento ahora tiene <strong>mejor legibilidad</strong> y <strong>navegación más intuitiva</strong>, manteniendo todo el contenido técnico original pero con presentación optimizada.</p>
+<h4 id="paso-10.3-crear-valores-dinámicos"><strong>Paso 10.3: Crear Valores Dinámicos</strong></h4>
+<p>Para cada métrica, crear un texto vinculado a variables:</p>
+<p><strong>Pallets Procesados:</strong></p>
+<ol>
+<li><strong>Text:</strong> <code>palletsProcessed</code></li>
+<li><strong>Font:</strong> Bold, Size: 14, Color: <code>#27AE60</code> (Verde)</li>
+</ol>
+<p><strong>Camiones Procesados:</strong></p>
+<ol>
+<li><strong>Text:</strong> <code>trucksProcessed</code></li>
+<li><strong>Font:</strong> Bold, Size: 14, Color: <code>#2980B9</code> (Azul)</li>
+</ol>
+<p><strong>Tiempo Promedio:</strong></p>
+<ol>
+<li><strong>Text:</strong> <code>format("%.2f", avgCycleTime)</code></li>
+<li><strong>Font:</strong> Bold, Size: 14, Color: <code>#E67E22</code> (Naranja)</li>
+</ol>
+<p><strong>Utilización Andenes:</strong></p>
+<ol>
+<li><strong>Text:</strong> <code>format("%.1f", docks.utilization() * 100)</code></li>
+<li><strong>Font:</strong> Bold, Size: 14, Color: <code>#E74C3C</code> (Rojo)</li>
+</ol>
+<h4 id="paso-10.4-agregar-gráfica-de-tiempo-opcional"><strong>Paso 10.4: Agregar Gráfica de Tiempo (Opcional)</strong></h4>
+<ol>
+<li>Paleta: <strong>Analysis → Time Plot</strong></li>
+<li>Arrastrar debajo del dashboard</li>
+<li>Configurar:
+<ul>
+<li><strong>Title:</strong> <code>Evolución de Pallets Procesados</code></li>
+<li><strong>Data items:</strong> Add → <code>palletsProcessed</code></li>
+<li><strong>Width:</strong> 300, <strong>Height:</strong> 200</li>
+</ul>
+</li>
+</ol>
+<h3 id="💡-consejos-de-dashboard">💡 CONSEJOS DE DASHBOARD</h3>
+<ul>
+<li><strong>Posición estratégica:</strong> Esquina superior derecha</li>
+<li><strong>Colores significativos:</strong> Verde=bien, Rojo=alerta</li>
+<li><strong>Formato consistente:</strong> 2 decimales para tiempos</li>
+<li><strong>Actualización automática:</strong> Los textos se actualizan solos</li>
+</ul>
+<h3 id="✅-checklist-de-verificación-9">✅ Checklist de Verificación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Título del dashboard creado</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 4 etiquetas estáticas de métricas</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 4 valores dinámicos vinculados a variables</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Formato correcto para números decimales</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Gráfica de tiempo opcional agregada</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Colores consistentes y significativos</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Dashboard organizado y legible</li>
+</ul>
+<hr>
+<h1 id="parte-6-ejecución-y-publicación">PARTE 6: EJECUCIÓN Y PUBLICACIÓN</h1>
+<hr>
+<h2 id="paso-11-–-ejecución-y-pruebas">17. PASO 11 – EJECUCIÓN Y PRUEBAS</h2>
+<h3 id="🎯-objetivo-10">🎯 Objetivo</h3>
+<p>Verificar que el modelo funciona correctamente y produce resultados dentro de rangos esperados.</p>
+<h3 id="🧠-lógica-10">🧠 Lógica</h3>
+<p>Las pruebas validad que:</p>
+<ul>
+<li><strong>El flujo es continuo</strong> sin bloqueos</li>
+<li><strong>Las métricas son razonables</strong> según diseño</li>
+<li><strong>Los recursos se utilizan</strong> eficientemente</li>
+<li><strong>No hay errores</strong> de programación</li>
+</ul>
+<h3 id="🛠️-procedimiento-de-pruebas">🛠️ Procedimiento de Pruebas</h3>
+<h4 id="paso-11.1-ejecución-inicial"><strong>Paso 11.1: Ejecución Inicial</strong></h4>
+<ol>
+<li>Click en botón <strong>Run</strong> (▶️) en barra superior</li>
+<li>Esperar que se abra ventana de simulación</li>
+<li>Observar comportamiento por 5-10 minutos reales</li>
+</ol>
+<h4 id="paso-11.2-verificación-visual"><strong>Paso 11.2: Verificación Visual</strong></h4>
+<p><strong>Lo que DEBES ver:</strong></p>
+<ul>
+<li>✅ Camiones aparecen en Sources</li>
+<li>✅ Fluyen continuamente por el flowchart</li>
+<li>✅ Se distribuyen entre rutas Norte/Sur</li>
+<li>✅ Toman diferentes caminos (Cross-dock/Buffer/Kitting)</li>
+<li>✅ Dashboard se actualiza en tiempo real</li>
+<li>✅ No hay acumulaciones excesivas en colas</li>
+</ul>
+<p><strong>Señales de ALERTA:</strong></p>
+<ul>
+<li>❌ Camiones atorados en algún punto</li>
+<li>❌ Colas que crecen infinitamente</li>
+<li>❌ Recursos con 0% o 100% utilización constante</li>
+<li>❌ KPIs que no cambian</li>
+</ul>
+<h4 id="paso-11.3-validación-de-métricas"><strong>Paso 11.3: Validación de Métricas</strong></h4>
+<p>Después de 24 horas simuladas (2-3 minutos reales):</p>
+
+<table>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Rango Esperado</th>
+<th>Tu Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pallets procesados</strong></td>
+<td>6,000 - 8,000</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Camiones procesados</strong></td>
+<td>200 - 300</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Tiempo ciclo promedio</strong></td>
+<td>2.5 - 4.5 horas</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Utilización andenes</strong></td>
+<td>65% - 85%</td>
+<td></td>
+</tr>
+</tbody>
+</table><h3 id="⚠️-ajustes-comunes">⚠️ AJUSTES COMUNES</h3>
+<p><strong>Si llegada es muy alta:</strong></p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// En Sources, reducir tasas:</span>
+<span class="token function">uniform</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>  <span class="token comment">// Menos camiones por hora</span>
+</code></pre>
+<p><strong>Si utilización es 100%:</strong></p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// En docks, aumentar capacidad:</span>
+capacity <span class="token operator">=</span> <span class="token number">28</span>  <span class="token comment">// Más andenes</span>
+</code></pre>
+<p><strong>Si tiempos ciclo son muy altos:</strong></p>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// En delays, reducir tiempos:</span>
+<span class="token function">triangular</span><span class="token punctuation">(</span><span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span>  <span class="token comment">// Más rápido</span>
+</code></pre>
+<h3 id="✅-checklist-de-validación">✅ Checklist de Validación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo ejecuta sin errores</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Camiones fluyen de inicio a fin</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Dashboard muestra datos reales</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Métricas en rangos esperados</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> No hay bloqueos en el sistema</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Recursos se utilizan balanceadamente</li>
+</ul>
+<hr>
+<h2 id="paso-12-–-publicación-en-anylogic-cloud">18. PASO 12 – PUBLICACIÓN EN ANYLOGIC CLOUD</h2>
+<h3 id="🎯-objetivo-11">🎯 Objetivo</h3>
+<p>Publicar el modelo en la nube para compartirlo con el profesor y compañeros.</p>
+<h3 id="🧠-lógica-11">🧠 Lógica</h3>
+<p>AnyLogic Cloud permite:</p>
+<ul>
+<li><strong>Acceso desde cualquier navegador</strong></li>
+<li><strong>Compartir sin instalar software</strong></li>
+<li><strong>Ejecución en servidores remotos</strong></li>
+<li><strong>Colaboración y revisión</strong></li>
+</ul>
+<h3 id="🛠️-procedimiento-de-publicación">🛠️ Procedimiento de Publicación</h3>
+<h4 id="paso-12.1-exportar-a-la-nube"><strong>Paso 12.1: Exportar a la Nube</strong></h4>
+<ol>
+<li>Menú: <strong>File → Export → To AnyLogic Cloud…</strong></li>
+<li>Iniciar sesión o crear cuenta gratuita</li>
+<li>Configurar publicación:
+<ul>
+<li><strong>Model name:</strong> <code>CEDIS_SanBartolo_TuApellido_Matricula</code></li>
+<li><strong>Access:</strong> <code>Public</code></li>
+<li><strong>Description:</strong> <code>Modelo CEDIS Automotriz - Actividad 9</code></li>
+</ul>
+</li>
+<li>Click en <strong>Upload</strong></li>
+</ol>
+<h4 id="paso-12.2-probar-en-navegador"><strong>Paso 12.2: Probar en Navegador</strong></h4>
+<ol>
+<li>Copiar URL proporcionada</li>
+<li>Abrir en navegador web</li>
+<li>Click en <strong>Run model</strong></li>
+<li>Verificar que funciona igual que local</li>
+</ol>
+<h3 id="✅-checklist-de-publicación">✅ Checklist de Publicación</h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo exportado sin errores</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> URL copiada y guardada</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo accesible públicamente</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Funcionalidad verificada en navegador</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> KPIs visibles y actualizándose</li>
+</ul>
+<hr>
+<h2 id="🎉-¡felicitaciones">🎉 ¡FELICITACIONES!</h2>
+<p>Has completado exitosamente el modelo del CEDIS Automotriz San Bartolo en AnyLogic. Tu modelo incluye:</p>
+<h3 id="✅-características-implementadas">✅ <strong>Características Implementadas:</strong></h3>
+<ul>
+<li>Flujo completo de camiones desde 3 proveedores</li>
+<li>Sistema de andenes con recursos limitados</li>
+<li>Ruteo inteligente por regiones</li>
+<li>Tres rutas operativas (Cross-dock/Buffer/Kitting)</li>
+<li>Asignación a 3 destinos OEM finales</li>
+<li>Dashboard con métricas en tiempo real</li>
+<li>Cálculo automático de KPIs</li>
+</ul>
+<h3 id="📊-capacidades-del-modelo">📊 <strong>Capacidades del Modelo:</strong></h3>
+<ul>
+<li><strong>Throughput:</strong> ~7,000 pallets/día</li>
+<li><strong>Recursos:</strong> 24 andenes gestionados</li>
+<li><strong>Flexibilidad:</strong> Parámetros ajustables</li>
+<li><strong>Visualización:</strong> Dashboard integrado</li>
+<li><strong>Validación:</strong> Métricas en tiempo real</li>
+</ul>
+<h3 id="🚀-próximos-pasos">🚀 <strong>Próximos Pasos:</strong></h3>
+<ol>
+<li><strong>Documentar</strong> el modelo en reporte final</li>
+<li><strong>Capturar</strong> evidencias de funcionamiento</li>
+<li><strong>Analizar</strong> resultados y cuellos de botella</li>
+<li><strong>Proponer</strong> mejoras basadas en simulación</li>
+</ol>
+<p><strong>¡Excelente trabajo! Has creado una herramienta profesional de simulación logística.</strong></p>
+<hr>
+<h2 id="📋-checklist-final-de-entrega">📋 CHECKLIST FINAL DE ENTREGA</h2>
+<h3 id="🔧-modelo-anylogic">🔧 <strong>Modelo AnyLogic:</strong></h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Proyecto con nombre personalizado</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Unidades configuradas en horas y metros</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Layout visual del CEDIS completo</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Agente Truck con 6 variables</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 Sources configurados correctamente</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Flowchart completo funcionando</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> ResourcePool de andenes (capacidad 24)</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Decisiones de ruteo programadas</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 3 rutas operativas implementadas</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Asignación a 3 destinos OEM</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Variables KPI en Main</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Dashboard funcional</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo ejecuta sin errores</li>
+</ul>
+<h3 id="🌐-publicación">🌐 <strong>Publicación:</strong></h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Modelo subido a AnyLogic Cloud</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Enlace funcional y público</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> KPIs visibles en versión web</li>
+</ul>
+<h3 id="📄-documentación">📄 <strong>Documentación:</strong></h3>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Reporte completo en formato PDF</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> 6 capturas de pantalla obligatorias</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Tabla de resultados con KPIs</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Análisis de cuellos de botella</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled=""> Conclusión personal reflexiva</li>
+</ul>
+<p><strong>¡Listo para entregar! 🎯</strong></p>
 </div>
 </body>
 

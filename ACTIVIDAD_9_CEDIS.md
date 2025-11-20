@@ -1034,6 +1034,43 @@ SRC_MAGNA_SUR ───┘
 </li>
 </ol>
 <h4 id="paso-6.2-programar-la-lógica-de-decisión"><strong>Paso 6.2: Programar la Lógica de Decisión</strong></h4>
+<h3 id="paso-6.2-configurar-tiempos-de-recepción"><strong>Paso 6.2: Configurar Tiempos de Recepción</strong></h3>
+<p><strong>Agregar estos delays después del SelectOutput ROUTE_RECEPCION:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Nombre</th>
+<th>Delay Time</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Delay</strong></td>
+<td><code>DELAY_RECEP_NORTE</code></td>
+<td><code>triangular(0.15, 0.25, 0.40)</code></td>
+<td>Procesamiento recepción norte</td>
+</tr>
+<tr>
+<td><strong>Delay</strong></td>
+<td><code>DELAY_RECEP_SUR</code></td>
+<td><code>triangular(0.15, 0.25, 0.40)</code></td>
+<td>Procesamiento recepción sur</td>
+</tr>
+<tr>
+<td><strong>Delay</strong></td>
+<td><code>SORTING_PROCESS</code></td>
+<td><code>triangular(0.2, 0.4, 0.8)</code></td>
+<td>Clasificación central</td>
+</tr>
+</tbody>
+</table><p><strong>Conexiones:</strong></p>
+<pre><code>RELEASE_ANDEN → ROUTE_RECEPCION ─┬─(0)─&gt; DELAY_RECEP_NORTE ─┐
+                                 │                           ├─&gt; SORTING_PROCESS
+                                 └─(1)─&gt; DELAY_RECEP_SUR ───┘
+</code></pre>
 <p>En el campo de código del SelectOutput:</p>
 <pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Decidir ruta según región del camión</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>agent<span class="token punctuation">.</span>region<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"NORTE"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1742,6 +1779,350 @@ SRC_MAGNA ─┘                                         │
                                     EXIT_CEDIS → KPIs &amp; Dashboard
 </code></pre>
 <p><strong>¡Listo para entregar! 🎯</strong></p>
+<h1 id="🔧-partes-faltantes---para-completar-el-documento">🔧 PARTES FALTANTES - PARA COMPLETAR EL DOCUMENTO</h1>
+<h2 id="📍-ubicaciones-donde-pegar-cada-sección">📍 UBICACIONES DONDE PEGAR CADA SECCIÓN</h2>
+<hr>
+<h2 id="🚨-falta-1-completar-paso-6---tiempos-de-recepción">🚨 <strong>FALTA 1: COMPLETAR PASO 6 - TIEMPOS DE RECEPCIÓN</strong></h2>
+<p><strong>📍 PEGAR DESPUÉS DEL PASO 6.1 (donde termina el código del SelectOutput)</strong></p>
+<hr>
+<h2 id="🚨-falta-2-sección-completa---cross-docking-y-buffer">🚨 <strong>FALTA 2: SECCIÓN COMPLETA - CROSS-DOCKING Y BUFFER</strong></h2>
+<p><strong>📍 PEGAR DESPUÉS DEL PASO 6 (donde termina la parte de recepción)</strong></p>
+<h3 id="paso-7-–-decisión-cross-docking-o-buffer-estratégico-1"><strong>13. PASO 7 – DECISIÓN: CROSS-DOCKING O BUFFER ESTRATÉGICO</strong></h3>
+<h3 id="🎯-objetivo-13">🎯 Objetivo</h3>
+<p>Implementar la lógica que determina si los materiales pasan directo a embarque o requieren almacenamiento temporal.</p>
+<h3 id="🧠-lógica-12">🧠 Lógica</h3>
+<p>Según datos reales de CEDIS automotrices:</p>
+<ul>
+<li><strong>65% Cross-docking:</strong> Máxima eficiencia, costo mínimo</li>
+<li><strong>30% Buffer:</strong> Flexibilidad operativa, manejo de picos</li>
+<li><strong>5% Kitting:</strong> Valor agregado, servicios especiales</li>
+</ul>
+<h3 id="🛠️-configuración">🛠️ Configuración</h3>
+<h4 id="paso-7.1-crear-decisión-de-flujo"><strong>Paso 7.1: Crear Decisión de Flujo</strong></h4>
+<ol>
+<li>Arrastrar <strong>SelectOutput</strong> a la derecha de <code>SORTING_PROCESS</code></li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>FLOW_DECISION</code></li>
+<li><strong>Type:</strong> <code>Condition</code></li>
+<li><strong>Condition:</strong> <code>By code</code></li>
+<li><strong>Outputs:</strong> <code>3</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="paso-7.2-programar-distribución"><strong>Paso 7.2: Programar Distribución</strong></h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">double</span> r <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> <span class="token number">0.65</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment">// 65% - Cross-docking directo</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> <span class="token number">0.95</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// 30% - Buffer estratégico</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>  <span class="token comment">// 5% - Kitting/Valor agregado</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="paso-7.3-crear-procesos"><strong>Paso 7.3: Crear Procesos</strong></h4>
+
+<table>
+<thead>
+<tr>
+<th>Ruta</th>
+<th>Bloque</th>
+<th>Nombre</th>
+<th>Delay Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buffer</td>
+<td>Delay</td>
+<td><code>BUFFER_TIME</code></td>
+<td><code>triangular(1, 3, 6)</code></td>
+</tr>
+<tr>
+<td>Kitting</td>
+<td>Delay</td>
+<td><code>KITTING_PROCESS</code></td>
+<td><code>triangular(0.15, 0.30, 0.50)</code></td>
+</tr>
+<tr>
+<td>Cross-docking</td>
+<td>(Directo)</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table><p><strong>Conexiones:</strong></p>
+<pre><code>SORTING_PROCESS → FLOW_DECISION ─┬─(0)─&gt; [Cross-docking] ─┐
+                                 ├─(1)─&gt; BUFFER_TIME ────┤
+                                 └─(2)─&gt; KITTING_PROCESS ─┘
+</code></pre>
+<hr>
+<h2 id="🚨-falta-3-sección-completa---destinos-oem">🚨 <strong>FALTA 3: SECCIÓN COMPLETA - DESTINOS OEM</strong></h2>
+<p><strong>📍 PEGAR DESPUÉS DEL PASO 7</strong></p>
+<h3 id="paso-8-–-asignación-de-destino-oem-1"><strong>14. PASO 8 – ASIGNACIÓN DE DESTINO OEM</strong></h3>
+<h3 id="🎯-objetivo-14">🎯 Objetivo</h3>
+<p>Determinar a qué ensambladora final se dirige cada material.</p>
+<h3 id="🧠-lógica-13">🧠 Lógica</h3>
+<p>Distribución basada en volumen:</p>
+<ul>
+<li><strong>GM Silao (55%):</strong> Mayor volumen</li>
+<li><strong>GM SLP (33%):</strong> Volumen medio</li>
+<li><strong>BMW SLP (12%):</strong> Volumen menor, alto valor</li>
+</ul>
+<h3 id="🛠️-configuración-1">🛠️ Configuración</h3>
+<h4 id="paso-8.1-crear-decisión-de-destino"><strong>Paso 8.1: Crear Decisión de Destino</strong></h4>
+<ol>
+<li>Arrastrar <strong>SelectOutput</strong></li>
+<li>Configurar:
+<ul>
+<li><strong>Name:</strong> <code>DESTINO_OEM</code></li>
+<li><strong>Type:</strong> <code>Condition</code></li>
+<li><strong>Condition:</strong> <code>By code</code></li>
+<li><strong>Outputs:</strong> <code>3</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="paso-8.2-programar-asignación"><strong>Paso 8.2: Programar Asignación</strong></h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token keyword">double</span> r <span class="token operator">=</span> <span class="token function">uniform</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> <span class="token number">0.55</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    agent<span class="token punctuation">.</span>destinoOEM <span class="token operator">=</span> <span class="token string">"GM_SILAO"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> <span class="token number">0.88</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    agent<span class="token punctuation">.</span>destinoOEM <span class="token operator">=</span> <span class="token string">"GM_SLP"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    agent<span class="token punctuation">.</span>destinoOEM <span class="token operator">=</span> <span class="token string">"BMW_SLP"</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="paso-8.3-conectar-flujos-anteriores"><strong>Paso 8.3: Conectar Flujos Anteriores</strong></h4>
+<ul>
+<li>Rama 0 de <code>FLOW_DECISION</code> → <code>DESTINO_OEM</code></li>
+<li><code>BUFFER_TIME</code> → <code>DESTINO_OEM</code></li>
+<li><code>KITTING_PROCESS</code> → <code>DESTINO_OEM</code></li>
+</ul>
+<h4 id="paso-8.4-preparación-por-cliente"><strong>Paso 8.4: Preparación por Cliente</strong></h4>
+
+<table>
+<thead>
+<tr>
+<th>Cliente</th>
+<th>Bloque</th>
+<th>Nombre</th>
+<th>Delay Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GM Silao</td>
+<td>Delay</td>
+<td><code>PREPARE_GM_SILAO</code></td>
+<td><code>triangular(0.25, 0.40, 0.60)</code></td>
+</tr>
+<tr>
+<td>GM SLP</td>
+<td>Delay</td>
+<td><code>PREPARE_GM_SLP</code></td>
+<td><code>triangular(0.25, 0.40, 0.60)</code></td>
+</tr>
+<tr>
+<td>BMW SLP</td>
+<td>Delay</td>
+<td><code>PREPARE_BMW_SLP</code></td>
+<td><code>triangular(0.30, 0.45, 0.70)</code></td>
+</tr>
+</tbody>
+</table><p><strong>Conexiones:</strong></p>
+<pre><code>DESTINO_OEM ─┬─(0)─&gt; PREPARE_GM_SILAO
+             ├─(1)─&gt; PREPARE_GM_SLP
+             └─(2)─&gt; PREPARE_BMW_SLP
+</code></pre>
+<hr>
+<h2 id="🚨-falta-4-sección-completa---salida-y-kpis">🚨 <strong>FALTA 4: SECCIÓN COMPLETA - SALIDA Y KPIs</strong></h2>
+<p><strong>📍 PEGAR DESPUÉS DEL PASO 8</strong></p>
+<h3 id="paso-9-–-salida-y-registro-de-métricas-1"><strong>15. PASO 9 – SALIDA Y REGISTRO DE MÉTRICAS</strong></h3>
+<h3 id="🎯-objetivo-15">🎯 Objetivo</h3>
+<p>Completar el flujo y registrar indicadores de desempeño.</p>
+<h3 id="🛠️-configuración-2">🛠️ Configuración</h3>
+<h4 id="paso-9.1-crear-variables-kpi-en-main"><strong>Paso 9.1: Crear Variables KPI en Main</strong></h4>
+
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Tipo</th>
+<th>Valor</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>palletsProcessed</code></td>
+<td>int</td>
+<td><code>0</code></td>
+<td>Total pallets procesados</td>
+</tr>
+<tr>
+<td><code>trucksProcessed</code></td>
+<td>int</td>
+<td><code>0</code></td>
+<td>Total camiones procesados</td>
+</tr>
+<tr>
+<td><code>avgCycleTime</code></td>
+<td>double</td>
+<td><code>0.0</code></td>
+<td>Tiempo promedio en sistema</td>
+</tr>
+<tr>
+<td><code>totalCycleTime</code></td>
+<td>double</td>
+<td><code>0.0</code></td>
+<td>Acumulador para promedio</td>
+</tr>
+</tbody>
+</table><h4 id="paso-9.2-crear-salida"><strong>Paso 9.2: Crear Salida</strong></h4>
+<ol>
+<li>Arrastrar <strong>Sink</strong></li>
+<li><strong>Name:</strong> <code>EXIT_CEDIS</code></li>
+<li>Conectar los 3 PREPARE al Sink</li>
+</ol>
+<h4 id="paso-9.3-código-en-exit_cedis-on-exit"><strong>Paso 9.3: Código en EXIT_CEDIS (On exit)</strong></h4>
+<pre class=" language-java"><code class="prism  language-java"><span class="token comment">// Registrar hora de salida</span>
+agent<span class="token punctuation">.</span>tSalidaSistema <span class="token operator">=</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Calcular tiempo de ciclo</span>
+<span class="token keyword">double</span> tCiclo <span class="token operator">=</span> agent<span class="token punctuation">.</span>tSalidaSistema <span class="token operator">-</span> agent<span class="token punctuation">.</span>tEntradaSistema<span class="token punctuation">;</span>
+
+<span class="token comment">// Actualizar contadores</span>
+palletsProcessed <span class="token operator">+=</span> agent<span class="token punctuation">.</span>pallets<span class="token punctuation">;</span>
+trucksProcessed <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Actualizar tiempo promedio</span>
+totalCycleTime <span class="token operator">+=</span> tCiclo<span class="token punctuation">;</span>
+avgCycleTime <span class="token operator">=</span> totalCycleTime <span class="token operator">/</span> trucksProcessed<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<h2 id="🚨-falta-5-sección-completa---dashboard">🚨 <strong>FALTA 5: SECCIÓN COMPLETA - DASHBOARD</strong></h2>
+<p><strong>📍 PEGAR DESPUÉS DEL PASO 9</strong></p>
+<h3 id="paso-10-–-crear-dashboard-de-monitoreo"><strong>16. PASO 10 – CREAR DASHBOARD DE MONITOREO</strong></h3>
+<h3 id="🎯-objetivo-16">🎯 Objetivo</h3>
+<p>Panel visual para monitoreo en tiempo real.</p>
+<h3 id="🛠️-configuración-3">🛠️ Configuración</h3>
+<h4 id="paso-10.1-título-del-dashboard"><strong>Paso 10.1: Título del Dashboard</strong></h4>
+<ul>
+<li><strong>Text:</strong> <code>📊 DASHBOARD - CEDIS SAN BARTOLO</code></li>
+<li><strong>Font:</strong> Bold, Size: 18</li>
+</ul>
+<h4 id="paso-10.2-métricas-dinámicas"><strong>Paso 10.2: Métricas Dinámicas</strong></h4>
+
+<table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Texto Dinámico</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pallets procesados</td>
+<td><code>palletsProcessed</code></td>
+<td>Verde</td>
+</tr>
+<tr>
+<td>Camiones procesados</td>
+<td><code>trucksProcessed</code></td>
+<td>Azul</td>
+</tr>
+<tr>
+<td>Tiempo promedio</td>
+<td><code>format("%.2f", avgCycleTime)</code></td>
+<td>Naranja</td>
+</tr>
+<tr>
+<td>Utilización andenes</td>
+<td><code>format("%.1f", docks.utilization() * 100)</code></td>
+<td>Rojo</td>
+</tr>
+</tbody>
+</table><hr>
+<h2 id="🚨-falta-6-sección-completa---montacargas-opcional">🚨 <strong>FALTA 6: SECCIÓN COMPLETA - MONTACARGAS (OPCIONAL)</strong></h2>
+<p><strong>📍 PEGAR COMO PARTE OPCIONAL DESPUÉS DEL DASHBOARD</strong></p>
+<h3 id="paso-11-–-gestión-de-montacargas-opcional"><strong>17. PASO 11 – GESTIÓN DE MONTACARGAS (OPCIONAL)</strong></h3>
+<h3 id="🎯-objetivo-17">🎯 Objetivo</h3>
+<p>Implementar montacargas como recurso adicional.</p>
+<h3 id="🛠️-configuración-4">🛠️ Configuración</h3>
+<h4 id="paso-11.1-crear-resourcepool"><strong>Paso 11.1: Crear ResourcePool</strong></h4>
+<ul>
+<li><strong>Name:</strong> <code>forklifts</code></li>
+<li><strong>Capacity:</strong> <code>12</code></li>
+</ul>
+<h4 id="paso-11.2-usar-en-procesos"><strong>Paso 11.2: Usar en Procesos</strong></h4>
+<p>Agregar <strong>Seize/Release</strong> alrededor de <code>SORTING_PROCESS</code>:</p>
+<ul>
+<li><strong>Seize:</strong> <code>forklifts</code>, Quantity: <code>2</code></li>
+<li><strong>Release:</strong> <code>forklifts</code></li>
+</ul>
+<hr>
+<h2 id="🚨-falta-7-sección-completa---ejecución-y-publicación">🚨 <strong>FALTA 7: SECCIÓN COMPLETA - EJECUCIÓN Y PUBLICACIÓN</strong></h2>
+<p><strong>📍 PEGAR AL FINAL DEL DOCUMENTO</strong></p>
+<h2 id="📋-resumen-de-secciones-faltantes">📋 RESUMEN DE SECCIONES FALTANTES</h2>
+
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Sección</th>
+<th>Ubicación</th>
+<th>Crítico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Tiempos Recepción (Paso 6.2)</td>
+<td>Después Paso 6.1</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Cross-docking y Buffer (Paso 7)</td>
+<td>Después Paso 6</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Destinos OEM (Paso 8)</td>
+<td>Después Paso 7</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Salida y KPIs (Paso 9)</td>
+<td>Después Paso 8</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Dashboard (Paso 10)</td>
+<td>Después Paso 9</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Montacargas (Paso 11)</td>
+<td>Opcional después Dashboard</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ejecución y Cloud (Pasos 12-13)</td>
+<td>Final documento</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table><p><strong>¡Con estas 7 secciones agregadas, el documento estará COMPLETO y funcional!</strong> 🚀</p>
 </div>
 </body>
 
